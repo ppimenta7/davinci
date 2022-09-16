@@ -3,13 +3,26 @@ import team from '../../../data/corporate/team.json';
 
 const Team = () => {
   return (
-    <section className="team-shape section-padding bg-gray">
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <div className="round-head text-center mb-80">
-              <h6 className="ls2 text-u fz-12 mb-15">Our Staff <span></span></h6>
-              <h2 className="fw-700">Creative Minds</h2>
+    <section className="team-shape section-padding bg-gray" data-scroll-index="1">
+      <div className="container-fluid">
+      <div className="row justify-content-center">
+          <div className="col-lg-8 col-md-10">
+            <div className="section-head text-center pb-50">
+              <h6 className="sub-head radius mb-20">
+                <span className="fz-12 ls2 text-u gr-orange-text">
+                  Quem Somos
+                </span>
+              </h6>
+              <h2>O &quot;Dream Team&quot; Brasileiro</h2>
+              <p className="fz-16">
+                Na Da vinci Clinic, contamos com o mais especializado corpo
+                clínico da América do Sul
+              </p>
+              <p className="fz-16">
+                Nossos profissionais têm décadas de experiência com reabilitação
+                de amputados, utilizando das técnicas mais avançadas somadas à o
+                que há de mais tecnológico no mercado
+              </p>
             </div>
           </div>
         </div>
@@ -17,17 +30,18 @@ const Team = () => {
           {
             team.map((member, index) => (
               <div className="col-lg-3 col-md-6" key={index}>
-                <div className="item">
+                <div className="item md-mb50">
                   <div className="img">
                     <img src={member.picture} className="primery-shadow" alt="" />
-                    <div className="cont text-light">
+                    <div className="cont text-dark">
                       <h6 className="fz-14 fw-700 text-u ls1 mb-5">{ member.name }</h6>
                       <span className="fz-14 opacity-8">{ member.position }</span>
-                      <p className="fz-14 opacity-8 text-light">{ member.about }</p>
-                      <div className="shape gr-sunrise-bg"></div>
+                      <hr/>
+                      <p className="fz-14 opacity-8 text-dark">{ member.about }</p>
+                      <div className="shape blue-light-bg"></div>
                     </div>
-                    <div className="mt-30 mb-30 text-light text-center bg-gray " stylle={{minHeight: "15vh"}}>
-                    <h6 className="fw-500 text-black blue-bg in">{ member.name }</h6>
+                    <div className="mt-30 mb-30 text-dark text-center bg-gray " stylle={{minHeight: "16vh"}}>
+                    <h6 className="fw-500 text-black blue-bg in" style={{padding: "5px 10px"}}>{ member.name }</h6>
                     <p className="fz-16">{ member.position }</p>
                     </div>
                   </div>
