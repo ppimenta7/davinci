@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "image": "img/davinci/jairo.png",
+    "type": "Branding",
+    "title": "Daimler Financial"
+  },
+  {
+    "id": 2,
+    "image": "img/davinci/monica.png",
+    "type": "Marketing",
+    "title": "Skoda Corporate"
+  },
+  {
+    "id": 3,
+    "image": "img/davinci/",
+    "type": "ui / ux design",
+    "title": "Jeremy Dupont"
+  },
+  {
+    "id": 4,
+    "image": "img/davinci/pedro-pimenta.png",
+    "type": "Web Design",
+    "title": "Potato Oslands"
+  }
+]

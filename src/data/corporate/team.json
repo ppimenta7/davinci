@@ -1,0 +1,26 @@
+[
+  {
+    "picture": "img/davinci/pedro-pimenta.png",
+    "name": "Pedro Pimenta",
+    "position": "Co-Fundador e Diretor Executivo",
+    "about": "Lorem Ipsum"
+  },
+  {
+    "picture": "img/davinci/jairo.png",
+    "name": "Jairo Bluementhal",
+    "position": "Co-fundador e Diretor Clínico Ortesista e Protesista",
+    "about": "Primeiro Brasileiro graduado em O&P nos Estados Unidos. Ministrou cursos e palestras em mais de 30 países, sendo membro atuante da Academia Americana de Protesistas e Ortesistas (AAOP) e da International Society for Prosthetics and Orthotics (ISPO)."
+  },
+  {
+    "picture": "img/davinci/monica.png",
+    "name": "Mônica Yamaoka",
+    "position": "Fisioterapeuta",
+    "about": "Fisioterapeuta formada pela PUCCAMP, especializada na reabilitação de amputados de MMII (membros inferiores). Palestrou em várias Universidades, tais como UNICID, UNIFESP, UNASP e em Congressos da SBOT – Salvador. Palestra na Reabilitar na Santa Casa de São Paulo."
+  },
+  {
+    "picture": "img/davinci/leandro.png",
+    "name": "Leandro Silva",
+    "position": "Diretor Técnico",
+    "about": "Considerado um dos mais experientes protesistas do Brasil. São 26 anos de experiência com certificação pela Abotec (Associação Brasileira de Ortopedia Técnica), Touch Bionics em membros superiores, Ossur em encaixes Direct Socket TT, TF e Saddle Casting."
+  }
+]

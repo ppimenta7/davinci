@@ -1,0 +1,20 @@
+[
+  {
+    "plan_name": "Princing",
+    "plan_price": "79.99",
+    "plan_features": [
+      {
+        "title": "Marketing strategy",
+        "available": true
+      },
+      {
+        "title": "Competitive analysis",
+        "available": true
+      },
+      {
+        "title": "Monthly management",
+        "available": true
+      }
+    ]
+  }
+]

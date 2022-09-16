@@ -1,0 +1,58 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\claud\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add axios
+
+PATH: 
+  C:\Users\claud\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\claud\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\Intel64;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Java\jdk-16.0.2\bin;C:\ProgramData\UNIVALI\Portugol Studio;C:\Program Files\dotnet;C:\Program Files (x86)\Calibre2;C:\Users\claud\AppData\Local\Microsoft\WindowsApps;C:\Users\claud\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\claud\AppData\Roaming\npm;C:\Users\claud\AppData\Local\GitHubDesktop\bin;C:\adb;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Users\claud\AppData\Local\Microsoft\WindowsApps;C:\Users\claud\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\claud\AppData\Local\GitHubDesktop\bin;C:\Users\claud\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'E:\Área de Trabalho\Davinci\ravoreact-10\ravoreact-10\Main_files\ravo_react\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node'
+
+npm manifest: 
+  {
+    "name": "ravo_react",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint"
+    },
+    "dependencies": {
+      "@ramonak/react-progress-bar": "^5.0.0",
+      "axios": "^0.27.2",
+      "next": "^12.0.7",
+      "react": "^17.0.2",
+      "react-circular-progressbar": "^2.0.4",
+      "react-dom": "^17.0.2",
+      "react-fade-in": "^2.0.1",
+      "react-modal-video": "^1.2.8",
+      "react-parallax-tilt": "^1.7.40",
+      "react-scroll": "^1.8.7",
+      "react-slidedown": "^2.4.7",
+      "react-tsparticles": "^2.0.6",
+      "swiper": "^8.0.7",
+      "tsparticles": "^2.0.6"
+    },
+    "devDependencies": {
+      "@types/node": "^18.7.16",
+      "@types/react": "^18.0.19",
+      "eslint": "8.17.0",
+      "eslint-config-next": "12.1.6"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

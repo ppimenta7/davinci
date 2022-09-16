@@ -1,0 +1,24 @@
+{
+  "gallery": [
+    {
+      "image": "img/davinci/pedro-pimenta.png",
+      "title": "Pedro Pimenta",
+      "type": "Co-Fundador e Diretor Executivo"
+    },
+    {
+      "image": "img/davinci/jairo.png",
+      "title": "Jairo Bluementhal",
+      "type": "Co-fundador e Diretor Clínico Ortesista e Protesista"
+    },
+    {
+      "image": "img/davinci/monica.png",
+      "title": "Mônica Yamaoka",
+      "type": "Fisioterapeuta"
+    },
+    {
+      "image": "img/davinci/leandro.png",
+      "title": "Leandro Silva",
+      "type": "Diretor Técnico"
+    }
+  ]
+}
