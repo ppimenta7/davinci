@@ -5,7 +5,7 @@ import features from "../../../data/business/features.json";
 
 const Portfolio = ({products, categories}) => {
 
-  {products.map((product) => console.log(product.nome))}
+  {products?.map((product) => console.log(product.nome))}
 
   return (
     <section className="work-carsouel crv section-padding pb-30 bg-dark-gray bg-color" data-scroll-index="2" >

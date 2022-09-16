@@ -65,7 +65,7 @@ const LandingPreview = ({ bugets, products, categories }) => {
       <MainLightLayout type="landing-preview" links={nav_links} navTheme="light" >
         <Header bugets={bugets}/>
         <main className="position-re">
-          <OurServices />
+          {/* <OurServices /> */}
           <Team />
           <Portfolio1 products={products} categories={categories}/>
           <About products={products} categories={categories}/>

@@ -13,11 +13,11 @@ const Pricing = ({ bugets }) => {
                   <div className="amount text-center">
                     <h3 className="full-width">
                       <span>R$</span>
-                      {bugets.value}
+                      {bugets?.value}
                     </h3>
                   </div>
                   <div className="offer ">
-                    <p>{bugets.comments_report}</p>
+                    <p>{bugets?.comments_report}</p>
                   </div>
                   <div className="order text-center">
                     <a

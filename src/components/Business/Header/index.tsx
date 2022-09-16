@@ -17,8 +17,8 @@ const Header = ({ bugets }) => {
     setOpen(true);
   };
 
-  const bgTitle = bugets.title;
-  const title = bgTitle.replace(/Orçamento para/g, "");
+  const bgTitle = bugets?.title;
+  const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
   return (
     <>
       <header className="home-bus1 position-re" data-scroll-index="0">

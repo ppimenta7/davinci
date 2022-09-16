@@ -35,7 +35,7 @@ export const getServerSideProps = async ({ query }) => {
   const rest1 = await getProducts(IDproducts);
   const products = rest1.results
 
-  const IDCategorys = products.map((product) => { return product.category; });
+  const IDCategorys = products?.map((product) => { return product.category; });
   const categories = await getCategories(IDCategorys);
 
   console.log(categories)

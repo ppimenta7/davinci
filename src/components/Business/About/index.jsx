@@ -45,7 +45,7 @@ const About = ({products, categories}) => {
 
   return (
     <div data-scroll-index="3">
-      {products.map((product) => (
+      {products?.map((product) => (
         <section key={product.id} className="section-padding pt-0">
           <div className="container">
             <div className="row">
