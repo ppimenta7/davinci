@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import team from '../../../data/corporate/team.json';
+import Video from '../../Project/Video';
+
 
 const Team = () => {
   return (
@@ -26,7 +28,8 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <div className="row justify-content-center">
+        <Video />
+        <div className="row col-lg-10 col-md-12 pt-60 justify-content-center margin-rl-auto">
           {
             team.map((member, index) => (
               <div className="col-lg-3 col-md-6" key={index}>
@@ -34,14 +37,14 @@ const Team = () => {
                   <div className="img">
                     <img src={member.picture} className="primery-shadow" alt="" />
                     <div className="cont text-dark">
-                      <h6 className="fz-14 fw-700 text-u ls1 mb-5">{ member.name }</h6>
-                      <span className="fz-14 opacity-8">{ member.position }</span>
+                      {/* <h6 className="fz-14 fw-700 text-u ls1 mb-5">{ member.name }</h6>
+                      <span className="fz-14 opacity-8">{ member.position }</span> */}
                       <hr/>
                       <p className="fz-14 opacity-8 text-dark">{ member.about }</p>
                       <div className="shape blue-light-bg"></div>
                     </div>
                     <div className="mt-30 mb-30 text-dark text-center bg-gray " stylle={{minHeight: "16vh"}}>
-                    <h6 className="fw-500 text-black blue-bg in" style={{padding: "5px 10px"}}>{ member.name }</h6>
+                    <h6 className="fw-500 mb-10 text-black blue-bg in" style={{padding: "5px 10px"}}>{ member.name }</h6>
                     <p className="fz-16">{ member.position }</p>
                     </div>
                   </div>
@@ -53,8 +56,10 @@ const Team = () => {
               </div>
             ))
           }
+          
         </div>
       </div>
+      
     </section>
   )
 }

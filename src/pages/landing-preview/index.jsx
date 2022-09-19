@@ -8,6 +8,7 @@ import Navbar from "../../components/Navbars/MainNavbar/index";
 //= Components
 import Header from '../../components/Business/Header';
 import OurServices from '../../components/Business/OurServices';
+import Services from '../../components/Business/Services';
 import Team from '../../components/Business/Team';
 import Portfolio1 from '../../components/Business/Portfolio1';
 import Portfolio3 from '../../components/Business/Portfolio3';
@@ -67,6 +68,7 @@ const LandingPreview = ({ bugets, products, categories }) => {
         <main className="position-re">
           {/* <OurServices /> */}
           <Team />
+          <Services />
           <Portfolio1 products={products} categories={categories}/>
           <About products={products} categories={categories}/>
           <Section />
