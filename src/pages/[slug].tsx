@@ -26,8 +26,9 @@ const Slug: NextPage<SlugInterface> = ({ bugets, products, categories }) => {
 
 export const getServerSideProps = async ({ query }) => {
   const params = query.slug;
+  console.log(query)
 
-  const id = typeof params === "string" ? params : "";
+  const id = typeof params === "string" ? params.replace(/[^0-9]/g,'') : "";
 
   const bugets = await getBugets(id);
 
@@ -38,7 +39,6 @@ export const getServerSideProps = async ({ query }) => {
   const IDCategorys = products?.map((product) => { return product.category; });
   const categories = await getCategories(IDCategorys);
 
-  console.log(categories)
   return {
     props: {
       bugets,

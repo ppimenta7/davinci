@@ -6,7 +6,7 @@ export const getServerSideProps = async () => {
   return {
     redirect: {
       permanent: true,
-      destination: '/landing-preview',
+      destination: '/home',
     }
   }
 }
