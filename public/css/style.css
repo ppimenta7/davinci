@@ -299,7 +299,7 @@ img.left {
 }
 
 .bg-img {
-  background-size: contain;
+  background-size: cover; 
   background-repeat: no-repeat;
 }
 
@@ -2428,6 +2428,11 @@ img.left {
   color: #F19C49 !important;
 }
 
+.color-da{
+  background: rgb(1,171,170);
+  background: linear-gradient(18deg, rgba(1,171,170,1) 25%, rgba(241,156,73,1) 75%);
+}
+
 .bg-light {
   background-color: #fff !important;
 }
@@ -2653,6 +2658,15 @@ img.left {
   -webkit-text-fill-color: transparent;
 }
 
+.gr-da-text {
+  background-image: -webkit-linear-gradient(18deg, rgba(1,171,170,1) 25%, rgba(241,156,73,1) 75%);
+  background-image: -o-linear-gradient(18deg, rgba(1,171,170,1) 25%, rgba(241,156,73,1) 75%);
+  background-image: linear-gradient(18deg, rgba(1,171,170,1) 25%, rgba(241,156,73,1) 75%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .gr-sunrise-bord {
   border-image-source: radial-gradient(circle farthest-corner at 10% 20%, #fdc168 0%, #fb8080 90%) !important;
 }
@@ -2707,6 +2721,10 @@ img.left {
 
 .gr-orange-bg {
   background-color: #F19C49;
+}
+
+.gr-blue-bg{
+  color: rgb(1,171,170);;
 }
 
 .gr-orange-bg.shadow-gr {
@@ -5127,6 +5145,10 @@ header.simple-header .path a:after {
 
 /* ====================== [ end showcase ] ====================== */
 /* ====================== [ Start Intro ] ====================== */
+.hero-stu{
+  width: 100%;
+}
+
 .hero .two-img {
   position: relative;
 }
@@ -5765,6 +5787,14 @@ header.simple-header .path a:after {
 
 /* ====================== [ End Intro ] ====================== */
 /* ====================== [ Start services ] ====================== */
+.services{  
+  background-image: url(../img/davinci/d2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-image: url(../img/davinci/image2.png); */
+ 
+}
+
 .services.to-up {
   position: relative;
   margin-top: -60px;
@@ -5881,6 +5911,13 @@ header.simple-header .path a:after {
 }
 
 .services .icon-bord-shad span {
+  font-size: 28px;
+  position: relative;
+  line-height: inherit;
+  z-index: 2;
+}
+
+.services .icon-bord-shad .i-span{
   font-size: 28px;
   position: relative;
   line-height: inherit;

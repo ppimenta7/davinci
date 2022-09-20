@@ -2,14 +2,11 @@ import services from "../../../data/business/services.json";
 
 const Services = () => {
   return (
-    <section className="services section-padding pt-90 gr-gray-bg">
+    <section className="services section-padding pt-90">
       <div className="container">
         <div className="row">
           <div className="col-12">
             <div className="round-head text-center mb-40">
-              <h6 className="ls2 text-u fz-13 fw-600 mb-20 gr-green-text rest">
-                Best Features
-              </h6>
               <h2 className="fw-700">Por que a Da Vinci?</h2>
             </div>
           </div>
@@ -20,7 +17,7 @@ const Services = () => {
               <div className="col-lg-4 pb-15" key={service.id}>
                 <div className="item shadw bord text-center">
                   <div className="icon fz-50 mb-15 rest">
-                    <i className={`gr-sunrise-text`}></i>
+                    <i className={`gr-sunrise-text fas ${service.icon} i-span`}></i>
                     {/* <span className={`${service.icon} gr-sunrise-text`}></span> */}
                   </div>
                   <h6 className="mb-15 margin-rl-25">{service.title}</h6>

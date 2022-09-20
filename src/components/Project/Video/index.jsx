@@ -18,7 +18,7 @@ const Video = () => {
   return (
     <section>
       <div className="container-fluid">
-        <div className="video-wrapper section-padding bg-img parallaxie valign" data-background="img/davinci/equipe1.jpg" data-overlay-dark="4">
+        <div className="video-wrapper section-padding bg-img parallaxie valign" data-background="#ccc" data-overlay-dark="4">
           <div className="full-width text-center">
             <a className="vid" href="https://youtu.be/hq8-I0N5BM4" onClick={openVideo}>
               <div className="vid-butn">
@@ -34,10 +34,10 @@ const Video = () => {
         typeof window !== "undefined" && 
           (
             <ModalVideo
-              channel="vimeo"
+              channel="youtube"
               autoplay
               isOpen={isOpen}
-              videoId="127203262"
+              videoId="hq8-I0N5BM4"
               onClose={() => setOpen(false)}
             />
           )

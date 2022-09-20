@@ -15,7 +15,8 @@ const Team = () => {
                   Quem Somos
                 </span>
               </h6>
-              <h2>O &quot;Dream Team&quot; Brasileiro</h2>
+              <h2>Experiência Conta</h2>
+              <p className="fz-24">O &quot;Dream Team&quot; Brasileiro</p>
               <p className="fz-16">
                 Na Da vinci Clinic, contamos com o mais especializado corpo
                 clínico da América do Sul
@@ -28,7 +29,9 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <Video />
+        <div className='row col-lg-8 col-md-10 margin-rl-auto' data-background="img/davinci/equipe2.jpg">
+          <Video />
+        </div>
         <div className="row col-lg-10 col-md-12 pt-60 justify-content-center margin-rl-auto">
           {
             team.map((member, index) => (
@@ -43,9 +46,9 @@ const Team = () => {
                       <p className="fz-14 opacity-8 text-dark">{ member.about }</p>
                       <div className="shape blue-light-bg"></div>
                     </div>
-                    <div className="mt-30 mb-30 text-dark text-center bg-gray " stylle={{minHeight: "16vh"}}>
+                    <div className="mt-30 mb-30 text-dark text-center bg-gray " style={{minHeight: "16vh"}}>
                     <h6 className="fw-500 mb-10 text-black blue-bg in" style={{padding: "5px 10px"}}>{ member.name }</h6>
-                    <p className="fz-16">{ member.position }</p>
+                    <p className="fz-16 pt-10">{ member.position }</p>
                     </div>
                   </div>
                   {/* <div className="cont mt-30 mb-30 text-center bg-gray">
