@@ -71,6 +71,7 @@ const LandingPreview = ({ bugets, products, categories }) => {
           {/* <Hero2/> */}
           <Team />
           <Services />
+          <Portfolio3 />
           <Portfolio1 products={products} categories={categories}/>
           <About products={products} categories={categories}/>
           <Section />

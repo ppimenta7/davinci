@@ -1,26 +1,20 @@
 [
   {
     "id": 1,
-    "image": "img/davinci/jairo.png",
+    "image": "img/davinci/d2.png",
     "type": "Branding",
-    "title": "Daimler Financial"
+    "title": "Kids"
   },
   {
     "id": 2,
-    "image": "img/davinci/monica.png",
+    "image": "img/davinci/d5.png",
     "type": "Marketing",
-    "title": "Skoda Corporate"
-  },
-  {
-    "id": 3,
-    "image": "img/davinci/",
-    "type": "ui / ux design",
-    "title": "Jeremy Dupont"
+    "title": "Senior"
   },
   {
     "id": 4,
-    "image": "img/davinci/pedro-pimenta.png",
+    "image": "img/davinci/d6.png",
     "type": "Web Design",
-    "title": "Potato Oslands"
+    "title": "Performance"
   }
 ]

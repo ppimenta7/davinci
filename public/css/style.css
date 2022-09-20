@@ -4800,6 +4800,10 @@ header.simple-header .path a:after {
   min-height: 80vh;
 }
 
+.work-crus{
+  justify-content: space-between;
+}
+
 #particles-js {
   position: absolute;
   width: 100%;
@@ -5787,12 +5791,8 @@ header.simple-header .path a:after {
 
 /* ====================== [ End Intro ] ====================== */
 /* ====================== [ Start services ] ====================== */
-.services{  
+.services{
   background-image: url(../img/davinci/d2.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* background-image: url(../img/davinci/image2.png); */
- 
 }
 
 .services.to-up {
@@ -6250,6 +6250,23 @@ header.simple-header .path a:after {
 
 /* ====================== [ End brands ] ====================== */
 /* ====================== [ Start Work ] ====================== */
+.slide-item{
+    width: 100%;
+    height: 350px;
+    border-radius: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.slide-item h6{
+  transform: rotate(270deg);
+  position: relative;
+  right: 0;
+}
+
 .portfolio {
   position: relative;
 }
