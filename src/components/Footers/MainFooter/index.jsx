@@ -12,7 +12,7 @@ const Footer = ({ footerClass, footerBg, business, creative }) => {
 
   return (
     <footer className={footerClass} style={{ backgroundImage: footerBg ? "url('img/background/8.jpg')":"url('')" }} ref={footerRef}>
-      {
+      {/* {
         footerBg ? (
           <div className="cal pb-80 pt-80">
             <div className="container">
@@ -40,7 +40,7 @@ const Footer = ({ footerClass, footerBg, business, creative }) => {
         :
         null
       }
-      <div className="container pt-80 pb-80">
+      {/* <div className="container pt-80 pb-80">
         <div className="row">
           <div className="col-lg-3">
             <div className="clumn">
@@ -119,12 +119,12 @@ const Footer = ({ footerClass, footerBg, business, creative }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className={`${footerBg ? 'sub-footer pb-50 pt-0 no-bord': creative ? 'sub-footer pb-50 pt-50':'sub-footer pb-50'}`}>
+      <div className={`sub-footer pt-0 no-bord`}>
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
+            {/* <div className="col-lg-6">
               <div className="horizontal-link fz-13">
                 <ul className="rest">
                   <li className="mr-30">
@@ -144,13 +144,13 @@ const Footer = ({ footerClass, footerBg, business, creative }) => {
                   </li>
                 </ul>
               </div>
-            </div>
-            <div className="col-lg-6">
+            </div> */}
+            <div className="col-lg-12">
               <div className="copyrights d-flex justify-content-end">
                 <p className="fz-13">
-                  © 2022 Ravo is Proudly Powered by 
+                  © 2022 Davinci is Proudly Powered by 
                   <span className="underline">
-                    <a href={footerData.theme_author.url} rel="noreferrer" target="_blank" className={`${business ? 'gr-green-text':creative ? '':'gr-purple-red-text'} ms-1`}>{ footerData.theme_author.name }</a>
+                    <a href={footerData.theme_author.url} rel="noreferrer" target="_blank" className={`gr-green-text ms-1`}>{ footerData.theme_author.name }</a>
                   </span>
                 </p>
               </div>
