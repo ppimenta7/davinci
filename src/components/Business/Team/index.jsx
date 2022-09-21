@@ -5,7 +5,7 @@ import Video from '../../Project/Video';
 
 const Team = () => {
   return (
-    <section className="team-shape section-padding bg-gray" data-scroll-index="1">
+    <section className="team-shape section-padding" data-scroll-index="1">
       <div className="container-fluid">
       <div className="row justify-content-center">
           <div className="col-lg-8 col-md-10">

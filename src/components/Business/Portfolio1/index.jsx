@@ -8,15 +8,15 @@ const Portfolio = ({products, categories}) => {
   {products?.map((product) => console.log(product.nome))}
 
   return (
-    <section className="work-carsouel crv section-padding pb-30 bg-dark-gray bg-color" data-scroll-index="2" >
+    <section className="work-carsouel crv section-padding pb-0 pt-30 bg-dark-gray bg-color" data-scroll-index="2" >
       <div className="container">
         <div className="row">
           <div className="col-12">
             <div className="round-head text-center mb-40">
-              <h6 className="ls2 text-u fz-12 mb-15 gr-orange-text">
+              {/* <h6 className="ls2 text-u fz-12 mb-15 gr-orange-text">
                 Produtos<span></span>
-              </h6>
-              {/* <h2 className="fw-700">Case Studies</h2> */}
+              </h6> */}
+              <h2 className="fw-700">Produtos</h2>
             </div>
           </div>
 

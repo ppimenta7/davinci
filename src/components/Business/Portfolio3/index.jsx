@@ -5,7 +5,7 @@ import portfolios from "../../../data/main/portfolio3.json";
 
 const Portfolio = () => {
   return (
-    <section className="portfolio-simp-crus section-padding pb-0">
+    <section className="portfolio-simp-crus section-padding">
       <div className="container">
         <div className="row">
           <div className="col-8 margin-rl-auto">

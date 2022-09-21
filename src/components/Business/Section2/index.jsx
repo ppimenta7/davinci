@@ -28,7 +28,7 @@ const Section = () => {
     <section className="section-padding position-re">
       <div className="container">
         <div className="row">
-          <div className="col-lg-6 valign">
+          <div className="col-lg-8 valign pb-60">
             <div className="content md-mb50">
               <div className="sub-head radius mb-20">
                 <span className="fz-12 ls2 text-u">Perguntas Frequentes</span>
@@ -45,7 +45,7 @@ const Section = () => {
               </Link>
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-10 margin-rl-auto">
             <div className="content">
               <div className="accordion shadwo">
                 {/* <h5 className="mb-40 text-center fw-600">Perguntas Frequentes</h5> */}
@@ -53,7 +53,7 @@ const Section = () => {
                   accordions.map((accordion, idx) => (
                     <div className={`item ${idx == 1 ? 'active':''} ${idx == accordion.length - 1 ? 'mb-0':''}`} id={`accordion-${idx}`} key={idx} onClick={openAccordion}>
                       <div>
-                        <div className="title">
+                        <div className="title ">
                           <h6 className="fz-13 text-u ls2 fw-600">{ accordion.title }</h6>
                           <span className="ico"></span>
                         </div>

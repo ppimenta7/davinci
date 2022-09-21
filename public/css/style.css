@@ -9576,6 +9576,7 @@ header.simple-header .path a:after {
   padding: 17px 30px;
   border: 1px solid #e3e3e3;
   border-radius: 30px;
+  background-color: #ccc;
 }
 
 .accordion.shadwo .item .title .ico {
@@ -9588,12 +9589,12 @@ header.simple-header .path a:after {
 }
 
 .accordion.shadwo .item.active .title {
-  background: #f6f6ff;
+  background: #aaa;
   border-color: transparent;
 }
 
 .accordion .item {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 
 .accordion .title {
@@ -9618,7 +9619,7 @@ header.simple-header .path a:after {
 .accordion .accordion-info {
   display: none;
   padding: 0px 30px;
-  margin-top: 30px;
+  margin-top: 10px;
   border-left: 1px dotted rgba(255, 255, 255, 0.1);
 }
 
