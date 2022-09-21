@@ -29,7 +29,7 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <div className='row col-lg-8 col-md-10 margin-rl-auto' data-background="img/davinci/equipe2.jpg">
+        <div className='row col-lg-8 col-md-10 margin-rl-auto'>
           <Video />
         </div>
         <div className="row col-lg-10 col-md-12 pt-60 justify-content-center margin-rl-auto">

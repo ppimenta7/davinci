@@ -6853,6 +6853,8 @@ header.simple-header .path a:after {
 
 .video-wrapper {
   min-height: 80vh;
+  background-size: 81%!important;
+  background-position: right center!important;
 }
 
 .video-wrapper .vid {
@@ -9552,6 +9554,20 @@ header.simple-header .path a:after {
 
 /* ====================== [ End Numbers & Counter  ] ====================== */
 /* ====================== [ Start accordion ] ====================== */
+.accordion{
+  overflow:auto;
+  height: 350px;
+}
+
+.accordion::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+.accordion::-webkit-scrollbar-thumb {
+  background-color: #ccc;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
 .accordion.bord .title {
   border-bottom: 1px solid #eee;
   padding-left: 0;
@@ -9570,6 +9586,7 @@ header.simple-header .path a:after {
 .accordion.bord .accordion-info {
   padding: 0;
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .accordion.shadwo .item .title {
@@ -9586,6 +9603,7 @@ header.simple-header .path a:after {
 
 .accordion.shadwo .item .accordion-info {
   margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .accordion.shadwo .item.active .title {

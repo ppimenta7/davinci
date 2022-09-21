@@ -72,7 +72,7 @@ const Section = () => {
               <img src="img/davinci/foto.jpg" alt="" />
             </div>
           </div>
-          <div className="col-lg-10">
+          <div className="col-lg-12">
             <div className="content">
               <div className="accordion bord mt-50">
                 {/* <h5 className="mb-40 text-center fw-600">Perguntas Frequentes</h5> */}
