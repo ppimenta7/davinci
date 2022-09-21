@@ -28,7 +28,7 @@ const Section = () => {
     <section className="section-padding position-re">
       <div className="container">
         <div className="row">
-          <div className="col-lg-8 valign pb-60">
+          <div className="col-lg-6 valign pb-60">
             <div className="content md-mb50">
               <div className="sub-head radius mb-20">
                 <span className="fz-12 ls2 text-u">Perguntas Frequentes</span>
@@ -37,24 +37,51 @@ const Section = () => {
               <p>
                 Morbi sagittis hendrt nulla simply dummy text of the printing and typesetting has been the industry’s en diam ips elementum pretium hendrerit ultricies.
               </p>
+              <div className="flex mt-50">
+                <div className="item flex full-width">
+                  <div className="icon-flex mr-20">
+                    <h3>320</h3>
+                  </div>
+                  <div className="cont-flex valign">
+                    <div>
+                      <span>Perfect <br /> Prodects</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="item flex full-width">
+                  <div className="icon-flex mr-20">
+                    <h3>100%</h3>
+                  </div>
+                  <div className="cont-flex valign">
+                    <div>
+                      <span>Positive <br /> Feedback</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <Link href="https://davinciclinic.com.br">
-                <a className="butn butn-md butn-gradient2 text-light radius-30 mt-40">
+                <a className="butn butn-md blue-bg text-light radius-30 mt-40">
                   <span className="text slide-up">Saiba Mais</span>
                   <span className="text slide-down">Saiba Mais</span>
                 </a>
               </Link>
             </div>
           </div>
-          <div className="col-lg-10 margin-rl-auto">
+          <div className="col-lg-6 wow slideInUp">
+            <div className="img wow imago">
+              <img src="img/davinci/foto.jpg" alt="" />
+            </div>
+          </div>
+          <div className="col-lg-10">
             <div className="content">
-              <div className="accordion shadwo">
+              <div className="accordion bord mt-50">
                 {/* <h5 className="mb-40 text-center fw-600">Perguntas Frequentes</h5> */}
                 {
                   accordions.map((accordion, idx) => (
-                    <div className={`item ${idx == 1 ? 'active':''} ${idx == accordion.length - 1 ? 'mb-0':''}`} id={`accordion-${idx}`} key={idx} onClick={openAccordion}>
+                    <div className={`item ${idx == 1 ? 'active':''}`} id={`accordion-${idx}`} key={idx} onClick={openAccordion}>
                       <div>
                         <div className="title ">
-                          <h6 className="fz-13 text-u ls2 fw-600">{ accordion.title }</h6>
+                          <h6 className="fz-16">{ accordion.title }</h6>
                           <span className="ico"></span>
                         </div>
                         <SlideDown className="accordion-info active" closed={accordion.closed}>
