@@ -105,7 +105,7 @@ const LandingPage = ({ bugets, products, categories }) => {
             </main>
           </>
         ) : (
-          <Login handleAcess={handleAcess} bugetsPassword={bugets.password_access_code}/>
+          <Login handleAcess={handleAcess} bugetsPassword={bugets?.password_access_code}/>
         )}
       </MainLightLayout>
     </>
