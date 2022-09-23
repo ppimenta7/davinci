@@ -23,7 +23,7 @@ import ExpiratePage from "../../components/Business/ExpiratePage";
 const LandingPage = ({ bugets, products, categories }) => {
 
   const dateNow = new Date();
-  const expirationDate = new Date(bugets.expiration_date);
+  const expirationDate = new Date(bugets?.expiration_date);
   const status = expirationDate.getTime() >= dateNow.getTime();
 
   const [acess, setAcess] = useState(false);
