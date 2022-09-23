@@ -7,19 +7,14 @@ const Portfolio = () => {
   return (
     <section className="portfolio-simp-crus section-padding">
       <div className="container">
-        <div className="row">
-          <div className="col-8 margin-rl-auto">
-            <div className="work-crus flex">
+        <div className="row col-lg-10 col-md-12 pt-60 justify-content-center margin-rl-auto">
                 {portfolios.map((slide, idx) => (
-                  <div key={idx} className="col-4 padding-rl-20 mr-30 ">
+                  <div key={idx} className="col-lg-3 col-md-6">
                     <div style={{backgroundImage: `url(${slide.image})`}} className="slide-item img info mt-20 text-center">
                         <h6 className="fw-600 text-u text-light fz-24">{slide.title}</h6>
                       </div>
                   </div>
                 ))}
-              <div className="swiper-pagination"></div>
-            </div>
-          </div>
         </div>
 
         <div className="text-center pb-50 mt-30">

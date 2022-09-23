@@ -1,6 +1,6 @@
 const Pricing = ({ bugets }) => {
   return (
-    <section className="price section-padding gr-orange-bg-gr" data-scroll-index="4">
+    <section className="price section-padding" data-scroll-index="4">
       <div className="container">
         <div className="price-table">
           <div className="row justify-content-center primery-shadow col-md-8 col-lg-6 margin-rl-auto">

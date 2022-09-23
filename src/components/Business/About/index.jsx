@@ -4,39 +4,43 @@ import Link from "next/link";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/css/modal-video.css";
 import Modal from 'react-bootstrap/Modal';
+import MyVerticallyCenteredModal from "../../../../public/js/modal"
 
-function MyVerticallyCenteredModal(props, {products}) {
-  return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Detalhes Técnicos
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-      </Modal.Body>
-      <Modal.Footer>
-        <button onClick={props.onHide}>Close</button>
-      </Modal.Footer>
-    </Modal>
-  );
-}
+// function MyVerticallyCenteredModal(props) {
+//   return (
+//     <Modal
+//       {...props}
+//       size="lg"
+//       aria-labelledby="contained-modal-title-vcenter"
+//       centered
+//     >
+//       <Modal.Header closeButton>
+//         <Modal.Title id="contained-modal-title-vcenter">
+//           Detalhes Técnicos
+//         </Modal.Title>
+//       </Modal.Header>
+//       <Modal.Body>
+//         <h4>Centered Modal</h4>
+//         {props.productsName}
+//         {props.productsDetails}
+//         <p>
+//           Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+//           dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+//           consectetur ac, vestibulum at eros.
+//         </p>
+//       </Modal.Body>
+//       <Modal.Footer>
+//         <button onClick={props.onHide}>Close</button>
+//       </Modal.Footer>
+//     </Modal>
+//   );
+// }
 
 const About = ({products, categories}) => {
 
   const [isOpen, setOpen] = useState(false);
   const [modalShow, setModalShow] = useState(false);
+  const [productSelect, setProductSelect] = useState("");
 
   const openVideo = (e) => {
     e.preventDefault();
@@ -45,7 +49,7 @@ const About = ({products, categories}) => {
 
   return (
     <div data-scroll-index="3">
-      {products?.map((product) => (
+      {products?.map((product, idx) => (
         <section style={{backgroundColor:"#f0f0f0"}} key={product.id} className="section-padding pt-0">
           <div className="container">
             <div className="row">
@@ -144,7 +148,7 @@ const About = ({products, categories}) => {
                   </p>
                   
 
-                    <a className="butn butn-md butn-orange-light text-u fw-700 radius-30 mt-30" onClick={() => setModalShow(true)}>
+                    <a className="butn butn-md butn-orange-light text-u fw-700 radius-30 mt-30" onClick={() => (setModalShow(true),setProductSelect(product))}>
                       <span className="text slide-up fz-15">Ver Mais</span>
                       <span className="text slide-down fz-15">Ver Mais</span>
                     </a>
@@ -165,6 +169,7 @@ const About = ({products, categories}) => {
 
           <MyVerticallyCenteredModal
             show={modalShow}
+            product={productSelect}
             onHide={() => setModalShow(false)}
           />
         </section>

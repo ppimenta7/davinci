@@ -5,7 +5,7 @@ import { ProductsInterface } from "../interfaces/productsInterface";
 import { getBugets } from "../services/getBugets";
 import { getCategories } from "../services/getCategories";
 import { getProducts } from "../services/getProducts";
-import LandingPreview from "./landing-preview";
+import LandingPage from "./landing-page";
 
 interface SlugInterface {
   bugets: BugetsInterface;
@@ -19,7 +19,7 @@ interface SlugInterface {
 const Slug: NextPage<SlugInterface> = ({ bugets, products, categories }) => {
   return (
     <>
-      <LandingPreview bugets={bugets} products={products} categories={categories}/>
+      <LandingPage bugets={bugets} products={products} categories={categories}/>
     </>
   );
 };
@@ -32,7 +32,7 @@ export const getServerSideProps = async ({ query }) => {
 
   const bugets = await getBugets(id);
 
-  const IDproducts = bugets.products.join();
+  const IDproducts = bugets?.products.join();
   const rest1 = await getProducts(IDproducts);
   const products = rest1.results
 

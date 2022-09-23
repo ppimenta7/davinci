@@ -3,22 +3,31 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import features from "../../../data/business/features.json";
 
-const Portfolio = ({products, categories}) => {
+const Portfolio = ({products, categories, bugets}) => {
 
-  {products?.map((product) => console.log(product.nome))}
+  const bgTitle = bugets?.title;
+  const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
 
   return (
+    <>
+    <section className="work-carsouel crv section-padding pb-0 pt-30" data-scroll-index="2" >
+      <div className="container">
+            <div className="round-head text-center mb-20">
+              <h2 className="orange-color text-u fz-35 pt-40 pb-30"><span className="fw-300 text-dark">Orçamento para</span>{title}</h2>
+            </div>
+      </div>
+    </section>
     <section className="work-carsouel crv section-padding pb-0 pt-30 bg-dark-gray bg-color" data-scroll-index="2" >
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <div className="round-head text-center mb-40">
+          {/* <div className="col-12">
+            <div className="round-head text-center mb-40 ">
               {/* <h6 className="ls2 text-u fz-12 mb-15 gr-orange-text">
                 Produtos<span></span>
-              </h6> */}
-              <h2 className="fw-700">Produtos</h2>
+              </h6> 
+              <h2 className="orange-color text-u fz-35 pt-40 pb-30"><span className="fw-300">Orçamento para</span>{title}</h2>
             </div>
-          </div>
+          </div> */}
 
           <section className={`feat-exp pb-50 `} data-overlay-light="0">
             <div className="container">
@@ -26,8 +35,8 @@ const Portfolio = ({products, categories}) => {
                 <div className={`col-lg-4 'col-md-6' valign`}>
                   <div className="exp">
                     <h3 className="fw-700">
-                      Create your own{" "}
-                      <span className="fw-300">unique website</span>
+                    As melhores
+                      <span className="fw-300"> próteses para VOCÊ</span>
                     </h3>
                   </div>
                 </div>
@@ -37,11 +46,11 @@ const Portfolio = ({products, categories}) => {
                       <h2
                         className={`lg-text feat-exp gr-green-text fw-700 line-height-1`}
                       >
-                        {features.years}
+                        0{features.years}
                       </h2>
                       <div className="valign ml-20">
                         <h6 className="text-u ls4 fz-14 line-height-28">
-                          years <br /> in the field
+                          anos<br/> no mercado
                         </h6>
                       </div>
                     </div>
@@ -49,7 +58,7 @@ const Portfolio = ({products, categories}) => {
                 </div>
                 <div className="col-lg-4 valign">
                   <div className="text">
-                    <p>{features.text}</p>
+                    <p className="fz-16">{features.text}</p>
                   </div>
                 </div>
               </div>
@@ -95,6 +104,7 @@ const Portfolio = ({products, categories}) => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

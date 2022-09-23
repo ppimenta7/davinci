@@ -33,12 +33,12 @@ const Section = () => {
               <div className="sub-head radius mb-20">
                 <span className="fz-12 ls2 text-u">Perguntas Frequentes</span>
               </div>
-              <h3 className="mb-20 fz-38 fw-700">Start building stunning websites with us.</h3>
+              <h3 className="mb-20 fz-38 fw-700">Principais Dúvidas e Respostas para você que precisa de uma Prótese.</h3>
               <p>
                 Morbi sagittis hendrt nulla simply dummy text of the printing and typesetting has been the industry’s en diam ips elementum pretium hendrerit ultricies.
               </p>
               <div className="flex mt-50">
-                <div className="item flex full-width">
+                {/* <div className="item flex full-width">
                   <div className="icon-flex mr-20">
                     <h3>320</h3>
                   </div>
@@ -47,14 +47,14 @@ const Section = () => {
                       <span>Perfect <br /> Prodects</span>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div className="item flex full-width">
                   <div className="icon-flex mr-20">
                     <h3>100%</h3>
                   </div>
                   <div className="cont-flex valign">
                     <div>
-                      <span>Positive <br /> Feedback</span>
+                      <span>Feedbacks<br />Positivo</span>
                     </div>
                   </div>
                 </div>

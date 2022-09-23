@@ -2,19 +2,16 @@
   {
     "id": 1,
     "image": "img/davinci/d2.png",
-    "type": "Branding",
     "title": "Kids"
   },
   {
     "id": 2,
     "image": "img/davinci/d5.png",
-    "type": "Marketing",
     "title": "Senior"
   },
   {
-    "id": 4,
+    "id": 3,
     "image": "img/davinci/d6.png",
-    "type": "Web Design",
     "title": "Performance"
   }
 ]

@@ -24,7 +24,9 @@ const Header = ({ bugets }) => {
       <header className="home-bus1 position-re" data-scroll-index="0">
         <div
           className="background bg-img parallaxie valign"
-          data-background="img/davinci/d3.png"
+          // data-background="img/davinci/fundo.jpg"
+          // data-background="img/davinci/d3.png"
+          data-background="img/davinci/image2.png"
           data-overlay-dark="4">
           <div className="container padding-rl-50">
             <div className="row">
@@ -49,8 +51,16 @@ const Header = ({ bugets }) => {
                       </div>
                     </div>
                   </div>
-                  <h1 className="orange-color text-u fz-40 pt-40"><span className="fw-300 ">Orçamento para</span>{title}</h1>
-                  <p className="fz-18">A Da Vinci Clinic reúne os mais experientes profissionais do país que, juntos somam mais de 100 anos de experiência e milhares de pacientes reabilitados. Sua próxima experiência pode ser aqui</p>
+                  {/* <h1 className="orange-color text-u fz-40 pt-40"><span className="fw-300 ">Orçamento para</span>{title}</h1> */}
+                  <h1 className="fw-300 text-u fz-40 pt-40">A <span className="orange-color fw-600 ">Da Vinci Clinic</span> é o centro de reabilitação mais avançado da América Latina </h1>
+                  <p 
+                  // style={{
+                  //       backgroundColor:"#ccccccab",
+                  //       padding: "5px 10px",
+                  //       borderRadius: "10px",
+                  //       color: "black",
+                  //   }}
+                  className="fz-18">A Da Vinci Clinic reúne os mais experientes profissionais do país que, juntos somam mais de 100 anos de experiência e milhares de pacientes reabilitados. Sua próxima experiência pode ser aqui</p>
                   <a
                     href="#0"
                     data-scroll-nav={1}
