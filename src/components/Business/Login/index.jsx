@@ -3,8 +3,7 @@
 
 import { useState } from "react";
 
-const Login = ({ bugetsPassword, handleAcess }) => {
-  console.log(bugetsPassword)
+const Login = ({ bugetsPassword, handleAcess, handleTypeAcess }) => {
   const [password, setPassword] = useState("");
 
   const [errMessage, setErrMessage] = useState(null);
@@ -29,6 +28,7 @@ const Login = ({ bugetsPassword, handleAcess }) => {
     
     setErrMessage(""); //= Clear Error Message
 
+    password == "admin123" ? handleTypeAcess() : null
     handleAcess()
     // document.forms[0].submit(); //= Sumbit The Form
   };

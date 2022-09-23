@@ -50,7 +50,6 @@ const getServerSideProps = async ({ query  })=>{
         );
         const categories = await (0,_services_getCategories__WEBPACK_IMPORTED_MODULE_2__/* .getCategories */ .C)(IDCategorys).then((res)=>res.data.results
         );
-        console.log(categories);
         return {
             props: {
                 bugets,

@@ -26,8 +26,12 @@ const LandingPage = ({ bugets, products, categories }) => {
   const expirationDate = new Date(bugets?.expiration_date);
   const status = expirationDate.getTime() >= dateNow.getTime();
 
-  const [acess, setAcess] = useState(false);
+  const [acessType, setAcessType] = useState("");
+  const handleTypeAcess = () => {
+    setAcessType("admin")
+  };
 
+  const [acess, setAcess] = useState(false);
   const handleAcess = () => {
     setAcess(true)
   };
@@ -72,7 +76,7 @@ const LandingPage = ({ bugets, products, categories }) => {
         navTheme="light"
       >
         {acess ? (
-            status ? (
+            status || acessType=="admin" ? (
           <>
             <Header bugets={bugets} />
             <main className="position-re">
@@ -98,7 +102,7 @@ const LandingPage = ({ bugets, products, categories }) => {
             </main>
           </>) : (<ExpiratePage />)  
         ) : (
-          <Login handleAcess={handleAcess} bugetsPassword={bugets?.password_access_code}/>
+          <Login handleAcess={handleAcess} handleTypeAcess={handleTypeAcess} bugetsPassword={bugets?.password_access_code}/>
         )}
       </MainLightLayout>
     </>

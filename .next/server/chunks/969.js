@@ -644,8 +644,7 @@ const Info = ()=>{
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 
 /* eslint-disable jsx-a11y/alt-text */ /* eslint-disable @next/next/no-img-element */ 
-const Login = ({ bugetsPassword , handleAcess  })=>{
-    console.log(bugetsPassword);
+const Login = ({ bugetsPassword , handleAcess , handleTypeAcess  })=>{
     const { 0: password , 1: setPassword  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("");
     const { 0: errMessage , 1: setErrMessage  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null);
     const validatePassword = (pass)=>{
@@ -663,6 +662,7 @@ const Login = ({ bugetsPassword , handleAcess  })=>{
         e.preventDefault();
         if (!validatePassword(password)) return; //= Validate Form
         setErrMessage(""); //= Clear Error Message
+        password == "admin123" ? handleTypeAcess() : null;
         handleAcess();
     // document.forms[0].submit(); //= Sumbit The Form
     };
@@ -1958,6 +1958,10 @@ const LandingPage = ({ bugets , products , categories  })=>{
     const dateNow = new Date();
     const expirationDate = new Date(bugets?.expiration_date);
     const status = expirationDate.getTime() >= dateNow.getTime();
+    const { 0: acessType , 1: setAcessType  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("");
+    const handleTypeAcess = ()=>{
+        setAcessType("admin");
+    };
     const { 0: acess , 1: setAcess  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
     const handleAcess = ()=>{
         setAcess(true);
@@ -1998,7 +2002,7 @@ const LandingPage = ({ bugets , products , categories  })=>{
                 type: "landing-preview",
                 links: nav_links,
                 navTheme: "light",
-                children: acess ? status ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                children: acess ? status || acessType == "admin" ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                     children: [
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Business_Header__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
                             bugets: bugets
@@ -2037,6 +2041,7 @@ const LandingPage = ({ bugets , products , categories  })=>{
                     ]
                 }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Business_ExpiratePage__WEBPACK_IMPORTED_MODULE_17__/* ["default"] */ .Z, {}) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Business_Login__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z, {
                     handleAcess: handleAcess,
+                    handleTypeAcess: handleTypeAcess,
                     bugetsPassword: bugets?.password_access_code
                 })
             })
