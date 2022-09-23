@@ -4,6 +4,7 @@ import ModalVideo from "react-modal-video";
 import "react-modal-video/css/modal-video.css";
 import parallaxie from "../../../common/parallaxie";
 import { goToSection } from "../../Navbars/AppNavbar";
+import { Autoplay } from "swiper";
 
 const Header = ({ bugets }) => {
   const [isOpen, setOpen] = useState(false);
@@ -34,7 +35,7 @@ const Header = ({ bugets }) => {
                 <div className="caption">
                   <div style={{display:"flex", alignItems:"center"}}>
                     <div className="pr-30"> 
-                      <img src="img/davinci/d7.png" alt="" />
+                      <img src="/img/davinci/d7.png" alt="" />
                     </div>
                     <div className="row" style={{borderLeft: "2px solid white", paddingLeft: "10px"}}>
                       <div className="social">

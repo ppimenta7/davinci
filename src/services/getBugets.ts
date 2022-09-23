@@ -1,6 +1,5 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { BugetsInterface } from "../interfaces/bugetsInterface";
-import { CustomAxiosResponse } from "./axiosService";
 
 export const options = {
   headers: {
@@ -12,7 +11,7 @@ export const options = {
 
 export const getBugets = async (
   id
-  ): Promise<CustomAxiosResponse<BugetsInterface>> => {
+  ): Promise<AxiosResponse<BugetsInterface>> => {
   
     const response = await axios.get(`https://cloud.jetadmin.io/api/models/budget_generation/${id}/`,{
       headers: {
@@ -21,5 +20,5 @@ export const getBugets = async (
       },
     });
   
-    return response.data;
+    return response;
   };

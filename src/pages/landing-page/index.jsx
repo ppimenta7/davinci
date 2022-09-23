@@ -20,7 +20,7 @@ import Info from "../../components/Business/Info";
 import Login from "../../components/Business/Login";
 
 const LandingPage = ({ bugets, products, categories }) => {
-  const [acess, setAcess] = useState(false);
+  const [acess, setAcess] = useState(true);
 
   const handleAcess = () => {
     setAcess(true)

@@ -1,9 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-
-export type Endpoint = string;
-export type Body = any;
-export type Token = string | undefined;
-export type Otherheaders = AxiosRequestConfig;
+import axios, { AxiosResponse } from "axios";
 
 export enum VariantEnum {
   Default = "info",

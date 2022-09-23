@@ -1,1 +1,3 @@
-new WOW().init();
+window.onload = function() {
+    new WOW().init()
+};

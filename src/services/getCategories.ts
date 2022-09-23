@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { CategoriesInterface } from "../interfaces/categoriesInterface";
 import { CustomAxiosResponse } from "./axiosService";
 import { options } from "./getBugets";
 
 export const getCategories = async (
   IDCategorys
-  ): Promise<CustomAxiosResponse<CategoriesInterface[]>> => {
+  ): Promise<AxiosResponse<CategoriesInterface[]|any>> => {
   
     const response = await axios.get(`https://cloud.jetadmin.io/api/models/categories/`,{
     params: {id__in: `${IDCategorys}`},
@@ -15,5 +15,5 @@ export const getCategories = async (
       },
     });
   
-    return response.data;
+    return response;
   };
