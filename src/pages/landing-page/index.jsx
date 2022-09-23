@@ -18,9 +18,15 @@ import About from "../../components/Business/About";
 import Section from "../../components/Business/Section2";
 import Info from "../../components/Business/Info";
 import Login from "../../components/Business/Login";
+import ExpiratePage from "../../components/Business/ExpiratePage";
 
 const LandingPage = ({ bugets, products, categories }) => {
-  const [acess, setAcess] = useState(true);
+
+  const dateNow = new Date();
+  const expirationDate = new Date(bugets.expiration_date);
+  const status = expirationDate.getTime() >= dateNow.getTime();
+
+  const [acess, setAcess] = useState(false);
 
   const handleAcess = () => {
     setAcess(true)
@@ -29,20 +35,6 @@ const LandingPage = ({ bugets, products, categories }) => {
   useEffect(() => {
     document.body.classList.add("index-main");
 
-    const removeClasses = [
-      "index-bus1",
-      "index-corporate",
-      "index-restaurant",
-      "index-arch",
-      "index-freelancer",
-      "cr-agency",
-      "land-demo2",
-      "mobile-app",
-      "gr-orange-bg",
-      "nft-market",
-    ];
-
-    document.body.classList.remove(...removeClasses);
   }, []);
 
   const nav_links = [
@@ -80,6 +72,7 @@ const LandingPage = ({ bugets, products, categories }) => {
         navTheme="light"
       >
         {acess ? (
+            status ? (
           <>
             <Header bugets={bugets} />
             <main className="position-re">
@@ -103,7 +96,7 @@ const LandingPage = ({ bugets, products, categories }) => {
                 creative={undefined}
               />
             </main>
-          </>
+          </>) : (<ExpiratePage />)  
         ) : (
           <Login handleAcess={handleAcess} bugetsPassword={bugets?.password_access_code}/>
         )}

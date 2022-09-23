@@ -1,4 +1,3 @@
-import { Head } from "next";
 import Image from "next/image";
 //= Layout
 import MainLightLayout from "../layouts/main-light";
@@ -6,9 +5,6 @@ import MainLightLayout from "../layouts/main-light";
 const NotFoundPage = () => {
   return (
     <>
-      {/* <Head>
-        <title>404 Error</title>
-      </Head> */}
       <MainLightLayout>
         <main className="position-re">
           <section>
