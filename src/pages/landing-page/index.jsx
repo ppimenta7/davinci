@@ -31,7 +31,7 @@ const LandingPage = ({ bugets, products, categories, customers }) => {
     setAcessType("admin")
   };
 
-  const [acess, setAcess] = useState(true);//false
+  const [acess, setAcess] = useState(false);//false
   const handleAcess = () => {
     setAcess(true)
   };
