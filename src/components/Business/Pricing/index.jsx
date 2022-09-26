@@ -33,7 +33,7 @@ const Pricing = ({ bugets, customers }) => {
               <p className="inline"><span>CPF:</span> {cpf}</p>
               <p className="inline"><span>Data de Nascimento:</span> {dataBirthdate}</p>
               <p><span>Doutor Responsável:</span> {customers.dr_responsible}</p>
-              <p><span>Tipo de Amputação:</span>R$ {customers.type_of_amputation}</p>
+              <p><span>Tipo de Amputação:</span>{customers.type_of_amputation}</p>
             {/* "reference": "teste" */}
             </div>
 
@@ -58,8 +58,8 @@ const Pricing = ({ bugets, customers }) => {
                       </tr>
                       <tr>
                         <td style={{border: "none"}}></td>
-                        <td >Total c/ Desconto</td>
-                        <td>{bugets.value}</td>
+                        <td style={{textAlign: "right"}}>Total c/ Desconto</td>
+                        <td>R${bugets.value}</td>
                       </tr>
                     </table>
                   </div>
@@ -78,12 +78,12 @@ const Pricing = ({ bugets, customers }) => {
 
                     <table className="table-bd-none">
                       <tr>
-                          <td>Prazo de Entrega: <span>A combinar</span></td>
-                          <td>Validade deste Orçamento: 30 Dias</td>
-                          <td>Garantia dos componentes: Do fabricante</td>
+                          <td className="fw-700">Prazo de Entrega: <span className="fw-400">A combinar</span></td>
+                          <td className="fw-700">Validade deste Orçamento:  <span className="fw-400">30 Dias</span></td>
+                          <td className="fw-700">Garantia dos componentes: <span className="fw-400">Do fabricante</span></td>
                       </tr>
                       <tr>
-                      <td colSpan={3}>Assistência Técnica: Toda e qualquer assistência técnica do material será prestado por esta empresa sempre que necessário, sendo recomendado a cada oito meses de manutenção para conservação do material. 
+                      <td colSpan={3}><span className="fw-700">Assistência Técnica:</span> Toda e qualquer assistência técnica do material será prestado por esta empresa sempre que necessário, sendo recomendado a cada oito meses de manutenção para conservação do material. 
                           Certos de contarmos com a sua preferência, colocamo-nos ao inteiro dispor para qualquer eventual esclarecimento </td>
                       </tr>
                     </table>
