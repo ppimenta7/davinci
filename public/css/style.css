@@ -2930,7 +2930,7 @@ img.left {
   width: 100%;
   height: 100%;
   border-radius: 30px;
-  background-color: #ffffff;
+  background-color: #ffae45;
   opacity: 0.25;
   z-index: -1;
 }
@@ -7474,18 +7474,58 @@ header.simple-header .path a:after {
 
 /* ====================== [ End services ] ====================== */
 /* ====================== [ Start Pricing ] ====================== */
+
+.customer{
+  padding: 15px 15px 30px;
+}
+.customer p{
+  font-weight: 400;
+  font-size: 16px;
+  color: #444;
+  padding: 5px 15px 0;
+}
+
+.customer span{
+  font-weight:700;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+}
+
+td{
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.table-bd-none td{
+  border: none
+}
+
+/* th{
+  padding: 1%;
+  border: 1px solid black;
+  background-color:rgb(102, 243, 149);
+  font-family: 'Roboto';
+  font-size: 18px;
+} */
+
 .price{
   background-color: #f5f5f5;
 }
 
-.price .item {
+/* .price .item {
   padding: 40px;
   border: 1px solid rgba(6, 14, 98, 0.75);
   background-image: url(../img/davinci/image2.png);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 30px;
-}
+} */
 
 .price .item.active {
   background: #fff;

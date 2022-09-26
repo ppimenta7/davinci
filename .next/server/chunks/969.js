@@ -948,70 +948,271 @@ __webpack_async_result__();
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5675);
+/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_1__);
 
-const Pricing = ({ bugets  })=>{
+/* eslint-disable @next/next/no-img-element */ 
+const Pricing = ({ bugets , customers  })=>{
+    function formateDate(date) {
+        const data = new Date(date), dia = data.getDate().toString(), diaF = dia.length == 1 ? "0" + dia : dia, mes = (data.getMonth() + 1).toString(), mesF = mes.length == 1 ? "0" + mes : mes, anoF = data.getFullYear();
+        return diaF + "/" + mesF + "/" + anoF;
+    }
+    const dataBirthdate = formateDate(customers.birth_date);
+    function formataCPF(cpf) {
+        cpf = cpf.replace(/[^\d]/g, "");
+        return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+    }
+    const cpf1 = formataCPF(customers.cpf);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
         className: "price section-padding",
         "data-scroll-index": "4",
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
             className: "container",
-            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: "price-table",
-                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: "row justify-content-center primery-shadow col-md-8 col-lg-6 margin-rl-auto",
-                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: `item md-mb50`,
+            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                className: "price-table col-md-10 col-lg-8 margin-rl-auto ",
+                children: [
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h5", {
+                        children: "Dados do Paciente"
+                    }),
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                        className: "row justify-content-center primery-shadow bg-light",
                         children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: "round-head type",
-                                children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h6", {
-                                    className: "ls2 text-u fz-12 mb-30",
-                                    children: [
-                                        "Proposta ",
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {})
-                                    ]
-                                })
-                            }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: "amount text-center",
-                                children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
-                                    className: "full-width",
-                                    children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                            children: "R$"
-                                        }),
-                                        bugets?.value
-                                    ]
-                                })
-                            }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: "offer ",
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
-                                    children: bugets?.comments_report
-                                })
-                            }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: "order text-center",
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                                    href: "#0",
-                                    className: `butn butn-md butn-icon-anim text-light radius-30 dark-blue-bg `,
-                                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: "text",
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                className: "customer",
+                                children: [
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+                                        className: "inline",
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                                className: "text-anim-two fz-12 fw-500 text-u ls2",
-                                                children: "Ver PDF da Proposta"
+                                                children: "Nome:"
+                                            }),
+                                            " ",
+                                            customers.full_name
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+                                        className: "inline",
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                children: "Endere\xe7o:"
+                                            }),
+                                            " ",
+                                            customers.address
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+                                        className: "inline",
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                children: "CPF:"
+                                            }),
+                                            " ",
+                                            cpf1
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+                                        className: "inline",
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                children: "Data de Nascimento:"
+                                            }),
+                                            " ",
+                                            dataBirthdate
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                children: "Doutor Respons\xe1vel:"
+                                            }),
+                                            " ",
+                                            customers.dr_responsible
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                children: "Tipo de Amputa\xe7\xe3o:"
+                                            }),
+                                            "R$ ",
+                                            customers.type_of_amputation
+                                        ]
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                className: `item md-mb50`,
+                                children: [
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                        className: "round-head type",
+                                        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h6", {
+                                            className: "ls2 text-u fz-12 mb-30",
+                                            children: [
+                                                "Proposta Comercial para Solu\xe7\xe3o I ",
+                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {})
+                                            ]
+                                        })
+                                    }),
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                        className: "amount text-center",
+                                        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("table", {
+                                            children: [
+                                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("tr", {
+                                                    children: [
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("td", {
+                                                            children: "Item"
+                                                        }),
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("td", {
+                                                            style: {
+                                                                width: "70%"
+                                                            },
+                                                            children: "Descri\xe7\xe3o"
+                                                        }),
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("td", {
+                                                            children: "Valor Unit."
+                                                        })
+                                                    ]
+                                                }),
+                                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("tr", {
+                                                    children: [
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("td", {
+                                                            children: "1"
+                                                        }),
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("td", {
+                                                            children: bugets.comments_report
+                                                        }),
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("td", {})
+                                                    ]
+                                                }),
+                                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("tr", {
+                                                    children: [
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("td", {
+                                                            style: {
+                                                                border: "none"
+                                                            }
+                                                        }),
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("td", {
+                                                            children: "Total c/ Desconto"
+                                                        }),
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("td", {
+                                                            children: bugets.value
+                                                        })
+                                                    ]
+                                                })
+                                            ]
+                                        })
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("table", {
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("tr", {
+                                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("td", {
+                                                    children: "Condi\xe7\xe3o Especial de Pagamento - at\xe9 18x no Cart\xe3o de Cr\xe9dito*"
+                                                })
+                                            }),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("tr", {
+                                                children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("td", {
+                                                    children: [
+                                                        "O valor normal pode ser dividido em at\xe9 ",
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                            children: "10"
+                                                        }),
+                                                        " parcelas iguais de ",
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                            children: "R$ 233.714,00"
+                                                        }),
+                                                        " no cart\xe3o de credito."
+                                                    ]
+                                                })
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                                                children: "Obs: *Sujeito a an\xe1lise de cr\xe9dito. **Sujeito a limite dispon\xedvel no cart\xe3o de cr\xe9dito. O pagamento pode ser realizado em mais um um cart\xe3o."
+                                            }),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                                                style: {
+                                                    fontSize: "16px",
+                                                    color: "#15171f",
+                                                    padding: "20px 0"
+                                                },
+                                                children: "*ESTE OR\xc7AMENTO INCLUI TODO SERVI\xc7O E FISIOTERAPIA NECESS\xc1RIOS PARA A COMPLETA REABILITA\xc7\xc3O DO(A) PACIENTE"
+                                            }),
+                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("table", {
+                                                className: "table-bd-none",
+                                                children: [
+                                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("tr", {
+                                                        children: [
+                                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("td", {
+                                                                children: [
+                                                                    "Prazo de Entrega: ",
+                                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                                        children: "A combinar"
+                                                                    })
+                                                                ]
+                                                            }),
+                                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("td", {
+                                                                children: "Validade deste Or\xe7amento: 30 Dias"
+                                                            }),
+                                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("td", {
+                                                                children: "Garantia dos componentes: Do fabricante"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("tr", {
+                                                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("td", {
+                                                            colSpan: 3,
+                                                            children: "Assist\xeancia T\xe9cnica: Toda e qualquer assist\xeancia t\xe9cnica do material ser\xe1 prestado por esta empresa sempre que necess\xe1rio, sendo recomendado a cada oito meses de manuten\xe7\xe3o para conserva\xe7\xe3o do material. Certos de contarmos com a sua prefer\xeancia, colocamo-nos ao inteiro dispor para qualquer eventual esclarecimento "
+                                                        })
+                                                    })
+                                                ]
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        style: {
+                                            flexDirection: "column",
+                                            alignItems: "flex-end"
+                                        },
+                                        className: "flex pb-30 pr-30",
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
+                                                style: {
+                                                    width: "250px",
+                                                    transform: "translateY(45px)"
+                                                },
+                                                src: "/img/davinci/ass.png",
+                                                alt: ""
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                                className: "icon anim-two fz-12 fas fa-long-arrow-alt-right ml-10"
+                                                style: {
+                                                    width: "250px",
+                                                    borderBottom: "2px black solid"
+                                                }
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: "valign pl-30",
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_1___default()), {
+                                                width: 140,
+                                                height: 102,
+                                                src: "/img/davinci/logo.png",
+                                                alt: ""
+                                            }),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                                                className: "fz-16 pl-30",
+                                                children: "Av. Aruan\xe2, n\xba 280/352 - 1\xba andar - Sala 7 - Tambor\xe9 - Barueri - SP"
                                             })
                                         ]
                                     })
-                                })
+                                ]
                             })
                         ]
                     })
-                })
+                ]
             })
         })
     });
@@ -1954,7 +2155,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_com
 
 
 
-const LandingPage = ({ bugets , products , categories  })=>{
+const LandingPage = ({ bugets , products , categories , customers  })=>{
     const dateNow = new Date();
     const expirationDate = new Date(bugets?.expiration_date);
     const status = expirationDate.getTime() >= dateNow.getTime();
@@ -1962,7 +2163,7 @@ const LandingPage = ({ bugets , products , categories  })=>{
     const handleTypeAcess = ()=>{
         setAcessType("admin");
     };
-    const { 0: acess , 1: setAcess  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+    const { 0: acess , 1: setAcess  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true); //false
     const handleAcess = ()=>{
         setAcess(true);
     };
@@ -2028,7 +2229,8 @@ const LandingPage = ({ bugets , products , categories  })=>{
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Business_Info__WEBPACK_IMPORTED_MODULE_15__/* ["default"] */ .Z, {}),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Business_Pricing__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {
-                                    bugets: bugets
+                                    bugets: bugets,
+                                    customers: customers
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Footers_MainFooter__WEBPACK_IMPORTED_MODULE_12__/* ["default"] */ .Z, {
                                     footerClass: "main-footer bg-dark-blue bg-img",

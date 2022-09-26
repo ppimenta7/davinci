@@ -1,9 +1,11 @@
 import { NextPage } from "next";
 import { BugetsInterface } from "../interfaces/bugetsInterface";
 import { CategoriesInterface } from "../interfaces/categoriesInterface";
+import { CustomersInterface } from "../interfaces/customersInterface";
 import { ProductsInterface } from "../interfaces/productsInterface";
 import { getBugets } from "../services/getBugets";
 import { getCategories } from "../services/getCategories";
+import { getCustomers } from "../services/getCustomers";
 import { getProducts } from "../services/getProducts";
 import LandingPage from "./landing-page";
 
@@ -11,15 +13,16 @@ interface SlugInterface {
   bugets: BugetsInterface;
   products: ProductsInterface;
   categories: CategoriesInterface;
+  customers: CustomersInterface;
   params: {
     slug: string;
   };
 }
 
-const Slug: NextPage<SlugInterface> = ({ bugets, products, categories }) => {
+const Slug: NextPage<SlugInterface> = ({ bugets, products, categories, customers }) => {
   return (
     <>
-      <LandingPage bugets={bugets} products={products} categories={categories} />
+      <LandingPage bugets={bugets} products={products} categories={categories} customers={customers}/>
     </>
   );
 };
@@ -40,11 +43,14 @@ export const getServerSideProps = async ({ query }) => {
     const IDCategorys = await products.map((products: ProductsInterface) => products.category)
     const categories = await getCategories(IDCategorys).then((res) => res.data.results);
 
+    const customers = await getCustomers(bugets.customer);
+
     return {
       props: {
         bugets,
         products,
-        categories: categories,
+        categories,
+        customers,
       },
     }
   } catch (error) {

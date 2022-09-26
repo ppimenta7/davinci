@@ -18,21 +18,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _services_getBugets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5049);
 /* harmony import */ var _services_getCategories__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1793);
-/* harmony import */ var _services_getProducts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3575);
-/* harmony import */ var _landing_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6969);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_landing_page__WEBPACK_IMPORTED_MODULE_4__]);
-_landing_page__WEBPACK_IMPORTED_MODULE_4__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+/* harmony import */ var _services_getCustomers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6680);
+/* harmony import */ var _services_getProducts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3575);
+/* harmony import */ var _landing_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6969);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_landing_page__WEBPACK_IMPORTED_MODULE_5__]);
+_landing_page__WEBPACK_IMPORTED_MODULE_5__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
 
 
-const Slug = ({ bugets , products , categories  })=>{
+
+const Slug = ({ bugets , products , categories , customers  })=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_landing_page__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_landing_page__WEBPACK_IMPORTED_MODULE_5__["default"], {
             bugets: bugets,
             products: products,
-            categories: categories
+            categories: categories,
+            customers: customers
         })
     });
 };
@@ -44,17 +47,19 @@ const getServerSideProps = async ({ query  })=>{
         const bugets = await (0,_services_getBugets__WEBPACK_IMPORTED_MODULE_1__/* .getBugets */ .r)(id).then((res)=>res.data
         );
         const IDproducts = bugets.products.join();
-        const products1 = await (0,_services_getProducts__WEBPACK_IMPORTED_MODULE_3__/* .getProducts */ .X)(IDproducts).then((res)=>res.data.results
+        const products1 = await (0,_services_getProducts__WEBPACK_IMPORTED_MODULE_4__/* .getProducts */ .X)(IDproducts).then((res)=>res.data.results
         );
         const IDCategorys = await products1.map((products)=>products.category
         );
         const categories = await (0,_services_getCategories__WEBPACK_IMPORTED_MODULE_2__/* .getCategories */ .C)(IDCategorys).then((res)=>res.data.results
         );
+        const customers = await (0,_services_getCustomers__WEBPACK_IMPORTED_MODULE_3__/* .getCustomers */ .O)(bugets.customer);
         return {
             props: {
                 bugets,
                 products: products1,
-                categories: categories
+                categories,
+                customers
             }
         };
     } catch (error) {
@@ -123,6 +128,35 @@ const getCategories = async (IDCategorys)=>{
         }
     });
     return response;
+};
+
+
+/***/ }),
+
+/***/ 6680:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "O": () => (/* binding */ getCustomers)
+/* harmony export */ });
+/* unused harmony export options */
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2167);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+const options = {
+    headers: {
+        Authorization: "Token d06fb4379620cbd4ca06289a4850b882860da1e8",
+        "X-Bridge-Settings": "gAAAAABjDlJApy_5HrRIuXa70jw4jBGUIzOUq-mEcDSlXiJHwgOjIDCzbbwLeucEBLUxxVZm5a2Alw3xCwpb3NnwunZUkROTWLF9rdBnyocZEFHw0luFRIhAU44P9To5v7R7_SRxlM1wUqkPpGb_HVUDm0oqVvXspWbDzhwxgbGWBaE6DgTcT0tX3nzz_2qpt1TmC9G1BAbv0ouZQPJl6qbxWn0gaBGOgkV-_msKWvJinE3GgyN7zL0C5BlOlJPDEz7T44mCzfQ0EUUr1vGk6178aDVzZj5THW5Xv3F7xRqC4iivg3rLFNki16LMQrZsAEtC9xKHeJ0mfksNc2ku6171Q_q8j8UkhlwtkOZr9KGJ4tJHq8LWuNytd581UT2LwW74ifXyJbBYPvMx-GLVdGEtJYmXuQz5bcCWR6amvRDQ9xsH_Y7cMwBr42txgNYMUXFGXs2NhMbygRCG8lkeSC_TNcMKolWLrd3MdDw7edn9pXx4XMDjM9I77DoLJNbMuTpwd-XqxDzyNDj8yCP8GsWm1JZLYUi_og==YMoDW/XHWWa55nCSlzYbQQ=="
+    }
+};
+const getCustomers = async (id)=>{
+    const response = await axios__WEBPACK_IMPORTED_MODULE_0___default().get(`https://cloud.jetadmin.io/api/models/customers/${id}/`, {
+        headers: {
+            Authorization: options.headers.Authorization,
+            "X-Bridge-Settings": options.headers["X-Bridge-Settings"]
+        }
+    });
+    return response.data;
 };
 
 

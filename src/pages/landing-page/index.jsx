@@ -20,7 +20,7 @@ import Info from "../../components/Business/Info";
 import Login from "../../components/Business/Login";
 import ExpiratePage from "../../components/Business/ExpiratePage";
 
-const LandingPage = ({ bugets, products, categories }) => {
+const LandingPage = ({ bugets, products, categories, customers }) => {
 
   const dateNow = new Date();
   const expirationDate = new Date(bugets?.expiration_date);
@@ -31,7 +31,7 @@ const LandingPage = ({ bugets, products, categories }) => {
     setAcessType("admin")
   };
 
-  const [acess, setAcess] = useState(false);
+  const [acess, setAcess] = useState(true);//false
   const handleAcess = () => {
     setAcess(true)
   };
@@ -92,7 +92,7 @@ const LandingPage = ({ bugets, products, categories }) => {
               <Section />
               <Testimonials curve={true} />
               <Info />
-              <Pricing bugets={bugets} />
+              <Pricing bugets={bugets} customers={customers}/>
               <Footer
                 footerClass="main-footer bg-dark-blue bg-img"
                 footerBg={true}
