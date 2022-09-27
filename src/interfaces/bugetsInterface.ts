@@ -8,4 +8,7 @@ export interface BugetsInterface {
     customer:             string;
     title:                string;
     version:              string;
+    discount:             string;
+    payment_conditions:   string;
+
 }

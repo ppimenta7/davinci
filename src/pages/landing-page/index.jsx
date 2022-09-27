@@ -92,7 +92,7 @@ const LandingPage = ({ bugets, products, categories, customers }) => {
               <Section />
               <Testimonials curve={true} />
               <Info />
-              <Pricing bugets={bugets} customers={customers}/>
+              <Pricing bugets={bugets} customers={customers} products={products} />
               <Footer
                 footerClass="main-footer bg-dark-blue bg-img"
                 footerBg={true}

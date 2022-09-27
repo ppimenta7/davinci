@@ -1,7 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 
-const Pricing = ({ bugets, customers }) => {
+const Pricing = ({ bugets, customers, products}) => {
+
+  function formateValue(val) {
+    val = parseFloat(val)
+    const value = val.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) 
+    return value;
+  }
 
   function formateDate(date){
     const data = new Date(date),
@@ -14,12 +20,17 @@ const Pricing = ({ bugets, customers }) => {
 }
   const dataBirthdate = formateDate(customers.birth_date)
 
+
   function formataCPF(cpf){
     cpf = cpf.replace(/[^\d]/g, "");
     return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
   }
   const cpf = formataCPF(customers.cpf);
 
+  const comment = ""
+  products.map(prod => {
+    comment += `${prod.technical_details}. `
+  })
 
   return (
     <section className="price section-padding" data-scroll-index="4">
@@ -53,22 +64,25 @@ const Pricing = ({ bugets, customers }) => {
                       </tr>
                       <tr>
                         <td>1</td>
-                        <td>{bugets.comments_report}</td>
-                        <td></td>
+                        <td>{bugets.comments_report}{
+                            bugets.comments_report == "" ? comment : bugets.comments_report
+                        }</td>
+                        <td>{formateValue(bugets.value)}</td>
                       </tr>
                       <tr>
                         <td style={{border: "none"}}></td>
                         <td style={{textAlign: "right"}}>Total c/ Desconto</td>
-                        <td>R${bugets.value}</td>
+                        <td className="fw-700">{formateValue(bugets.value - bugets.discount)}</td>
                       </tr>
                     </table>
                   </div>
                   <table>
                       <tr>
-                        <td>Condição Especial de Pagamento - até 18x no Cartão de Crédito*</td>
+                        <td className="text-u">Condição de Pagamento</td>
                       </tr>
                       <tr>
-                        <td>O valor normal pode ser dividido em até <span>10</span> parcelas iguais de <span>R$ 233.714,00</span> no cartão de credito.</td>
+                        {/* <td>O valor normal pode ser dividido em até <span>10</span> parcelas iguais de <span>R$ 233.714,00</span> no cartão de credito.</td> */}
+                        <td>{bugets.payment_conditions}</td>
                       </tr>
                     </table>
                   <div>
