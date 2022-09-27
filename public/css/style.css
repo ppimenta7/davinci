@@ -2876,36 +2876,39 @@ img.left {
   font-size: 12px;
   font-weight: 200;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 1px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  align-items: center;
 }
 
-.sec-head .s-title h6 a {
+.sec-head .s-title h6 p {
   line-height: 50px;
+  font-weight: 400;
+  color: black;
+  font-size: 14px;
 }
 
 .sec-head .s-title h6 .icon {
   font-size: 30px;
   position: relative;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.555);
   border-radius: 50%;
-  margin-left: 20px;
-  opacity: .5;
+  margin-left: 15px;
 }
 
 .sec-head .s-title h6 .icon:after {
   content: '';
   width: 30px;
   height: .5px;
-  background: #eee;
+  background: rgb(0, 0, 0);
   position: absolute;
-  right: 24px;
+  right: 16px;
   top: 50%;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
@@ -2931,7 +2934,7 @@ img.left {
   height: 100%;
   border-radius: 30px;
   background-color: #ffae45;
-  opacity: 0.25;
+  opacity: 0.5;
   z-index: -1;
 }
 
@@ -2971,13 +2974,13 @@ img.left {
   top: 50%;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgb(85, 85, 85);
   z-index: -1;
 }
 
 .line-head h6 {
   display: inline-block;
-  background: #fff;
+  background: rgb(199, 199, 199);
   padding: 0 50px;
   font-size: 11px;
   text-transform: uppercase;

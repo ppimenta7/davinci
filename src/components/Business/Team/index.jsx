@@ -1,14 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 import team from "../../../data/corporate/team.json";
 import Video from "../../Project/Video";
+import { useState } from "react";
+import ModalVideo from "react-modal-video";
+import "react-modal-video/css/modal-video.css";
 
 const Team = () => {
+  const [isOpen, setOpen] = useState(false);
+
+  const openVideo = (e) => {
+    e.preventDefault();
+    setOpen(true);
+  };
+
   return (
     <section className="team-shape section-padding" data-scroll-index="1">
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-md-10">
-            <div className="section-head text-center pb-50">
+            <div className="section-head text-center">
               <h6 className="sub-head radius mb-20">
                 <span className="fz-12 ls2 text-u gr-orange-text">
                   Quem Somos
@@ -28,9 +38,32 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <div className="row col-lg-8 col-md-10 margin-rl-auto">
-          <Video />
+        {/* <div className="sec-head">
+            <div className="s-title valign justify-content-center">
+              <a href="https://youtu.be/hq8-I0N5BM4"
+            onClick={openVideo}>
+              <h6>
+                  <p>Conheça a equipe Da Vinci Clinic</p>
+                <span style={{color: "black"}} className="icon pe-7s-angle-right"></span>
+              </h6>
+              </a>
+            </div>
+        </div> */}
+        <div className="valign justify-content-center">
+          <a
+            href="https://youtu.be/hq8-I0N5BM4"
+            onClick={openVideo}
+            className="btn vid underline"
+          >
+            <span className="fw-500 fz-13 text-u">
+              Conheça a equipe Da Vinci Clinic
+            </span>
+            <i className="fas fa-play fz-12 ml-5"></i>
+          </a>
         </div>
+         {/*<div className="row col-lg-8 col-md-10 margin-rl-auto">
+          <Video /> 
+        </div>*/}
         <div className="row col-lg-10 col-md-12 pt-60 justify-content-center margin-rl-auto">
           {team.map((member, index) => (
             <div className="col-lg-3 col-md-6" key={index}>
@@ -66,6 +99,18 @@ const Team = () => {
           ))}
         </div>
       </div>
+      {
+        typeof window !== "undefined" && 
+          (
+            <ModalVideo
+              channel="youtube"
+              autoplay
+              isOpen={isOpen}
+              videoId="hq8-I0N5BM4"
+              onClose={() => setOpen(false)}
+            />
+          )
+      }
     </section>
   );
 };

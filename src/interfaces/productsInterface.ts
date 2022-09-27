@@ -6,5 +6,5 @@ export interface ProductsInterface {
     category:             string;
     technical_details:    string;
     link_video:           string;
-    nome:                 string;
+    name:                 string;
 }

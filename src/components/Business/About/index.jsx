@@ -132,7 +132,7 @@ const About = ({products, categories}) => {
                     <span>Highly expertise</span>
                   </div> */}
                   <h2 className="mb-20 fw-800">
-                  {product.nome}.
+                  {product.name}.
                   <span style={{display:"block"}} className="blue-color">{" "}
                     {
               
