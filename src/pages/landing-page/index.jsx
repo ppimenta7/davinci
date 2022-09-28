@@ -6,19 +6,19 @@ import Head from "next/head";
 import MainLightLayout from "../../layouts/main-light";
 import Navbar from "../../components/Navbars/MainNavbar/index";
 //= Components
-import Header from "../../components/Business/Header";
-import Services from "../../components/Business/Services";
-import Team from "../../components/Business/Team";
-import Portfolio1 from "../../components/Business/Portfolio1";
-import Portfolio3 from "../../components/Business/Portfolio3";
-import Pricing from "../../components/Business/Pricing";
-import Testimonials from "../../components/Business/Testimonials";
+import Header from "../../components/Landing-Page/Header";
+import Services from "../../components/Landing-Page/Services";
+import Team from "../../components/Landing-Page/Team";
+import Portfolio from "../../components/Landing-Page/Portfolio";
+import Portfolio1 from "../../components/Landing-Page/Portfolio1";
+import Pricing from "../../components/Landing-Page/Pricing";
+import Testimonials from "../../components/Landing-Page/Testimonials";
+import About from "../../components/Landing-Page/About";
+import Section from "../../components/Landing-Page/Section";
+import Info from "../../components/Landing-Page/Info";
+import Login from "../../components/Landing-Page/Login";
+import ExpiratePage from "../../components/Landing-Page/ExpiratePage";
 import Footer from "../../components/Footers/MainFooter";
-import About from "../../components/Business/About";
-import Section from "../../components/Business/Section2";
-import Info from "../../components/Business/Info";
-import Login from "../../components/Business/Login";
-import ExpiratePage from "../../components/Business/ExpiratePage";
 
 const LandingPage = ({ bugets, products, categories, customers }) => {
   const dateNow = new Date();
@@ -80,8 +80,8 @@ const LandingPage = ({ bugets, products, categories, customers }) => {
               <main className="position-re">
                 <Team />
                 <Services />
-                <Portfolio3 />
-                <Portfolio1
+                <Portfolio1 />
+                <Portfolio
                   bugets={bugets}
                   products={products}
                   categories={categories}

@@ -19,29 +19,44 @@ interface SlugInterface {
   };
 }
 
-const Slug: NextPage<SlugInterface> = ({ bugets, products, categories, customers }) => {
+const Slug: NextPage<SlugInterface> = ({
+  bugets,
+  products,
+  categories,
+  customers,
+}) => {
   return (
     <>
-      <LandingPage bugets={bugets} products={products} categories={categories} customers={customers}/>
+      <LandingPage
+        bugets={bugets}
+        products={products}
+        categories={categories}
+        customers={customers}
+      />
     </>
   );
 };
 
 export const getServerSideProps = async ({ query }) => {
   try {
-
     const params = query.slug;
 
-    const paramSplit = params.split("&")
+    const paramSplit = params.split("&");
     const id = typeof params === "string" ? paramSplit.at(-1) : "";
 
     const bugets = await getBugets(id).then((res) => res.data);
     const IDproducts = bugets.products.join();
 
-    const products = await getProducts(IDproducts).then((res) => res.data.results);
+    const products = await getProducts(IDproducts).then(
+      (res) => res.data.results
+    );
 
-    const IDCategorys = await products.map((products: ProductsInterface) => products.category)
-    const categories = await getCategories(IDCategorys).then((res) => res.data.results);
+    const IDCategorys = await products.map(
+      (products: ProductsInterface) => products.category
+    );
+    const categories = await getCategories(IDCategorys).then(
+      (res) => res.data.results
+    );
 
     const customers = await getCustomers(bugets.customer);
 
@@ -52,13 +67,13 @@ export const getServerSideProps = async ({ query }) => {
         categories,
         customers,
       },
-    }
+    };
   } catch (error) {
     return {
       redirect: {
-        destination: '/404',
-      }
-    }
+        destination: "/404",
+      },
+    };
   }
 };
 

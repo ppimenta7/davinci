@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import team from '../../../data/corporate/team.json';
+import team from '../../../data/business/team.json';
 
 const Team = () => {
   return (
