@@ -21,24 +21,22 @@ import Login from "../../components/Business/Login";
 import ExpiratePage from "../../components/Business/ExpiratePage";
 
 const LandingPage = ({ bugets, products, categories, customers }) => {
-
   const dateNow = new Date();
   const expirationDate = new Date(bugets?.expiration_date);
   const status = expirationDate.getTime() >= dateNow.getTime();
 
   const [acessType, setAcessType] = useState("");
   const handleTypeAcess = () => {
-    setAcessType("admin")
+    setAcessType("admin");
   };
 
-  const [acess, setAcess] = useState(false);//false
+  const [acess, setAcess] = useState(false); //false
   const handleAcess = () => {
-    setAcess(true)
+    setAcess(true);
   };
 
   useEffect(() => {
     document.body.classList.add("index-main");
-
   }, []);
 
   const nav_links = [
@@ -76,33 +74,44 @@ const LandingPage = ({ bugets, products, categories, customers }) => {
         navTheme="light"
       >
         {acess ? (
-            status || acessType=="admin" ? (
-          <>
-            <Header bugets={bugets} />
-            <main className="position-re">
-              <Team />
-              <Services />
-              <Portfolio3 />
-              <Portfolio1
-                bugets={bugets}
-                products={products}
-                categories={categories}
-              />
-              <About products={products} categories={categories} />
-              <Section />
-              <Testimonials curve={true} />
-              <Info />
-              <Pricing bugets={bugets} customers={customers} products={products} />
-              <Footer
-                footerClass="main-footer bg-dark-blue bg-img"
-                footerBg={true}
-                business={true}
-                creative={undefined}
-              />
-            </main>
-          </>) : (<ExpiratePage />)  
+          status || acessType == "admin" ? (
+            <>
+              <Header bugets={bugets} />
+              <main className="position-re">
+                <Team />
+                <Services />
+                <Portfolio3 />
+                <Portfolio1
+                  bugets={bugets}
+                  products={products}
+                  categories={categories}
+                />
+                <About products={products} categories={categories} />
+                <Section />
+                <Testimonials curve={true} />
+                <Info />
+                <Pricing
+                  bugets={bugets}
+                  customers={customers}
+                  products={products}
+                />
+                <Footer
+                  footerClass="main-footer bg-dark-blue bg-img"
+                  footerBg={true}
+                  business={true}
+                  creative={undefined}
+                />
+              </main>
+            </>
+          ) : (
+            <ExpiratePage />
+          )
         ) : (
-          <Login handleAcess={handleAcess} handleTypeAcess={handleTypeAcess} bugetsPassword={bugets?.password_access_code}/>
+          <Login
+            handleAcess={handleAcess}
+            handleTypeAcess={handleTypeAcess}
+            bugetsPassword={bugets?.password_access_code}
+          />
         )}
       </MainLightLayout>
     </>

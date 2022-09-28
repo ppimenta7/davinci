@@ -38,7 +38,7 @@ const Team = () => {
             </div>
           </div>
         </div>
-        {/* <div className="sec-head">
+        <div className="sec-head">
             <div className="s-title valign justify-content-center">
               <a href="https://youtu.be/hq8-I0N5BM4"
             onClick={openVideo}>
@@ -48,8 +48,8 @@ const Team = () => {
               </h6>
               </a>
             </div>
-        </div> */}
-        <div className="valign justify-content-center">
+        </div>
+        {/* <div className="valign justify-content-center">
           <a
             href="https://youtu.be/hq8-I0N5BM4"
             onClick={openVideo}
@@ -60,7 +60,7 @@ const Team = () => {
             </span>
             <i className="fas fa-play fz-12 ml-5"></i>
           </a>
-        </div>
+        </div> */}
          {/*<div className="row col-lg-8 col-md-10 margin-rl-auto">
           <Video /> 
         </div>*/}
