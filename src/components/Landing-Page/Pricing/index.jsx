@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
 
 const Pricing = ({ bugets, customers, products}) => {
 
@@ -18,14 +17,14 @@ const Pricing = ({ bugets, customers, products}) => {
           anoF = data.getFullYear();
     return diaF+"/"+mesF+"/"+anoF;
 }
-  const dataBirthdate = formateDate(customers.birth_date)
+  const dataBirthdate = formateDate(customers?.birth_date)
 
 
   function formataCPF(cpf){
     cpf = cpf.replace(/[^\d]/g, "");
     return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
   }
-  const cpf = formataCPF(customers.cpf);
+  const cpf = formataCPF(customers?.cpf);
 
   const comment = ""
   products.map(prod => {
@@ -108,7 +107,7 @@ const Pricing = ({ bugets, customers, products}) => {
                   </div>
 
                   <div className="valign pl-30">
-                    <Image width={140} height={102} src="/img/davinci/logo.png" alt=""/>
+                    <img style={{width: "140px"}} src="/img/davinci/logo.png" alt=""/>
                     <p className="fz-16 pl-30">Av. Aruanâ, nº 280/352 - 1º andar - Sala 7 - Tamboré - Barueri - SP</p>
                   </div>
 

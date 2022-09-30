@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 219;
-exports.ids = [219,545];
+exports.ids = [219,545,429];
 exports.modules = {
 
 /***/ 7563:
@@ -21,6 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_getCustomers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6680);
 /* harmony import */ var _services_getProducts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3575);
 /* harmony import */ var _landing_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6969);
+/* harmony import */ var _pdf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7726);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_landing_page__WEBPACK_IMPORTED_MODULE_5__]);
 _landing_page__WEBPACK_IMPORTED_MODULE_5__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
@@ -29,9 +30,16 @@ _landing_page__WEBPACK_IMPORTED_MODULE_5__ = (__webpack_async_dependencies__.the
 
 
 
-const Slug = ({ bugets , products , categories , customers ,  })=>{
+
+const Slug = ({ pdf , bugets , products , categories , customers ,  })=>{
+    console.log(pdf);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_landing_page__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        children: !pdf ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_landing_page__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            bugets: bugets,
+            products: products,
+            categories: categories,
+            customers: customers
+        }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_pdf__WEBPACK_IMPORTED_MODULE_6__["default"], {
             bugets: bugets,
             products: products,
             categories: categories,
@@ -42,6 +50,7 @@ const Slug = ({ bugets , products , categories , customers ,  })=>{
 const getServerSideProps = async ({ query  })=>{
     try {
         const params = query.slug;
+        const pdf = params.includes("pdf");
         const paramSplit = params.split("&");
         const id = typeof params === "string" ? paramSplit.at(-1) : "";
         const bugets = await (0,_services_getBugets__WEBPACK_IMPORTED_MODULE_1__/* .getBugets */ .r)(id).then((res)=>res.data
@@ -59,7 +68,8 @@ const getServerSideProps = async ({ query  })=>{
                 bugets,
                 products: products1,
                 categories,
-                customers
+                customers,
+                pdf: pdf
             }
         };
     } catch (error) {
@@ -196,6 +206,13 @@ module.exports = require("axios");
 
 /***/ }),
 
+/***/ 5158:
+/***/ ((module) => {
+
+module.exports = require("jspdf");
+
+/***/ }),
+
 /***/ 2796:
 /***/ ((module) => {
 
@@ -203,31 +220,10 @@ module.exports = require("next/dist/shared/lib/head-manager-context.js");
 
 /***/ }),
 
-/***/ 4957:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/head.js");
-
-/***/ }),
-
 /***/ 4014:
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/i18n/normalize-locale-path.js");
-
-/***/ }),
-
-/***/ 744:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/image-config-context.js");
-
-/***/ }),
-
-/***/ 5843:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/image-config.js");
 
 /***/ }),
 
@@ -336,6 +332,20 @@ module.exports = require("next/head");
 
 /***/ }),
 
+/***/ 5989:
+/***/ ((module) => {
+
+module.exports = require("pdfmake/build/pdfmake");
+
+/***/ }),
+
+/***/ 7788:
+/***/ ((module) => {
+
+module.exports = require("pdfmake/build/vfs_fonts");
+
+/***/ }),
+
 /***/ 6689:
 /***/ ((module) => {
 
@@ -392,7 +402,7 @@ module.exports = import("swiper/react");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [505,61,138,969], () => (__webpack_exec__(7563)));
+var __webpack_exports__ = __webpack_require__.X(0, [505,664,138,969,726], () => (__webpack_exec__(7563)));
 module.exports = __webpack_exports__;
 
 })();

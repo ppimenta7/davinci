@@ -1,4 +1,3 @@
-import Image from "next/image";
 //= Layout
 import MainLightLayout from "../../../layouts/main-light";
 

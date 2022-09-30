@@ -1,5 +1,4 @@
-import Image from "next/image";
-//= Layout
+/* eslint-disable @next/next/no-img-element */
 import MainLightLayout from "../layouts/main-light";
 
 const NotFoundPage = () => {
@@ -11,7 +10,7 @@ const NotFoundPage = () => {
             <div className="container content-404 ">
               <div className="col-lg-4 justify-content-center text-center margin-rl-auto">
                 <div className="content-icon">
-                <Image width={50} height={50} src="/img/davinci/heartShape.png" alt="" className="img-fluid"/>
+                <img style={{width: "50px"}} src="/img/davinci/heartShape.png" alt="" className="img-fluid"/>
                 </div>
                 <div>
                   <h1>404 Erro!</h1>

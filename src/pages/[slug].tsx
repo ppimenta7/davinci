@@ -8,8 +8,10 @@ import { getCategories } from "../services/getCategories";
 import { getCustomers } from "../services/getCustomers";
 import { getProducts } from "../services/getProducts";
 import LandingPage from "./landing-page";
+import Pdf from "./pdf";
 
 interface SlugInterface {
+  pdf: boolean;
   bugets: BugetsInterface;
   products: ProductsInterface;
   categories: CategoriesInterface;
@@ -20,19 +22,30 @@ interface SlugInterface {
 }
 
 const Slug: NextPage<SlugInterface> = ({
+  pdf,
   bugets,
   products,
   categories,
   customers,
 }) => {
+  console.log(pdf)
   return (
     <>
-      <LandingPage
-        bugets={bugets}
-        products={products}
-        categories={categories}
-        customers={customers}
-      />
+      {!pdf ? (
+        <LandingPage
+          bugets={bugets}
+          products={products}
+          categories={categories}
+          customers={customers}
+        />
+      ) : (
+        <Pdf
+          bugets={bugets}
+          products={products}
+          categories={categories}
+          customers={customers}
+        />
+      )}
     </>
   );
 };
@@ -41,6 +54,7 @@ export const getServerSideProps = async ({ query }) => {
   try {
     const params = query.slug;
 
+    const pdf = params.includes("pdf");
     const paramSplit = params.split("&");
     const id = typeof params === "string" ? paramSplit.at(-1) : "";
 
@@ -66,6 +80,7 @@ export const getServerSideProps = async ({ query }) => {
         products,
         categories,
         customers,
+        pdf: pdf,
       },
     };
   } catch (error) {

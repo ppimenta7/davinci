@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
@@ -12,7 +12,11 @@
     "@ramonak/react-progress-bar": "^5.0.0",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.1",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "next": "^12.0.7",
+    "next-optimized-images": "^2.6.2",
+    "pdfmake": "^0.2.5",
     "react": "^17.0.2",
     "react-bootstrap": "^2.5.0",
     "react-circular-progressbar": "^2.0.4",

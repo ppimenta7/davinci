@@ -363,16 +363,13 @@ const About = ({ products , categories  })=>{
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5675);
-/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _layouts_main_light__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3138);
-
+/* harmony import */ var _layouts_main_light__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3138);
 
 //= Layout
 
 const ExpiratePage = ()=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_layouts_main_light__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
+        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_layouts_main_light__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("main", {
                 className: "position-re",
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
@@ -781,41 +778,38 @@ const Login = ({ bugetsPassword , handleAcess , handleTypeAcess  })=>{
 
 /***/ }),
 
-/***/ 8929:
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1664);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3015);
-/* harmony import */ var _data_business_suport_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(573);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([swiper_react__WEBPACK_IMPORTED_MODULE_2__]);
-swiper_react__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
-
-/* eslint-disable @next/next/no-img-element */ 
+/***/ 2960:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
-const Portfolio = ()=>{
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "Z": () => (/* binding */ Landing_Page_Portfolio1)
+});
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(997);
+;// CONCATENATED MODULE: ./src/data/business/support.json
+const support_namespaceObject = JSON.parse('[{"id":1,"image":"img/davinci/d2.png","title":"Kids"},{"id":2,"image":"img/davinci/d5.png","title":"Senior"},{"id":3,"image":"img/davinci/d6.png","title":"Performance"}]');
+;// CONCATENATED MODULE: ./src/components/Landing-Page/Portfolio1/index.jsx
+
+
+const Portfolio1 = ()=>{
+    return /*#__PURE__*/ jsx_runtime_.jsx("section", {
         className: "portfolio-simp-crus section-padding",
-        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
             className: "container",
             children: [
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                /*#__PURE__*/ jsx_runtime_.jsx("div", {
                     className: "row col-lg-10 col-md-12 pt-60 justify-content-center margin-rl-auto",
-                    children: portfolios.map((slide, idx)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                    children: support_namespaceObject.map((slide, idx)=>/*#__PURE__*/ jsx_runtime_.jsx("div", {
                             className: "col-lg-3 col-md-6",
-                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                            children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                 style: {
                                     backgroundImage: `url(${slide.image})`
                                 },
                                 className: "slide-item img info mt-20 text-center",
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h6", {
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("h6", {
                                     className: "fw-600 text-u text-light fz-24",
                                     children: slide.title
                                 })
@@ -823,13 +817,13 @@ const Portfolio = ()=>{
                         }, idx)
                     )
                 }),
-                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
                     className: "text-center pb-50 mt-30",
                     children: [
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                        /*#__PURE__*/ jsx_runtime_.jsx("h2", {
                             children: "Uma cl\xednica para todos."
                         }),
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                        /*#__PURE__*/ jsx_runtime_.jsx("p", {
                             className: "col-6 fz-18 margin-rl-auto",
                             children: "De quem ainda vai passar por uma amputa\xe7\xe3o \xe0queles que busca melhor sua qualidade de vida com pr\xf3teses."
                         })
@@ -839,10 +833,8 @@ const Portfolio = ()=>{
         })
     });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Portfolio);
+/* harmony default export */ const Landing_Page_Portfolio1 = (Portfolio1);
 
-__webpack_async_result__();
-} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -985,11 +977,8 @@ __webpack_async_result__();
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5675);
-/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_1__);
 
-/* eslint-disable @next/next/no-img-element */ 
-const Pricing = ({ bugets , customers , products  })=>{
+/* eslint-disable @next/next/no-img-element */ const Pricing = ({ bugets , customers , products  })=>{
     function formateValue(val) {
         val = parseFloat(val);
         const value = val.toLocaleString("pt-br", {
@@ -1002,12 +991,12 @@ const Pricing = ({ bugets , customers , products  })=>{
         const data = new Date(date), dia = data.getDate().toString(), diaF = dia.length == 1 ? "0" + dia : dia, mes = (data.getMonth() + 1).toString(), mesF = mes.length == 1 ? "0" + mes : mes, anoF = data.getFullYear();
         return diaF + "/" + mesF + "/" + anoF;
     }
-    const dataBirthdate = formateDate(customers.birth_date);
+    const dataBirthdate = formateDate(customers?.birth_date);
     function formataCPF(cpf) {
         cpf = cpf.replace(/[^\d]/g, "");
         return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
     }
-    const cpf1 = formataCPF(customers.cpf);
+    const cpf1 = formataCPF(customers?.cpf);
     const comment = "";
     products.map((prod)=>{
         comment += `${prod.technical_details}. `;
@@ -1266,9 +1255,10 @@ const Pricing = ({ bugets , customers , products  })=>{
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                         className: "valign pl-30",
                                         children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_1___default()), {
-                                                width: 140,
-                                                height: 102,
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
+                                                style: {
+                                                    width: "140px"
+                                                },
                                                 src: "/img/davinci/logo.png",
                                                 alt: ""
                                             }),
@@ -2148,7 +2138,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Landing_Page_Services__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(1800);
 /* harmony import */ var _components_Landing_Page_Team__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3446);
 /* harmony import */ var _components_Landing_Page_Portfolio__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(8367);
-/* harmony import */ var _components_Landing_Page_Portfolio1__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(8929);
+/* harmony import */ var _components_Landing_Page_Portfolio1__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(2960);
 /* harmony import */ var _components_Landing_Page_Pricing__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(5728);
 /* harmony import */ var _components_Landing_Page_Testimonials__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(1631);
 /* harmony import */ var _components_Landing_Page_About__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(5814);
@@ -2157,8 +2147,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Landing_Page_Login__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(2798);
 /* harmony import */ var _components_Landing_Page_ExpiratePage__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(3298);
 /* harmony import */ var _components_Footers_MainFooter__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(4794);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Landing_Page_Portfolio__WEBPACK_IMPORTED_MODULE_8__, _components_Landing_Page_Portfolio1__WEBPACK_IMPORTED_MODULE_9__, _components_Landing_Page_Testimonials__WEBPACK_IMPORTED_MODULE_11__]);
-([_components_Landing_Page_Portfolio__WEBPACK_IMPORTED_MODULE_8__, _components_Landing_Page_Portfolio1__WEBPACK_IMPORTED_MODULE_9__, _components_Landing_Page_Testimonials__WEBPACK_IMPORTED_MODULE_11__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Landing_Page_Portfolio__WEBPACK_IMPORTED_MODULE_8__, _components_Landing_Page_Testimonials__WEBPACK_IMPORTED_MODULE_11__]);
+([_components_Landing_Page_Portfolio__WEBPACK_IMPORTED_MODULE_8__, _components_Landing_Page_Testimonials__WEBPACK_IMPORTED_MODULE_11__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 /* eslint-disable @next/next/no-css-tags */ // eslint-disable-next-line react/no-children-prop
 
@@ -2287,13 +2277,6 @@ __webpack_async_result__();
 /***/ ((module) => {
 
 module.exports = JSON.parse('{"g":2,"f":"No primeiro ano de vida a Da Vinci Clinic já reabilitou mais de 100 pacientes! E você tambem pode ser um deles..."}');
-
-/***/ }),
-
-/***/ 573:
-/***/ ((module) => {
-
-module.exports = [];
 
 /***/ }),
 

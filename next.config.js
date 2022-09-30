@@ -11,6 +11,10 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: false,
+  }, 
+  images: {
+    loader: 'akamai',
+    path: '',
   },
 }
 
