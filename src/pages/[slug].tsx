@@ -83,6 +83,7 @@ export const getServerSideProps = async ({ query }) => {
       },
     };
   } catch (error) {
+    console.log(error)
     return {
       redirect: {
         destination: "/404",
