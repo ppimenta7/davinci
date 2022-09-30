@@ -28,7 +28,6 @@ const Slug: NextPage<SlugInterface> = ({
   categories,
   customers,
 }) => {
-  console.log(pdf)
   return (
     <>
       {!pdf ? (
@@ -51,10 +50,10 @@ const Slug: NextPage<SlugInterface> = ({
 };
 
 export const getServerSideProps = async ({ query }) => {
-  try {
-    const params = query.slug;
+  const params = query.slug;
+  const pdf = params.includes("pdf");
 
-    const pdf = params.includes("pdf");
+  try {
     const paramSplit = params.split("&");
     const id = typeof params === "string" ? paramSplit.at(-1) : "";
 
