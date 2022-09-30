@@ -38,16 +38,6 @@ const Section = () => {
                 Morbi sagittis hendrt nulla simply dummy text of the printing and typesetting has been the industry’s en diam ips elementum pretium hendrerit ultricies.
               </p>
               <div className="flex mt-50">
-                {/* <div className="item flex full-width">
-                  <div className="icon-flex mr-20">
-                    <h3>320</h3>
-                  </div>
-                  <div className="cont-flex valign">
-                    <div>
-                      <span>Perfect <br /> Prodects</span>
-                    </div>
-                  </div>
-                </div> */}
                 <div className="item flex full-width">
                   <div className="icon-flex mr-20">
                     <h3>100%</h3>
@@ -67,9 +57,14 @@ const Section = () => {
               </Link>
             </div>
           </div>
-          <div className="col-lg-6 wow slideInUp">
+          {/* <div className="col-lg-6 wow slideInUp">
             <div className="img wow imago">
-              <img src="img/davinci/foto.jpg" alt="" />
+              <img style={{width: "100px"}} src="img/davinci/p.png" alt="" />
+            </div>
+          </div> */}
+          <div className="col-lg-6 wow slideInUp">
+            <div className="img wow">
+              <img src="img/davinci/p.png" alt="" />
             </div>
           </div>
           <div className="col-lg-12">
