@@ -15,8 +15,9 @@ export function formateValue(val) {
 }
 
 export function formataCPF(cpf){
-    cpf = cpf.replace(/[^\d]/g, "");
-    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+  const cpfFormate = cpf?.replace(/[^\d]/g, "")
+  .replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+  return cpfFormate
   }
 
 export function formateDateNow(){
@@ -34,8 +35,11 @@ export function formateDateNow(){
 }
 
 export function friendlyFilename(text) {
-  return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove acentos
-    .replace(/([^\w]+|\s+)/g, '-') // substitui espaço e outros caracteres por hífen
-    .replace(/\-\-+/g, '-') // substitui múltiplos hífens por um único hífen
-    .replace(/(ˆ-+|-+$)/, '') // remove hífens extras do final ou do início da string
+  const filename = text
+    ?.normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // remove acentos
+    .replace(/([^\w]+|\s+)/g, "-") // substitui espaço e outros caracteres por hífen
+    .replace(/\-\-+/g, "-") // substitui múltiplos hífens por um único hífen
+    .replace(/(ˆ-+|-+$)/, ""); // remove hífens extras do final ou do início da string
+  return filename;
 }
