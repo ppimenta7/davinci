@@ -16,6 +16,7 @@ const nextConfig = {
     loader: 'akamai',
     path: '',
   },
+  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
 }
 
 module.exports = nextConfig

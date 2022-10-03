@@ -15,30 +15,31 @@ export const dd = (products, bugets, customers, filename) => {
 
   const data_atual = formateDateNow()
 
-  const comment = "";
-  products.map((prod) => {
-    comment += `${prod.technical_details}. `;
-  });
+//   const comment = "";
+//   products.map((prod) => {
+//     comment += `${prod.technical_details}. `;
+//   });
 
-//   let html = new DOMParser().parseFromString(comment, "text/html");
-const floatingElement = new DOMParser().parseFromSrting(comment, 'text/xml')
-const string = floatingElement.innerText
-console.log(string);
-// 	console.log(html);
-	// const d = comment.replace(/<style([\s\S]*?)<\/style>/gi, '')
-	// 			.replace(/<script([\s\S]*?)<\/script>/gi, '')
-	// 			.replace(/<\/div>/ig, '\n')
-	// 			.replace(/<\/li>/ig, '\n')
-	// 			.replace(/<li>/ig, '  *  ')
-	// 			.replace(/<\/ul>/ig, '\n')
-	// 			.replace(/<\/p>/ig, '\n')
-	// 			.replace(/<br\s*[\/]?>/gi, "\n")
-	// 			.replace(/<[^>]+>/ig, '');
-	// console.log(d)
+// //   let html = new DOMParser().parseFromString(comment, "text/html");
+// const floatingElement = new DOMParser().parseFromSrting(comment, 'text/xml')
+// const string = floatingElement.innerText
+// console.log(string);
+// // 	console.log(html);
+// 	// const d = comment.replace(/<style([\s\S]*?)<\/style>/gi, '')
+// 	// 			.replace(/<script([\s\S]*?)<\/script>/gi, '')
+// 	// 			.replace(/<\/div>/ig, '\n')
+// 	// 			.replace(/<\/li>/ig, '\n')
+// 	// 			.replace(/<li>/ig, '  *  ')
+// 	// 			.replace(/<\/ul>/ig, '\n')
+// 	// 			.replace(/<\/p>/ig, '\n')
+// 	// 			.replace(/<br\s*[\/]?>/gi, "\n")
+// 	// 			.replace(/<[^>]+>/ig, '');
+// 	// console.log(d)
 
-var strippedHtml = comment.replace(/<[^>]+>/g, '');
+// var strippedHtml = comment.replace(/<[^>]+>/g, '');
 
-  const comments_report = bugets.comments_report == "" ? strippedHtml : bugets.comments_report
+  // const comments_report = bugets.comments_report == "" ? strippedHtml : bugets.comments_report
+  const comments_report = bugets.comments_report
 
 
   const dd = {
