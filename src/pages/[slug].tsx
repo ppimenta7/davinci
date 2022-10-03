@@ -8,7 +8,7 @@ import { getCategories } from "../services/getCategories";
 import { getCustomers } from "../services/getCustomers";
 import { getProducts } from "../services/getProducts";
 import LandingPage from "./landing-page";
-import Pdf from "./pdf";
+import { Pdf } from "./pdf-page/pdf";
 
 interface SlugInterface {
   pdf: boolean;
