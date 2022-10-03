@@ -35,8 +35,7 @@ export function formateDateNow(){
 }
 
 export function friendlyFilename(text) {
-  const filename = text
-    ?.normalize("NFD")
+  const filename = text?.normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "") // remove acentos
     .replace(/([^\w]+|\s+)/g, "-") // substitui espaço e outros caracteres por hífen
     .replace(/\-\-+/g, "-") // substitui múltiplos hífens por um único hífen

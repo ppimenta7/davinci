@@ -4,20 +4,98 @@ import Head from "next/head";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import { useEffect } from "react";
-// import dd from "./pdf-content";
 import { logo, fundo } from "../../public/img/imgs-datauri";
-import { formateDate, formateValue, formataCPF, formateDateNow, friendlyFilename} from "../../public/js/index";
+import {
+  formateDate,
+  formateValue,
+  formataCPF,
+  formateDateNow,
+  friendlyFilename,
+} from "../../public/js/index";
 
 const Pdf = ({ products, categories, bugets, customers }) => {
-
-
   const dataBirthdate = formateDate(customers?.birth_date);
   const cpf = formataCPF(customers?.cpf);
   const value = formateValue(bugets?.value);
   const discount = formateValue(bugets?.value - bugets?.discount);
   const data_atual = formateDateNow();
+  //   teste?.push(`
+  //     { text: ${++idx}, alignment: "center", margin: [5, 5] },
+  //     { text: '${product.description}', alignment: "center", margin: [5, 5] },
+  //     { text: '', alignment: "center", margin: [5, 5] },`
+  //   )
+  // })
+
+  // const pp = products.map((prod, idx) =>
+  //   [
+  //   { text: idx, alignment: "center", margin: [5, 5] },
+  //   { text: `${prod.description}`, alignment: "center", margin: [5, 5] },
+  //   { text: ``, alignment: "center", margin: [5, 5] },
+  // ]
+  // );
+
+  // const p = pp.map(
+  //   function(obj) {
+  //   return Object.keys(obj).map(function(key) {
+  //       return obj[key];
+  //   })
+  // });
+  // console.log(p)
+  // const pop = p.map(pop => pop)
+  // pop.map(p1 => console.log(p1))
+
+  // const comment = "";
+  // products.map((prod) => {
+  //   comment += `${prod.technical_details}. `;
+  // });
+
+  // //   let html = new DOMParser().parseFromString(comment, "text/html");
+  // const floatingElement = new DOMParser().parseFromSrting(comment, 'text/xml')
+  // const string = floatingElement.innerText
+  // console.log(string);
+  // // 	console.log(html);
+  // 	// const d = comment.replace(/<style([\s\S]*?)<\/style>/gi, '')
+  // 	// 			.replace(/<script([\s\S]*?)<\/script>/gi, '')
+  // 	// 			.replace(/<\/div>/ig, '\n')
+  // 	// 			.replace(/<\/li>/ig, '\n')
+  // 	// 			.replace(/<li>/ig, '  *  ')
+  // 	// 			.replace(/<\/ul>/ig, '\n')
+  // 	// 			.replace(/<\/p>/ig, '\n')
+  // 	// 			.replace(/<br\s*[\/]?>/gi, "\n")
+  // 	// 			.replace(/<[^>]+>/ig, '');
+  // 	// console.log(d)
+
+  // var strippedHtml = comment.replace(/<[^>]+>/g, '');
+
+  //   const comments_report = bugets.comments_report == "" ? strippedHtml : bugets.comments_report
+
   const comments_report = bugets?.comments_report;
   
+  // products.map(() => {
+  //   const um = { text: "idx", style: "tableHeader"}
+  //   const dois = { text: "prod.description", style: "tableHeader" }
+  //   const tres = { text: "Valor", style: "tableHeader" }
+  //   const teste = [um, dois, tres]
+  //   return [teste]
+  // }),
+  const bla = [
+    [
+      { text: "Item0", style: "tableHeader" },
+      { text: value, style: "tableHeader" },
+      { text: "Valor Unit.", style: "tableHeader" },
+    ],
+    [
+      { text: "Item1", style: "tableHeader" },
+      { text: value, style: "tableHeader" },
+      { text: "Valor Unit.", style: "tableHeader" },
+    ],
+    [
+      { text: "Item2", style: "tableHeader" },
+      { text: value, style: "tableHeader" },
+      { text: "Valor Unit.", style: "tableHeader" },
+    ]
+  ];
+
   const filename = friendlyFilename(customers?.full_name);
 
   function gerarPDF() {
@@ -73,7 +151,7 @@ const Pdf = ({ products, categories, bugets, customers }) => {
           ],
           margin: [0, 0, 0, 50],
         },
-  
+
         {
           text: "PROPOSTA COMERCIAL PARA SOLUÇÃO I",
           bold: true,
@@ -92,14 +170,13 @@ const Pdf = ({ products, categories, bugets, customers }) => {
                 { text: "Valor Unit.", style: "tableHeader" },
               ],
               [
-                { text: "1", alignment: "center", margin: [5, 5] },
-                {
-                  text: `${comments_report}`,
-                  alignment: "center",
-                  margin: [5, 5],
-                },
-                { text: `${discount}`, alignment: "center", margin: [5, 5] },
-              ],
+              { text: "1", alignment: "center", margin: [5, 5] },
+              {
+                text: `${comments_report}`,
+                alignment: "center",
+                margin: [5, 5],
+              },
+              { text: ``, alignment: "center", margin: [5, 5] },],
               [
                 {
                   border: [false, true, true, false],
@@ -158,7 +235,7 @@ const Pdf = ({ products, categories, bugets, customers }) => {
           },
           layout: "noBorders",
         },
-  
+
         {
           text: [
             { text: "Assistência Técnica: ", bold: true },

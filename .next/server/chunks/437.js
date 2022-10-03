@@ -42,7 +42,6 @@ var js = __webpack_require__(9308);
 
 
 
-// import dd from "./pdf-content";
 
 
 const Pdf = ({ products , categories , bugets , customers  })=>{
@@ -51,7 +50,101 @@ const Pdf = ({ products , categories , bugets , customers  })=>{
     const value = (0,js/* formateValue */.es)(bugets?.value);
     const discount = (0,js/* formateValue */.es)(bugets?.value - bugets?.discount);
     const data_atual = (0,js/* formateDateNow */.tb)();
+    //   teste?.push(`
+    //     { text: ${++idx}, alignment: "center", margin: [5, 5] },
+    //     { text: '${product.description}', alignment: "center", margin: [5, 5] },
+    //     { text: '', alignment: "center", margin: [5, 5] },`
+    //   )
+    // })
+    // const pp = products.map((prod, idx) =>
+    //   [
+    //   { text: idx, alignment: "center", margin: [5, 5] },
+    //   { text: `${prod.description}`, alignment: "center", margin: [5, 5] },
+    //   { text: ``, alignment: "center", margin: [5, 5] },
+    // ]
+    // );
+    // const p = pp.map(
+    //   function(obj) {
+    //   return Object.keys(obj).map(function(key) {
+    //       return obj[key];
+    //   })
+    // });
+    // console.log(p)
+    // const pop = p.map(pop => pop)
+    // pop.map(p1 => console.log(p1))
+    // const comment = "";
+    // products.map((prod) => {
+    //   comment += `${prod.technical_details}. `;
+    // });
+    // //   let html = new DOMParser().parseFromString(comment, "text/html");
+    // const floatingElement = new DOMParser().parseFromSrting(comment, 'text/xml')
+    // const string = floatingElement.innerText
+    // console.log(string);
+    // // 	console.log(html);
+    // 	// const d = comment.replace(/<style([\s\S]*?)<\/style>/gi, '')
+    // 	// 			.replace(/<script([\s\S]*?)<\/script>/gi, '')
+    // 	// 			.replace(/<\/div>/ig, '\n')
+    // 	// 			.replace(/<\/li>/ig, '\n')
+    // 	// 			.replace(/<li>/ig, '  *  ')
+    // 	// 			.replace(/<\/ul>/ig, '\n')
+    // 	// 			.replace(/<\/p>/ig, '\n')
+    // 	// 			.replace(/<br\s*[\/]?>/gi, "\n")
+    // 	// 			.replace(/<[^>]+>/ig, '');
+    // 	// console.log(d)
+    // var strippedHtml = comment.replace(/<[^>]+>/g, '');
+    //   const comments_report = bugets.comments_report == "" ? strippedHtml : bugets.comments_report
     const comments_report = bugets?.comments_report;
+    // products.map(() => {
+    //   const um = { text: "idx", style: "tableHeader"}
+    //   const dois = { text: "prod.description", style: "tableHeader" }
+    //   const tres = { text: "Valor", style: "tableHeader" }
+    //   const teste = [um, dois, tres]
+    //   return [teste]
+    // }),
+    const bla = [
+        [
+            {
+                text: "Item0",
+                style: "tableHeader"
+            },
+            {
+                text: value,
+                style: "tableHeader"
+            },
+            {
+                text: "Valor Unit.",
+                style: "tableHeader"
+            }, 
+        ],
+        [
+            {
+                text: "Item1",
+                style: "tableHeader"
+            },
+            {
+                text: value,
+                style: "tableHeader"
+            },
+            {
+                text: "Valor Unit.",
+                style: "tableHeader"
+            }, 
+        ],
+        [
+            {
+                text: "Item2",
+                style: "tableHeader"
+            },
+            {
+                text: value,
+                style: "tableHeader"
+            },
+            {
+                text: "Valor Unit.",
+                style: "tableHeader"
+            }, 
+        ]
+    ];
     const filename = (0,js/* friendlyFilename */.cC)(customers?.full_name);
     function gerarPDF() {
         (pdfmake_default()).vfs = (vfs_fonts_default()).pdfMake.vfs;
@@ -213,7 +306,7 @@ const Pdf = ({ products , categories , bugets , customers  })=>{
                                     ]
                                 },
                                 {
-                                    text: `${discount}`,
+                                    text: ``,
                                     alignment: "center",
                                     margin: [
                                         5,
