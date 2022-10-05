@@ -13,6 +13,7 @@ import {
   friendlyFilename,
 } from "../../public/js/index";
 import { totalValueBugets, nada, blabla } from "../data/pdf-content"
+const { htmlToText } = require('html-to-text');
 
 const Pdf = ({ products, categories, bugets, customers }) => {
   const dataBirthdate = formateDate(customers?.birth_date);
@@ -21,16 +22,13 @@ const Pdf = ({ products, categories, bugets, customers }) => {
   const discount = formateValue(bugets?.value - bugets?.discount);
   const data_atual = formateDateNow();
 
-  // const p = pp.map(
-  //   function(obj) {
-  //   return Object.keys(obj).map(function(key) {
-  //       return obj[key];
-  //   })
-  // });
-
   let comment = "";
   products?.map((prod) => {
     comment += `${prod?.technical_details}. `;
+  });
+
+  const text = htmlToText(comment, {
+      wordwrap: 130
   });
   // var strippedHtml = comment.replace(/<[^>]+>/g, '');
   // console.log(strippedHtml)
@@ -137,8 +135,8 @@ const Pdf = ({ products, categories, bugets, customers }) => {
           },
         },
         {
+          pageBreak: 'before',
           margin: [0, 5, 0, 15],
-          margin: [0, 5, 0, 2],
           table: {
             widths: ["*"],
             body: [
@@ -206,10 +204,15 @@ const Pdf = ({ products, categories, bugets, customers }) => {
       },
     };
 
+    const doc = pdfMake.createPdf(docDefinitions); 
+    doc.getBase64((data) => { window.location.href = 'data:application/pdf;base64,' + data; });
+
     pdfMake.createPdf(docDefinitions).download(`pdf_${filename}`);
     pdfMake.createPdf(docDefinitions).open({}, window);
     // pdfMake.createPdf(docDefinitions).open();
   }
+
+
 
   useEffect(() => {
     // function gerarPDF() {
@@ -241,6 +244,7 @@ const Pdf = ({ products, categories, bugets, customers }) => {
         {/* <div style={{ height: "100vh" }}>
           <h1>O download já está sendo iniciado</h1>
         </div> */}
+        {/* <div id="bla" dangerouslySetInnerHTML={{__html:"&amp;nbsp;"}}/> */}
         <div id="teste">
           <h1>Teste</h1>
           <p>

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { formateDate, formateValue, formataCPF } from "../../../../public/js/index";
+const { htmlToText } = require('html-to-text');
 
 const Pricing = ({ bugets, customers, products}) => {
   
@@ -12,6 +13,9 @@ const Pricing = ({ bugets, customers, products}) => {
   products.map(prod => {
     comment += `${prod.technical_details}. `
   })
+  const text = htmlToText(comment, {
+    wordwrap: 130
+});
 
   return (
     <section className="price section-padding" data-scroll-index="4">
@@ -25,7 +29,7 @@ const Pricing = ({ bugets, customers, products}) => {
               <p className="inline"><span>CPF:</span> {cpf}</p>
               <p className="inline"><span>Data de Nascimento:</span> {dataBirthdate}</p>
               <p><span>Doutor Responsável:</span> {customers.dr_responsible}</p>
-              <p><span>Tipo de Amputação:</span>{customers.type_of_amputation}</p>
+              <p><span>Tipo de Amputação:</span> {customers.type_of_amputation}</p>
             {/* "reference": "teste" */}
             </div>
 
@@ -45,9 +49,9 @@ const Pricing = ({ bugets, customers, products}) => {
                       </tr>
                       <tr>
                         <td>1</td>
-                        <td>{bugets.comments_report}{
-                            bugets.comments_report == "" ? comment : bugets.comments_report
-                        }</td>
+                        <td>{text}
+                        {/* {bugets.comments_report == "" ? comment : bugets.comments_report} */}
+                        </td>
                         <td>{value}</td>
                       </tr>
                       <tr>
