@@ -7480,6 +7480,7 @@ table{
   margin: auto;
 }
 
+
 td{
   border: 1px solid black;
   text-align: center;
@@ -10995,3 +10996,21 @@ body.index-main .bg-gray {
 }
 
 /* ====================== [ End 404 ] ====================== */
+.loader-container{
+  text-align: center;
+}
+.c-loader {
+  animation: is-rotating 1s infinite;
+  border: 6px solid #e5e5e5;
+  border-radius: 50%;
+  border-top-color: #51d4db;
+  height: 50px;
+  width: 50px;
+  margin: 10px auto;
+}
+
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}

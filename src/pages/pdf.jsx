@@ -4,7 +4,7 @@ import Head from "next/head";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import { useEffect } from "react";
-import { logo, fundo } from "../../public/img/imgs-datauri";
+import { logo, fundo, ass } from "../../public/img/imgs-datauri";
 import {
   formateDate,
   formateValue,
@@ -12,8 +12,8 @@ import {
   formateDateNow,
   friendlyFilename,
 } from "../../public/js/index";
-import { totalValueBugets, nada, blabla } from "../data/pdf-content"
-const { htmlToText } = require('html-to-text');
+import { totalValueBugets, nada, contentProducts } from "../data/pdf-content";
+const { htmlToText } = require("html-to-text");
 
 const Pdf = ({ products, categories, bugets, customers }) => {
   const dataBirthdate = formateDate(customers?.birth_date);
@@ -22,30 +22,25 @@ const Pdf = ({ products, categories, bugets, customers }) => {
   const discount = formateValue(bugets?.value - bugets?.discount);
   const data_atual = formateDateNow();
 
+  const bgTitle = bugets?.title;
+  const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
+
   let comment = "";
   products?.map((prod) => {
     comment += `${prod?.technical_details}. `;
   });
 
   const text = htmlToText(comment, {
-      wordwrap: 130
+    wordwrap: 130,
   });
-  // var strippedHtml = comment.replace(/<[^>]+>/g, '');
-  // console.log(strippedHtml)
 
-  // let html = new DOMParser().parseFromString(comment, "text/html");
-  // const floatingElement = new DOMParser().parseFromSrting(comment, 'text/xml')
-  // const string = floatingElement.innerText
-  // console.log(string);
-  // console.log(html);
+  const contentProduct = contentProducts(products, bugets);
 
-  const bla = blabla(products, bugets);
-
-  let res = false
+  let res = false;
   const tt = () => {
-    res = true
-    return totalValueBugets(value)
-  }
+    res = true;
+    return totalValueBugets(value);
+  };
 
   const filename = friendlyFilename(customers?.full_name);
 
@@ -120,22 +115,62 @@ const Pdf = ({ products, categories, bugets, customers }) => {
                 { text: "Descrição", style: "tableHeader" },
                 { text: "Valor Unit.", style: "tableHeader" },
               ],
-              bla.length > 0 ? bla[0]: (res == false? tt() : nada),
-              bla.length > 1 ? bla[1]: (res == false? tt() : nada),
-              bla.length > 2 ? bla[2]: (res == false? tt() : nada),
-              bla.length > 3 ? bla[3]: (res == false? tt() : nada),
-              bla.length > 4 ? bla[4]: (res == false? tt() : nada),
-              bla.length > 5 ? bla[5]: (res == false? tt() : nada),
-              bla.length > 6 ? bla[6]: (res == false? tt() : nada),
-              bla.length > 7 ? bla[7]: (res == false? tt() : nada),
-              bla.length > 8 ? bla[8]: (res == false? tt() : nada),
-              bla.length > 9 ? bla[9]: (res == false? tt() : nada),
+              contentProduct.length > 0
+                ? contentProduct[0]
+                : res == false
+                ? tt()
+                : nada,
+                contentProduct.length > 1
+                ? contentProduct[1]
+                : res == false
+                ? tt()
+                : nada,
+                contentProduct.length > 2
+                ? contentProduct[2]
+                : res == false
+                ? tt()
+                : nada,
+                contentProduct.length > 3
+                ? contentProduct[3]
+                : res == false
+                ? tt()
+                : nada,
+                contentProduct.length > 4
+                ? contentProduct[4]
+                : res == false
+                ? tt()
+                : nada,
+                contentProduct.length > 5
+                ? contentProduct[5]
+                : res == false
+                ? tt()
+                : nada,
+                contentProduct.length > 6
+                ? contentProduct[6]
+                : res == false
+                ? tt()
+                : nada,
+                contentProduct.length > 7
+                ? contentProduct[7]
+                : res == false
+                ? tt()
+                : nada,
+                contentProduct.length > 8
+                ? contentProduct[8]
+                : res == false
+                ? tt()
+                : nada,
+                contentProduct.length > 9
+                ? contentProduct[9]
+                : res == false
+                ? tt()
+                : nada,
             ],
             margin: [0, 0, 0, 20],
           },
         },
         {
-          pageBreak: 'before',
+          pageBreak: "before",
           margin: [0, 5, 0, 15],
           table: {
             widths: ["*"],
@@ -183,6 +218,12 @@ const Pdf = ({ products, categories, bugets, customers }) => {
             "Toda e qualquer assistência técnica do material será prestado por esta empresa sempre que necessário, sendo recomendado a cada oito meses de manutenção para conservação do material. Certos de contarmos com a sua preferência, colocamo-nos ao inteiro dispor para qualquer eventual esclarecimento",
           ],
         },
+        {
+          image: ass,
+          width: 200,
+          margin: [20, 20, 0, 20],
+          alignment: "right",
+        }
       ],
       styles: {
         header: {
@@ -204,7 +245,7 @@ const Pdf = ({ products, categories, bugets, customers }) => {
       },
     };
 
-    const doc = pdfMake.createPdf(docDefinitions); 
+    const doc = pdfMake.createPdf(docDefinitions);
     doc.open({}, window);
     doc.download(`pdf_${filename}`);
     doc.print();
@@ -234,27 +275,14 @@ const Pdf = ({ products, categories, bugets, customers }) => {
       <Head>
         <link rel="stylesheet" href="/css/style.css" />
       </Head>
-      <section
-      // style={{ overflow: "hidden", height: "100vh" }}
-      >
-        {/* <div style={{ height: "100vh" }}>
-          <h1>O download já está sendo iniciado</h1>
-        </div> */}
+      <section>
         {/* <div id="bla" dangerouslySetInnerHTML={{__html:"&amp;nbsp;"}}/> */}
         <div id="teste">
-          <h1>Teste</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolor
-            reiciendis quaerat odio quae ducimus vitae recusandae soluta?
-            Facilis aliquid aperiam asperiores id assumenda labore explicabo
-            fugit accusantium doloremque tempore.
-          </p>
-        </div>
-        <div className="container">
-          <div className="round-head text-center mb-20">
-            <h2 className="orange-color text-u fz-35 pt-40 pb-30">
-              <span className="fw-300 text-dark">Orçamento para</span>teste
-            </h2>
+          <div className="container loader-container">
+            <h2 className="orange-color text-u fz-35 pt-40 pb-30"><span className="fw-300 text-dark">Orçamento para</span>{title}</h2>
+            <h3>Gerando PDF</h3>
+              <p className="fz-16">Se a visualização não ocorrer <span style={{textDecoration: "underline"}} onClick={() => {window.location.reload(false);}}>tente novamente</span></p>
+              <div className="c-loader"></div>
           </div>
         </div>
       </section>

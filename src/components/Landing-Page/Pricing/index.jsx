@@ -41,8 +41,8 @@ const Pricing = ({ bugets, customers, products}) => {
                   </div>
                   
                   <div className="amount text-center">
-                    <table>
-                      <tr>
+                    <table className="table-border">
+                      <tr className="fw-600">
                         <td>Item</td>
                         <td style={{width:"70%"}}>Descrição</td>
                         <td>Valor Unit.</td>
