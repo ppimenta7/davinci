@@ -4,7 +4,7 @@
   "/_document": "pages/_document.js",
   "/404": "pages/404.html",
   "/[slug]": "pages/[slug].js",
-  "/": "pages/index.js",
+  "/": "pages/index.html",
   "/landing-page": "pages/landing-page.html",
   "/pdf": "pages/pdf.html"
 }

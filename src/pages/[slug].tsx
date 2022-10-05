@@ -7,8 +7,7 @@ import { getBugets } from "../services/getBugets";
 import { getCategories } from "../services/getCategories";
 import { getCustomers } from "../services/getCustomers";
 import { getProducts } from "../services/getProducts";
-import LandingPage from "./landing-page";
-import Pdf from "./pdf";
+import IndexPage from ".";
 
 interface SlugInterface {
   pdf: boolean;
@@ -30,21 +29,13 @@ const Slug: NextPage<SlugInterface> = ({
 }) => {
   return (
     <>
-      {!pdf ? (
-        <LandingPage
-          bugets={bugets}
-          products={products}
-          categories={categories}
-          customers={customers}
-        />
-      ) : (
-        <Pdf
-          bugets={bugets}
-          products={products}
-          categories={categories}
-          customers={customers}
-        />
-      )}
+      <IndexPage
+        bugets={bugets}
+        products={products}
+        categories={categories}
+        customers={customers}
+        pdf={pdf}
+      />
     </>
   );
 };
@@ -83,7 +74,6 @@ export const getServerSideProps = async ({ query }) => {
       },
     };
   } catch (error) {
-    console.log(error)
     return {
       redirect: {
         destination: "/404",

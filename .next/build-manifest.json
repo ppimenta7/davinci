@@ -5,26 +5,35 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/XwbzI2JayG7ACu_PsQHWa/_buildManifest.js",
-    "static/XwbzI2JayG7ACu_PsQHWa/_ssgManifest.js",
-    "static/XwbzI2JayG7ACu_PsQHWa/_middlewareManifest.js"
+    "static/dOsGEJDPjNC2xRTymzVXQ/_buildManifest.js",
+    "static/dOsGEJDPjNC2xRTymzVXQ/_ssgManifest.js",
+    "static/dOsGEJDPjNC2xRTymzVXQ/_middlewareManifest.js"
   ],
   "pages": {
     "/": [
-      "static/chunks/webpack-cbf3ae26bc4aae40.js",
+      "static/chunks/webpack-17f3821aec0cb41f.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-2247888345aac039.js",
-      "static/chunks/pages/index-3bc079fe1b6a0a7a.js"
+      "static/chunks/1644ddea-e0270f35e484dc4c.js",
+      "static/chunks/bb02c0f2-702766d1b4d33d73.js",
+      "static/chunks/e78312c5-93877492029a840c.js",
+      "static/chunks/664-41844e7ff48658f9.js",
+      "static/chunks/13-4f7a028c3221eb67.js",
+      "static/chunks/412-5d7d8799053eaa46.js",
+      "static/chunks/437-27b0e8906418e320.js",
+      "static/chunks/190-ab17c4c602101bf5.js",
+      "static/css/49a39a2333f70002.css",
+      "static/chunks/pages/index-39b4c97c0cd1e055.js"
     ],
     "/404": [
-      "static/chunks/webpack-cbf3ae26bc4aae40.js",
+      "static/chunks/webpack-17f3821aec0cb41f.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-2247888345aac039.js",
       "static/chunks/664-41844e7ff48658f9.js",
       "static/chunks/pages/404-562c33103c3d655a.js"
     ],
     "/[slug]": [
-      "static/chunks/webpack-cbf3ae26bc4aae40.js",
+      "static/chunks/webpack-17f3821aec0cb41f.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-2247888345aac039.js",
       "static/chunks/1644ddea-e0270f35e484dc4c.js",
@@ -33,43 +42,43 @@
       "static/chunks/664-41844e7ff48658f9.js",
       "static/chunks/13-4f7a028c3221eb67.js",
       "static/chunks/412-5d7d8799053eaa46.js",
-      "static/chunks/437-d4a10d98d0b8a0e4.js",
-      "static/chunks/467-346339cb978f6dc0.js",
+      "static/chunks/437-27b0e8906418e320.js",
+      "static/chunks/190-ab17c4c602101bf5.js",
       "static/css/49a39a2333f70002.css",
-      "static/chunks/pages/[slug]-6b9ed0476cb41941.js"
+      "static/chunks/pages/[slug]-9feabcb2bfbc086c.js"
     ],
     "/_app": [
-      "static/chunks/webpack-cbf3ae26bc4aae40.js",
+      "static/chunks/webpack-17f3821aec0cb41f.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-2247888345aac039.js",
       "static/css/5588c4286368a0ae.css",
       "static/chunks/pages/_app-1d177dd7f9e990e3.js"
     ],
     "/_error": [
-      "static/chunks/webpack-cbf3ae26bc4aae40.js",
+      "static/chunks/webpack-17f3821aec0cb41f.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-2247888345aac039.js",
       "static/chunks/pages/_error-0a004b8b8498208d.js"
     ],
     "/landing-page": [
-      "static/chunks/webpack-cbf3ae26bc4aae40.js",
+      "static/chunks/webpack-17f3821aec0cb41f.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-2247888345aac039.js",
       "static/chunks/664-41844e7ff48658f9.js",
       "static/chunks/13-4f7a028c3221eb67.js",
-      "static/chunks/467-346339cb978f6dc0.js",
+      "static/chunks/190-ab17c4c602101bf5.js",
       "static/css/49a39a2333f70002.css",
-      "static/chunks/pages/landing-page-36de7fa1e34d5a9c.js"
+      "static/chunks/pages/landing-page-79ecbf9afa0f5a66.js"
     ],
     "/pdf": [
-      "static/chunks/webpack-cbf3ae26bc4aae40.js",
+      "static/chunks/webpack-17f3821aec0cb41f.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-2247888345aac039.js",
       "static/chunks/1644ddea-e0270f35e484dc4c.js",
       "static/chunks/bb02c0f2-702766d1b4d33d73.js",
       "static/chunks/e78312c5-93877492029a840c.js",
       "static/chunks/412-5d7d8799053eaa46.js",
-      "static/chunks/437-d4a10d98d0b8a0e4.js",
+      "static/chunks/437-27b0e8906418e320.js",
       "static/chunks/pages/pdf-ab7de4753e48db4a.js"
     ]
   },

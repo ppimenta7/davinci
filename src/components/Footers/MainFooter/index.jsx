@@ -12,9 +12,7 @@ const Footer = ({ footerClass, footerBg, business, creative }) => {
 
   return (
     <footer className={footerClass} style={{ backgroundImage: footerBg ? "url('img/background/8.jpg')":"url('')" }} ref={footerRef}>
-      {/* {
-        footerBg ? (
-          <div className="cal pb-80 pt-80">
+      {/* <div className="cal pb-80 pt-80">
             <div className="container">
               <div className="row">
                 <div className="col-lg-7">
@@ -36,11 +34,8 @@ const Footer = ({ footerClass, footerBg, business, creative }) => {
               </div>
             </div>
           </div>
-        )
-        :
-        null
-      }
-      {/* <div className="container pt-80 pb-80">
+
+      <div className="container pt-80 pb-80">
         <div className="row">
           <div className="col-lg-3">
             <div className="clumn">
@@ -150,7 +145,7 @@ const Footer = ({ footerClass, footerBg, business, creative }) => {
                 <p className="fz-13">
                   © 2022 Davinci is Proudly Powered by 
                   <span className="underline">
-                    <a href={footerData.theme_author.url} rel="noreferrer" target="_blank" className={`gr-green-text ms-1`}>{ footerData.theme_author.name }</a>
+                    <a href="https://www.penseapp.com.br" rel="noreferrer" target="_blank" className="gr-green-text ms-1">Penseapp</a>
                   </span>
                 </p>
               </div>

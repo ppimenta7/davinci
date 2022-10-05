@@ -70,19 +70,16 @@ const Pdf = ({ products, categories, bugets, customers }) => {
   //   const comments_report = bugets.comments_report == "" ? strippedHtml : bugets.comments_report
 
   const comments_report = bugets?.comments_report;
-  
-  // products.map(() => {
-  //   const um = { text: "idx", style: "tableHeader"}
-  //   const dois = { text: "prod.description", style: "tableHeader" }
-  //   const tres = { text: "Valor", style: "tableHeader" }
-  //   const teste = [um, dois, tres]
-  //   return [teste]
-  // }),
+
+  const teste = ({t}) => {
+
+  }
+
   const bla = [
     [
-      { text: "Item0", style: "tableHeader" },
-      { text: value, style: "tableHeader" },
-      { text: "Valor Unit.", style: "tableHeader" },
+      { text: "1", style: "tableHeader" },
+      { text: "", style: "tableHeader" },
+      { text: '', style: "tableHeader" },
     ],
     [
       { text: "Item1", style: "tableHeader" },
@@ -93,7 +90,7 @@ const Pdf = ({ products, categories, bugets, customers }) => {
       { text: "Item2", style: "tableHeader" },
       { text: value, style: "tableHeader" },
       { text: "Valor Unit.", style: "tableHeader" },
-    ]
+    ],
   ];
 
   const filename = friendlyFilename(customers?.full_name);
@@ -169,14 +166,16 @@ const Pdf = ({ products, categories, bugets, customers }) => {
                 { text: "Descrição", style: "tableHeader" },
                 { text: "Valor Unit.", style: "tableHeader" },
               ],
-              [
-              { text: "1", alignment: "center", margin: [5, 5] },
-              {
-                text: `${comments_report}`,
-                alignment: "center",
-                margin: [5, 5],
-              },
-              { text: ``, alignment: "center", margin: [5, 5] },],
+              products.length > 0 & bla.length > 0 ? bla[0]: [{},{},{},],
+              // products.length > 1 & bla.length > 1 ? bla[1]: [{},{},{},],
+              // products.length > 2 & bla.length > 2 ? bla[2]: [{},{},{},],
+              // products.length > 3 & bla.length > 3 ? bla[3]: [{},{},{},],
+              // products.length > 4 & bla.length > 4 ? bla[4]: [{},{},{},],
+              // products.length > 5 & bla.length > 5 ? bla[5]: [{},{},{},],
+              // products.length > 6 & bla.length > 6 ? bla[6]: 
+              // products.length > 7 & bla.length > 7 ? bla[7]: 
+              // products.length > 8 & bla.length > 8 ? bla[8]: 
+              // products.length > 9 & bla.length > 9 ? bla[9]: 
               [
                 {
                   border: [false, true, true, false],
@@ -264,8 +263,8 @@ const Pdf = ({ products, categories, bugets, customers }) => {
     };
 
     pdfMake.createPdf(docDefinitions).download(`pdf_${filename}`);
-    // pdfMake.createPdf(docDefinitions).open({}, window);
-    pdfMake.createPdf(docDefinitions).open();
+    pdfMake.createPdf(docDefinitions).open({}, window);
+    // pdfMake.createPdf(docDefinitions).open();
   }
 
   useEffect(() => {
