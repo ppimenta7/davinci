@@ -12,6 +12,7 @@ import {
   formateDateNow,
   friendlyFilename,
 } from "../../public/js/index";
+import { totalValueBugets, nada, blabla } from "../data/pdf-content"
 
 const Pdf = ({ products, categories, bugets, customers }) => {
   const dataBirthdate = formateDate(customers?.birth_date);
@@ -19,20 +20,6 @@ const Pdf = ({ products, categories, bugets, customers }) => {
   const value = formateValue(bugets?.value);
   const discount = formateValue(bugets?.value - bugets?.discount);
   const data_atual = formateDateNow();
-  //   teste?.push(`
-  //     { text: ${++idx}, alignment: "center", margin: [5, 5] },
-  //     { text: '${product.description}', alignment: "center", margin: [5, 5] },
-  //     { text: '', alignment: "center", margin: [5, 5] },`
-  //   )
-  // })
-
-  // const pp = products.map((prod, idx) =>
-  //   [
-  //   { text: idx, alignment: "center", margin: [5, 5] },
-  //   { text: `${prod.description}`, alignment: "center", margin: [5, 5] },
-  //   { text: ``, alignment: "center", margin: [5, 5] },
-  // ]
-  // );
 
   // const p = pp.map(
   //   function(obj) {
@@ -40,58 +27,27 @@ const Pdf = ({ products, categories, bugets, customers }) => {
   //       return obj[key];
   //   })
   // });
-  // console.log(p)
-  // const pop = p.map(pop => pop)
-  // pop.map(p1 => console.log(p1))
 
-  // const comment = "";
-  // products.map((prod) => {
-  //   comment += `${prod.technical_details}. `;
-  // });
+  let comment = "";
+  products?.map((prod) => {
+    comment += `${prod?.technical_details}. `;
+  });
+  // var strippedHtml = comment.replace(/<[^>]+>/g, '');
+  // console.log(strippedHtml)
 
-  // //   let html = new DOMParser().parseFromString(comment, "text/html");
+  // let html = new DOMParser().parseFromString(comment, "text/html");
   // const floatingElement = new DOMParser().parseFromSrting(comment, 'text/xml')
   // const string = floatingElement.innerText
   // console.log(string);
-  // // 	console.log(html);
-  // 	// const d = comment.replace(/<style([\s\S]*?)<\/style>/gi, '')
-  // 	// 			.replace(/<script([\s\S]*?)<\/script>/gi, '')
-  // 	// 			.replace(/<\/div>/ig, '\n')
-  // 	// 			.replace(/<\/li>/ig, '\n')
-  // 	// 			.replace(/<li>/ig, '  *  ')
-  // 	// 			.replace(/<\/ul>/ig, '\n')
-  // 	// 			.replace(/<\/p>/ig, '\n')
-  // 	// 			.replace(/<br\s*[\/]?>/gi, "\n")
-  // 	// 			.replace(/<[^>]+>/ig, '');
-  // 	// console.log(d)
+  // console.log(html);
 
-  // var strippedHtml = comment.replace(/<[^>]+>/g, '');
+  const bla = blabla(products, bugets);
 
-  //   const comments_report = bugets.comments_report == "" ? strippedHtml : bugets.comments_report
-
-  const comments_report = bugets?.comments_report;
-
-  const teste = ({t}) => {
-
+  let res = false
+  const tt = () => {
+    res = true
+    return totalValueBugets(value)
   }
-
-  const bla = [
-    [
-      { text: "1", style: "tableHeader" },
-      { text: "", style: "tableHeader" },
-      { text: '', style: "tableHeader" },
-    ],
-    [
-      { text: "Item1", style: "tableHeader" },
-      { text: value, style: "tableHeader" },
-      { text: "Valor Unit.", style: "tableHeader" },
-    ],
-    [
-      { text: "Item2", style: "tableHeader" },
-      { text: value, style: "tableHeader" },
-      { text: "Valor Unit.", style: "tableHeader" },
-    ],
-  ];
 
   const filename = friendlyFilename(customers?.full_name);
 
@@ -158,7 +114,7 @@ const Pdf = ({ products, categories, bugets, customers }) => {
           table: {
             headerRows: 1,
             widths: ["auto", "*", "auto"],
-            // dontBreakRows: true,
+            // dontBreakRows: false,
             // keepWithHeaderRows: 1,
             body: [
               [
@@ -166,28 +122,16 @@ const Pdf = ({ products, categories, bugets, customers }) => {
                 { text: "Descrição", style: "tableHeader" },
                 { text: "Valor Unit.", style: "tableHeader" },
               ],
-              products.length > 0 & bla.length > 0 ? bla[0]: [{},{},{},],
-              // products.length > 1 & bla.length > 1 ? bla[1]: [{},{},{},],
-              // products.length > 2 & bla.length > 2 ? bla[2]: [{},{},{},],
-              // products.length > 3 & bla.length > 3 ? bla[3]: [{},{},{},],
-              // products.length > 4 & bla.length > 4 ? bla[4]: [{},{},{},],
-              // products.length > 5 & bla.length > 5 ? bla[5]: [{},{},{},],
-              // products.length > 6 & bla.length > 6 ? bla[6]: 
-              // products.length > 7 & bla.length > 7 ? bla[7]: 
-              // products.length > 8 & bla.length > 8 ? bla[8]: 
-              // products.length > 9 & bla.length > 9 ? bla[9]: 
-              [
-                {
-                  border: [false, true, true, false],
-                  text: "",
-                },
-                {
-                  text: "Total c/ Desconto",
-                  alignment: "right",
-                  margin: [10, 5, 10, 5],
-                },
-                { text: `${value}`, bold: true, margin: [10, 5, 10, 5] },
-              ],
+              bla.length > 0 ? bla[0]: (res == false? tt() : nada),
+              bla.length > 1 ? bla[1]: (res == false? tt() : nada),
+              bla.length > 2 ? bla[2]: (res == false? tt() : nada),
+              bla.length > 3 ? bla[3]: (res == false? tt() : nada),
+              bla.length > 4 ? bla[4]: (res == false? tt() : nada),
+              bla.length > 5 ? bla[5]: (res == false? tt() : nada),
+              bla.length > 6 ? bla[6]: (res == false? tt() : nada),
+              bla.length > 7 ? bla[7]: (res == false? tt() : nada),
+              bla.length > 8 ? bla[8]: (res == false? tt() : nada),
+              bla.length > 9 ? bla[9]: (res == false? tt() : nada),
             ],
             margin: [0, 0, 0, 20],
           },
