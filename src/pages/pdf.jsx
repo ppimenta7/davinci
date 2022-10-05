@@ -206,10 +206,9 @@ const Pdf = ({ products, categories, bugets, customers }) => {
 
     const doc = pdfMake.createPdf(docDefinitions); 
     doc.getBase64((data) => { window.location.href = 'data:application/pdf;base64,' + data; });
-
-    pdfMake.createPdf(docDefinitions).download(`pdf_${filename}`);
+    doc.download(`pdf_${filename}`);
     // pdfMake.createPdf(docDefinitions).open({}, window);
-    pdfMake.createPdf(docDefinitions).open();
+    doc.open();
   }
 
 
