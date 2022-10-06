@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-
 import { formateDate, formateValue, formataCPF } from "../../../../public/js/index";
 const { htmlToText } = require('html-to-text');
 

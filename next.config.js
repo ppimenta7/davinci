@@ -17,6 +17,8 @@ const nextConfig = {
     path: '',
   },
   pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts'], 
+  webpack: (config) => config,
+
 }
 
 module.exports = nextConfig

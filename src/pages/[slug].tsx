@@ -7,7 +7,8 @@ import { getBugets } from "../services/getBugets";
 import { getCategories } from "../services/getCategories";
 import { getCustomers } from "../services/getCustomers";
 import { getProducts } from "../services/getProducts";
-import IndexPage from ".";
+import dynamic from "next/dynamic";
+const IndexPage = dynamic(() => import("."));
 
 interface SlugInterface {
   pdf: boolean;
@@ -20,23 +21,10 @@ interface SlugInterface {
   };
 }
 
-const Slug: NextPage<SlugInterface> = ({
-  pdf,
-  bugets,
-  products,
-  categories,
-  customers,
-  params
-}) => {
+const Slug: NextPage<SlugInterface> = ({ pdf, bugets, products, categories, customers, params }) => {
   return (
     <>
-      <IndexPage
-        params={params}
-        bugets={bugets}
-        products={products}
-        categories={categories}
-        customers={customers}
-        pdf={pdf}
+      <IndexPage params={params} bugets={bugets} products={products} categories={categories} customers={customers} pdf={pdf}
       />
     </>
   );
@@ -53,16 +41,10 @@ export const getServerSideProps = async ({ query }) => {
     const bugets = await getBugets(id).then((res) => res.data);
     const IDproducts = bugets.products.join();
 
-    const products = await getProducts(IDproducts).then(
-      (res) => res.data.results
-    );
+    const products = await getProducts(IDproducts).then((res) => res.data.results);
 
-    const IDCategorys = await products.map(
-      (products: ProductsInterface) => products.category
-    );
-    const categories = await getCategories(IDCategorys).then(
-      (res) => res.data.results
-    );
+    const IDCategorys = await products.map((products: ProductsInterface) => products.category);
+    const categories = await getCategories(IDCategorys).then((res) => res.data.results);
 
     const customers = await getCustomers(bugets.customer);
 

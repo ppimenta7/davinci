@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 
 SwiperCore.use([Navigation, Controller]);
 
-const Testimonials = ({ curve }) => {
+const Testimonials = () => {
   const galleryTop = useRef();
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
@@ -101,7 +101,6 @@ const Testimonials = ({ curve }) => {
           </div>
         </div>
 
-        {curve ? (
           <div className="curve-top">
             <svg
               preserveAspectRatio="none"
@@ -123,7 +122,6 @@ const Testimonials = ({ curve }) => {
               </g>
             </svg>
           </div>
-        ) : null}
 
         <div className="curve-buttom">
           <svg

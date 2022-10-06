@@ -1,11 +1,14 @@
-import { GetServerSideProps, NextPage } from "next";
-import LandingPage from "./landing-page";
+import { NextPage } from "next";
+import dynamic from "next/dynamic";
+
 import { BugetsInterface } from "../interfaces/bugetsInterface";
 import { CategoriesInterface } from "../interfaces/categoriesInterface";
 import { CustomersInterface } from "../interfaces/customersInterface";
 import { ProductsInterface } from "../interfaces/productsInterface";
-import Pdf from "./pdf";
-import NotFoundPage from "./404"
+
+const LandingPage = dynamic(() => import("./landing-page"));
+const Pdf = dynamic(() => import("./pdf"));
+const NotFoundPage = dynamic(() => import("./404"));
 
 interface IndexPageInterface {
   bugets: BugetsInterface;
@@ -19,7 +22,7 @@ interface IndexPageInterface {
 const IndexPage: NextPage<IndexPageInterface> = ({ bugets, products, categories, customers, pdf, params }) => {
   return params == undefined ? <NotFoundPage /> : (
     pdf == true ? 
-        <Pdf bugets={bugets} products={products} categories={categories} customers={customers} />
+        <Pdf bugets={bugets} products={products} customers={customers} />
       : <LandingPage bugets={bugets} products={products} categories={categories} customers={customers} />
       );
 };

@@ -2,23 +2,24 @@
 // eslint-disable-next-line react/no-children-prop
 import { useState, useEffect } from "react";
 import Head from "next/head";
-//= Layout
+import dynamic from "next/dynamic";
+
 import MainLightLayout from "../layouts/main-light";
 import Navbar from "../components/Navbars/MainNavbar/index";
-//= Components
-import Header from "../components/Landing-Page/Header";
-import Services from "../components/Landing-Page/Services";
-import Team from "../components/Landing-Page/Team";
-import Portfolio from "../components/Landing-Page/Portfolio";
-import Portfolio1 from "../components/Landing-Page/Portfolio1";
-import Pricing from "../components/Landing-Page/Pricing";
-import Testimonials from "../components/Landing-Page/Testimonials";
-import About from "../components/Landing-Page/About";
-import Section from "../components/Landing-Page/Section";
-import Info from "../components/Landing-Page/Info";
-import Login from "../components/Landing-Page/Login";
-import ExpiratePage from "../components/Landing-Page/ExpiratePage";
-import Footer from "../components/Footers/MainFooter";
+
+const Header = dynamic(() => import("../components/Landing-Page/Header"));
+const Services = dynamic(() => import("../components/Landing-Page/Services"));
+const Team = dynamic(() => import("../components/Landing-Page/Team"));
+const Portfolio = dynamic(() => import("../components/Landing-Page/Portfolio"));
+const Portfolio1 = dynamic(() => import("../components/Landing-Page/Portfolio1"));
+const Pricing = dynamic(() => import("../components/Landing-Page/Pricing"));
+const Testimonials = dynamic(() => import("../components/Landing-Page/Testimonials"));
+const About = dynamic(() => import("../components/Landing-Page/About"));
+const Section = dynamic(() => import("../components/Landing-Page/Section"));
+const Info = dynamic(() => import("../components/Landing-Page/Info"));
+const Login = dynamic(() => import("../components/Landing-Page/Login"));
+const ExpiratePage = dynamic(() => import("../components/Landing-Page/ExpiratePage"));
+const Footer = dynamic(() => import("../components/Footers/MainFooter"));
 
 const LandingPage = ({ bugets, products, categories, customers }) => {
   const dateNow = new Date();
@@ -68,11 +69,7 @@ const LandingPage = ({ bugets, products, categories, customers }) => {
         <title>Davinci - Orçamento Hotsite</title>
       </Head>
 
-      <MainLightLayout
-        type="landing-preview"
-        links={nav_links}
-        navTheme="light"
-      >
+      <MainLightLayout links={nav_links}>
         {acess ? (
           status || acessType == "admin" ? (
             <>
@@ -88,19 +85,14 @@ const LandingPage = ({ bugets, products, categories, customers }) => {
                 />
                 <About products={products} categories={categories} />
                 <Section />
-                <Testimonials curve={true} />
+                <Testimonials/>
                 <Info />
                 <Pricing
                   bugets={bugets}
                   customers={customers}
                   products={products}
                 />
-                <Footer
-                  footerClass="main-footer bg-dark-blue bg-img"
-                  footerBg={true}
-                  business={true}
-                  creative={undefined}
-                />
+                <Footer/>
               </main>
             </>
           ) : (

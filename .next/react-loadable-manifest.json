@@ -3,7 +3,7 @@
     "id": 4668,
     "files": [
       "static/chunks/72a30a16.9ca1d3804e111872.js",
-      "static/chunks/812.c6323ad85c3036f3.js"
+      "static/chunks/812.2390eda4c3cc5fdd.js"
     ]
   },
   "..\\..\\node_modules\\jspdf\\dist\\jspdf.es.min.js -> dompurify": {
@@ -16,6 +16,127 @@
     "id": 1120,
     "files": [
       "static/chunks/ad7f724d.a1a0900eadd4038f.js"
+    ]
+  },
+  "[slug].tsx -> .": {
+    "id": 5970,
+    "files": [
+      "static/chunks/970.d2b95bc954539268.js"
+    ]
+  },
+  "index.tsx -> ./404": {
+    "id": 8609,
+    "files": [
+      "static/chunks/664-41844e7ff48658f9.js",
+      "static/chunks/609.bc0d63828a28bdd1.js"
+    ]
+  },
+  "index.tsx -> ./landing-page": {
+    "id": 6007,
+    "files": [
+      "static/chunks/664-41844e7ff48658f9.js",
+      "static/chunks/7.034f562d15b7c178.js"
+    ]
+  },
+  "index.tsx -> ./pdf": {
+    "id": 6053,
+    "files": [
+      "static/chunks/1644ddea-e0270f35e484dc4c.js",
+      "static/chunks/bb02c0f2-702766d1b4d33d73.js",
+      "static/chunks/e78312c5-93877492029a840c.js",
+      "static/chunks/647-5ae4ada0c3ee9baa.js",
+      "static/chunks/412-5d7d8799053eaa46.js",
+      "static/chunks/53-50b8a56192d7bf9d.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Footers/MainFooter": {
+    "id": 4794,
+    "files": [
+      "static/chunks/794.10dd885f4ca556e4.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Landing-Page/About": {
+    "id": 5814,
+    "files": [
+      "static/chunks/627.fc454b09ae6a4d8e.js",
+      "static/chunks/408.10c4443bd4661b0d.js",
+      "static/css/4f881434dcbd6f6d.css",
+      "static/chunks/33.4f11c893ec1f8476.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Landing-Page/ExpiratePage": {
+    "id": 3298,
+    "files": [
+      "static/chunks/298.b5f809cc33080c2b.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Landing-Page/Header": {
+    "id": 57,
+    "files": [
+      "static/chunks/627.fc454b09ae6a4d8e.js",
+      "static/css/4f881434dcbd6f6d.css",
+      "static/chunks/486.0cbe9e729d5dfb54.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Landing-Page/Info": {
+    "id": 97,
+    "files": [
+      "static/chunks/97.e18e8a5327ba4f39.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Landing-Page/Login": {
+    "id": 2798,
+    "files": [
+      "static/chunks/798.99d4be8bc44b5894.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Landing-Page/Portfolio": {
+    "id": 2248,
+    "files": [
+      "static/chunks/352.178a7fde45f547ae.js",
+      "static/chunks/248.468898857aa84024.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Landing-Page/Portfolio1": {
+    "id": 2960,
+    "files": [
+      "static/chunks/960.cefef9a6a551545d.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Landing-Page/Pricing": {
+    "id": 5728,
+    "files": [
+      "static/chunks/647-5ae4ada0c3ee9baa.js",
+      "static/chunks/728.28357f96f512a4fb.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Landing-Page/Section": {
+    "id": 2739,
+    "files": [
+      "static/css/b48a2d331a296f22.css",
+      "static/chunks/739.6dea30d36a7b4636.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Landing-Page/Services": {
+    "id": 1800,
+    "files": [
+      "static/chunks/800.34e4d5cdbcf9600c.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Landing-Page/Team": {
+    "id": 3446,
+    "files": [
+      "static/chunks/627.fc454b09ae6a4d8e.js",
+      "static/css/4f881434dcbd6f6d.css",
+      "static/chunks/255.cbfb2dd9f69b1fd6.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Landing-Page/Testimonials": {
+    "id": 7190,
+    "files": [
+      "static/chunks/352.178a7fde45f547ae.js",
+      "static/css/8292de043a10ca3b.css",
+      "static/chunks/190.3dee024834075ecb.js"
     ]
   }
 }

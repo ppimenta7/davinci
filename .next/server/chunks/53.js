@@ -172,7 +172,7 @@ const contentProducts = (products, bugets)=>{
 
 
 const { htmlToText  } = __webpack_require__(816);
-const Pdf = ({ products , categories , bugets , customers  })=>{
+const Pdf = ({ products , bugets , customers  })=>{
     const dataBirthdate = (0,js/* formateDate */.F8)(customers?.birth_date);
     const cpf = (0,js/* formataCPF */.bE)(customers?.cpf);
     const value = (0,js/* formateValue */.es)(bugets?.value);

@@ -15,7 +15,7 @@ import {
 import { totalValueBugets, nada, contentProducts } from "../data/pdf-content";
 const { htmlToText } = require("html-to-text");
 
-const Pdf = ({ products, categories, bugets, customers }) => {
+const Pdf = ({ products, bugets, customers }) => {
   const dataBirthdate = formateDate(customers?.birth_date);
   const cpf = formataCPF(customers?.cpf);
   const value = formateValue(bugets?.value);

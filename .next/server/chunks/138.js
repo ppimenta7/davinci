@@ -130,7 +130,7 @@ const Navbar = ({ links , navbarRef , theme  })=>{
 /* eslint-disable @next/next/no-css-tags */ 
 
 
-const MainLayout = ({ children , links , type , navTheme  })=>{
+const MainLayout = ({ children , links  })=>{
     // const navbarRef = useRef(null);
     // useEffect(() => {
     //   var navbar = navbarRef.current;

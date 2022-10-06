@@ -18,7 +18,7 @@ const About = ({ products, categories }) => {
 
   return (
     <div data-scroll-index="3">
-      {products?.map((product, idx) => (
+      {products?.map((product) => (
         <section
           style={{ backgroundColor: "#f0f0f0" }}
           key={product.id}

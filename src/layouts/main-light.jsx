@@ -4,8 +4,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbars/AppNavbar";
 
 
-const MainLayout = ({ children, links, type, navTheme }) => {
-
+const MainLayout = ({ children, links}) => {
 
   // const navbarRef = useRef(null);
 
@@ -21,21 +20,19 @@ const MainLayout = ({ children, links, type, navTheme }) => {
   //   });
   // }, [navbarRef]);
 
-
   return (
     <>
       <Head>
         <link rel="stylesheet" href="/css/plugins.css" />
         <link rel="stylesheet" href="/css/style.css" />
       </Head>
-
-
+      
           {/* <Navbar
             navbarRef={navbarRef} 
             logoTheme={navTheme} 
-            theme={navTheme ? navTheme : 'light'} 
+            theme={'light'} 
             links={links} 
-            container={type} 
+            container={"landing-preview"} 
           /> */}
           { children }
     </>
