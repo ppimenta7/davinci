@@ -120,47 +120,47 @@ const Pdf = ({ products, categories, bugets, customers }) => {
                 : res == false
                 ? tt()
                 : nada,
-                contentProduct.length > 1
+              contentProduct.length > 1
                 ? contentProduct[1]
                 : res == false
                 ? tt()
                 : nada,
-                contentProduct.length > 2
+              contentProduct.length > 2
                 ? contentProduct[2]
                 : res == false
                 ? tt()
                 : nada,
-                contentProduct.length > 3
+              contentProduct.length > 3
                 ? contentProduct[3]
                 : res == false
                 ? tt()
                 : nada,
-                contentProduct.length > 4
+              contentProduct.length > 4
                 ? contentProduct[4]
                 : res == false
                 ? tt()
                 : nada,
-                contentProduct.length > 5
+              contentProduct.length > 5
                 ? contentProduct[5]
                 : res == false
                 ? tt()
                 : nada,
-                contentProduct.length > 6
+              contentProduct.length > 6
                 ? contentProduct[6]
                 : res == false
                 ? tt()
                 : nada,
-                contentProduct.length > 7
+              contentProduct.length > 7
                 ? contentProduct[7]
                 : res == false
                 ? tt()
                 : nada,
-                contentProduct.length > 8
+              contentProduct.length > 8
                 ? contentProduct[8]
                 : res == false
                 ? tt()
                 : nada,
-                contentProduct.length > 9
+              contentProduct.length > 9
                 ? contentProduct[9]
                 : res == false
                 ? tt()
@@ -223,7 +223,7 @@ const Pdf = ({ products, categories, bugets, customers }) => {
           width: 200,
           margin: [20, 20, 0, 20],
           alignment: "right",
-        }
+        },
       ],
       styles: {
         header: {
@@ -245,10 +245,17 @@ const Pdf = ({ products, categories, bugets, customers }) => {
       },
     };
 
+    function carregado() {
+      const loader = document.querySelector("#loader");
+      const title = document.querySelector("#title");
+      loader.style.display = "none";
+      title.innerHTML = "Sucesso!";
+    }
     const doc = pdfMake.createPdf(docDefinitions);
-    doc.getBase64((data) => { window.location.href = 'data:application/pdf;base64,' + data; });
-    // doc.open({}, window);
-    doc.download(`pdf_${filename}`);
+    setTimeout(carregado, 5000);
+    doc.open({}, window);
+    // doc.getBase64((data) => { window.location.href = 'data:application/pdf;base64,' + data; });
+    // doc.download(`pdf_${filename}`);
   }
 
   useEffect(() => {
@@ -279,10 +286,18 @@ const Pdf = ({ products, categories, bugets, customers }) => {
         {/* <div id="bla" dangerouslySetInnerHTML={{__html:"&amp;nbsp;"}}/> */}
         <div id="teste">
           <div className="container loader-container">
-            <h2 className="orange-color text-u fz-35 pt-40 pb-30"><span className="fw-300 text-dark">Orçamento para</span>{title}</h2>
-            <h3>Gerando PDF</h3>
-              <p className="fz-16">Se a visualização não ocorrer <span style={{textDecoration: "underline"}} onClick={() => {window.location.reload(false);}}>tente novamente</span></p>
-              <div className="c-loader"></div>
+            <h2 className="orange-color text-u fz-35 pt-40 pb-30">
+              <span className="fw-300 text-dark">Orçamento para</span>
+              {title}
+            </h2>
+            <h3 id="title">Gerando PDF</h3>
+            <p className="fz-16">
+              Se a geração não ocorrer{" "}
+              <span style={{ textDecoration: "underline" }} onClick={gerarPDF}>
+                tente novamente
+              </span>
+            </p>
+            <div id="loader" className="c-loader"></div>
           </div>
         </div>
       </section>

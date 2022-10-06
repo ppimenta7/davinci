@@ -26,10 +26,12 @@ const Slug: NextPage<SlugInterface> = ({
   products,
   categories,
   customers,
+  params
 }) => {
   return (
     <>
       <IndexPage
+        params={params}
         bugets={bugets}
         products={products}
         categories={categories}
@@ -71,6 +73,7 @@ export const getServerSideProps = async ({ query }) => {
         categories,
         customers,
         pdf: pdf,
+        params: params,
       },
     };
   } catch (error) {
