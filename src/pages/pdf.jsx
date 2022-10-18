@@ -16,6 +16,7 @@ import { totalValueBugets, nada, contentProducts } from "../data/pdf-content";
 const { htmlToText } = require("html-to-text");
 
 const Pdf = ({ products, bugets, customers }) => {
+
   const dataBirthdate = formateDate(customers?.birth_date);
   const cpf = formataCPF(customers?.cpf);
   const value = formateValue(bugets?.value);
@@ -24,6 +25,8 @@ const Pdf = ({ products, bugets, customers }) => {
 
   const bgTitle = bugets?.title;
   const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
+  
+  const version = bugets?.version
 
   let comment = "";
   products?.map((prod) => {
@@ -97,10 +100,19 @@ const Pdf = ({ products, bugets, customers }) => {
           ],
           margin: [0, 0, 0, 50],
         },
-
         {
-          text: "PROPOSTA COMERCIAL PARA SOLUÇÃO I",
-          bold: true,
+          table: {
+            headerRows: 1,
+            widths: ["*", "auto"],
+            // dontBreakRows: false,
+            // keepWithHeaderRows: 1,
+            body: [
+              [
+                { text: "PROPOSTA COMERCIAL PARA SOLUÇÃO I", bold: true, noWrap: true, alignment: 'left' },
+                { text: `v${version}`, bold: true, alignment: 'right', noWrap: true,},
+              ],
+            ],
+          },layout: "noBorders", margin: [10, 0, 15, 0]
         },
         {
           margin: [0, 5, 0, 15],

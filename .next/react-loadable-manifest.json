@@ -46,7 +46,7 @@
       "static/chunks/e78312c5-93877492029a840c.js",
       "static/chunks/647-5ae4ada0c3ee9baa.js",
       "static/chunks/412-5d7d8799053eaa46.js",
-      "static/chunks/53-50b8a56192d7bf9d.js"
+      "static/chunks/53-f0a9eb1932d68704.js"
     ]
   },
   "landing-page.tsx -> ../components/Footers/MainFooter": {
@@ -107,7 +107,7 @@
     "id": 5728,
     "files": [
       "static/chunks/647-5ae4ada0c3ee9baa.js",
-      "static/chunks/728.28357f96f512a4fb.js"
+      "static/chunks/728.d76efb734735d142.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Section": {

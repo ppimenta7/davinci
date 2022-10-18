@@ -8,6 +8,7 @@ import { getCategories } from "../services/getCategories";
 import { getCustomers } from "../services/getCustomers";
 import { getProducts } from "../services/getProducts";
 import dynamic from "next/dynamic";
+import { getBugetsHistory } from "../services/getBugetsHistory";
 const IndexPage = dynamic(() => import("."));
 
 interface SlugInterface {
@@ -32,14 +33,33 @@ const Slug: NextPage<SlugInterface> = ({ pdf, bugets, products, categories, cust
 
 export const getServerSideProps = async ({ query }) => {
   const params = query.slug;
-  const pdf = params.includes("pdf");
 
+  // const params = "orcamento-para-solucao-de-amputacao-chopart&19"
+  // const params = "pdf=orcamento-para-solucao-de-amputacao-chopart&22"
+
+  // const params = "historico2=orcamento-para-solucao-de-amputacao-chopart&22-versao=1"
+  // const params = "historico-pdf3=orcamento-para-solucao-de-amputacao-chopart&22-versao=2"
+
+  const type = params.includes("historico") ? 'historico' : (params.includes("pdf") ? 'pdf' : 'hotsite');
+  const pdf = params.includes("pdf") ? true : false
+
+  const paramSplit = params.split("&");
+  const history = paramSplit[0].split("=");
+  
+  const historyID = history[0].replace(/historico/i, "").replace(/-pdf/i, "");
+  const paramID = type == 'historico' ? historyID : paramSplit[1]
+
+  const id = typeof params === "string" ? paramID : "";
+  console.log(id)
+  
   try {
-    const paramSplit = params.split("&");
-    const id = typeof params === "string" ? paramSplit.at(-1) : "";
+    let bugets;
 
-    const bugets = await getBugets(id).then((res) => res.data);
-    const IDproducts = bugets.products.join();
+    if (type == 'historico') { bugets = await getBugetsHistory(id).then((res) => res.data); }
+    else { bugets = await getBugets(id).then((res) => res.data); }
+    // bugets = await getBugets(id).then((res) => res.data);
+
+    const IDproducts = bugets.products.join()
 
     const products = await getProducts(IDproducts).then((res) => res.data.results);
 

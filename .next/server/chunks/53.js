@@ -180,6 +180,7 @@ const Pdf = ({ products , bugets , customers  })=>{
     const data_atual = (0,js/* formateDateNow */.tb)();
     const bgTitle = bugets?.title;
     const title1 = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
+    const version = bugets?.version;
     let comment = "";
     products?.map((prod)=>{
         comment += `${prod?.technical_details}. `;
@@ -302,8 +303,38 @@ const Pdf = ({ products , bugets , customers  })=>{
                     ]
                 },
                 {
-                    text: "PROPOSTA COMERCIAL PARA SOLU\xc7\xc3O I",
-                    bold: true
+                    table: {
+                        headerRows: 1,
+                        widths: [
+                            "*",
+                            "auto"
+                        ],
+                        // dontBreakRows: false,
+                        // keepWithHeaderRows: 1,
+                        body: [
+                            [
+                                {
+                                    text: "PROPOSTA COMERCIAL PARA SOLU\xc7\xc3O I",
+                                    bold: true,
+                                    noWrap: true,
+                                    alignment: "left"
+                                },
+                                {
+                                    text: `v${version}`,
+                                    bold: true,
+                                    alignment: "right",
+                                    noWrap: true
+                                }, 
+                            ], 
+                        ]
+                    },
+                    layout: "noBorders",
+                    margin: [
+                        10,
+                        0,
+                        15,
+                        0
+                    ]
                 },
                 {
                     margin: [

@@ -33,12 +33,10 @@ const Pricing = ({ bugets, customers, products}) => {
             </div>
 
                 <div className={`item md-mb50`}>
-                  <div className="round-head type">
-                    <h6 className="ls2 text-u fz-12 mb-30">
-                    Proposta Comercial para Solução I <span></span>
-                    </h6>
+                  <div className="round-head span type mb-30 valign text-black">
+                      <h6 className="ls2 text-u fz-12">Proposta Comercial para Solução I</h6>
+                      <span className="ls2 fz-12 fw-600">v{bugets?.version}</span>
                   </div>
-                  
                   <div className="amount text-center">
                     <table className="table-border">
                       <tr className="fw-600">

@@ -107,15 +107,21 @@ const Pricing = ({ bugets , customers , products  })=>{
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                 className: `item md-mb50`,
                                 children: [
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                        className: "round-head type",
-                                        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h6", {
-                                            className: "ls2 text-u fz-12 mb-30",
-                                            children: [
-                                                "Proposta Comercial para Solu\xe7\xe3o I ",
-                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {})
-                                            ]
-                                        })
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: "round-head span type mb-30 valign text-black",
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h6", {
+                                                className: "ls2 text-u fz-12",
+                                                children: "Proposta Comercial para Solu\xe7\xe3o I"
+                                            }),
+                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
+                                                className: "ls2 fz-12 fw-600",
+                                                children: [
+                                                    "v",
+                                                    bugets?.version
+                                                ]
+                                            })
+                                        ]
                                     }),
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                         className: "amount text-center",

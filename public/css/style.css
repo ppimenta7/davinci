@@ -2913,21 +2913,18 @@ img.left {
 .round-head h6 {
   position: relative;
   display: inline-block;
-  padding: 15px 40px;
   z-index: 2;
 }
 
-.round-head h6 span {
-  position: absolute;
-  top: 0;
-  left: 0;
+.round-head.span{
   width: 100%;
-  height: 100%;
   border-radius: 30px;
-  background-color: #ffae45;
-  opacity: 0.5;
-  z-index: -1;
+  background-color: #ffd6a2;
+  color: #181818!important;
+  padding: 15px 40px;
+  justify-content: space-between;
 }
+
 
 .round-head h6 .dot {
   position: absolute;
@@ -7514,10 +7511,10 @@ td{
   transform: scale(1.02);
 }
 
-.price .item .type h6 {
+/* .price .item .type h6 {
   width: 100%;
   text-align: center;
-}
+} */
 
 .price .item .amount {
   padding-bottom: 40px;
@@ -10700,7 +10697,7 @@ body.index-main .bg-gray {
   .round-head h6,
   .blog-grid .s-title {
     padding: 0;
-    margin-top: 15px;
+    /* margin-top: 15px; */
   }
   .work-carsouel .work-crsol {
     -webkit-clip-path: none;

@@ -5,7 +5,7 @@ exports.id = 219;
 exports.ids = [219,405,545,429];
 exports.modules = {
 
-/***/ 6774:
+/***/ 8898:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -93,7 +93,26 @@ const getProducts = async (IDproducts)=>{
 // EXTERNAL MODULE: ./node_modules/next/dynamic.js
 var dynamic = __webpack_require__(5152);
 var dynamic_default = /*#__PURE__*/__webpack_require__.n(dynamic);
+;// CONCATENATED MODULE: ./src/services/getBugetsHistory.ts
+
+const getBugetsHistory_options = {
+    headers: {
+        Authorization: "Token d06fb4379620cbd4ca06289a4850b882860da1e8",
+        "X-Bridge-Settings": "gAAAAABjDlJApy_5HrRIuXa70jw4jBGUIzOUq-mEcDSlXiJHwgOjIDCzbbwLeucEBLUxxVZm5a2Alw3xCwpb3NnwunZUkROTWLF9rdBnyocZEFHw0luFRIhAU44P9To5v7R7_SRxlM1wUqkPpGb_HVUDm0oqVvXspWbDzhwxgbGWBaE6DgTcT0tX3nzz_2qpt1TmC9G1BAbv0ouZQPJl6qbxWn0gaBGOgkV-_msKWvJinE3GgyN7zL0C5BlOlJPDEz7T44mCzfQ0EUUr1vGk6178aDVzZj5THW5Xv3F7xRqC4iivg3rLFNki16LMQrZsAEtC9xKHeJ0mfksNc2ku6171Q_q8j8UkhlwtkOZr9KGJ4tJHq8LWuNytd581UT2LwW74ifXyJbBYPvMx-GLVdGEtJYmXuQz5bcCWR6amvRDQ9xsH_Y7cMwBr42txgNYMUXFGXs2NhMbygRCG8lkeSC_TNcMKolWLrd3MdDw7edn9pXx4XMDjM9I77DoLJNbMuTpwd-XqxDzyNDj8yCP8GsWm1JZLYUi_og==YMoDW/XHWWa55nCSlzYbQQ=="
+    }
+};
+const getBugetsHistory = async (id)=>{
+    const response = await external_axios_default().get(`https://cloud.jetadmin.io/api/models/budget_history/${id}/`, {
+        headers: {
+            Authorization: getBugetsHistory_options.headers.Authorization,
+            "X-Bridge-Settings": getBugetsHistory_options.headers["X-Bridge-Settings"]
+        }
+    });
+    return response;
+};
+
 ;// CONCATENATED MODULE: ./src/pages/[slug].tsx
+
 
 
 
@@ -122,12 +141,28 @@ const Slug = ({ pdf , bugets , products , categories , customers , params  })=>{
 };
 const getServerSideProps = async ({ query  })=>{
     const params = query.slug;
-    const pdf = params.includes("pdf");
+    // const params = "orcamento-para-solucao-de-amputacao-chopart&19"
+    // const params = "pdf=orcamento-para-solucao-de-amputacao-chopart&22"
+    // const params = "historico2=orcamento-para-solucao-de-amputacao-chopart&22-versao=1"
+    // const params = "historico-pdf3=orcamento-para-solucao-de-amputacao-chopart&22-versao=2"
+    const type = params.includes("historico") ? "historico" : params.includes("pdf") ? "pdf" : "hotsite";
+    const pdf = params.includes("pdf") ? true : false;
+    const paramSplit = params.split("&");
+    const history = paramSplit[0].split("=");
+    const historyID = history[0].replace(/historico/i, "").replace(/-pdf/i, "");
+    const paramID = type == "historico" ? historyID : paramSplit[1];
+    const id = typeof params === "string" ? paramID : "";
+    console.log(id);
     try {
-        const paramSplit = params.split("&");
-        const id = typeof params === "string" ? paramSplit.at(-1) : "";
-        const bugets = await getBugets(id).then((res)=>res.data
-        );
+        let bugets;
+        if (type == "historico") {
+            bugets = await getBugetsHistory(id).then((res)=>res.data
+            );
+        } else {
+            bugets = await getBugets(id).then((res)=>res.data
+            );
+        }
+        // bugets = await getBugets(id).then((res) => res.data);
         const IDproducts = bugets.products.join();
         const products1 = await getProducts(IDproducts).then((res)=>res.data.results
         );
@@ -369,7 +404,7 @@ module.exports = import("swiper/react");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [152], () => (__webpack_exec__(6774)));
+var __webpack_exports__ = __webpack_require__.X(0, [152], () => (__webpack_exec__(8898)));
 module.exports = __webpack_exports__;
 
 })();
