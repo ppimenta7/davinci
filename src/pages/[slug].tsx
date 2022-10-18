@@ -50,8 +50,7 @@ export const getServerSideProps = async ({ query }) => {
   const paramID = type == 'historico' ? historyID : paramSplit[1]
 
   const id = typeof params === "string" ? paramID : "";
-  console.log(id)
-  
+
   try {
     let bugets;
 

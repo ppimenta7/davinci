@@ -35,7 +35,7 @@ const Section = () => {
               </div>
               <h3 className="mb-20 fz-38 fw-700">Principais Dúvidas e Respostas para você que precisa de uma Prótese.</h3>
               <p>
-                Morbi sagittis hendrt nulla simply dummy text of the printing and typesetting has been the industry’s en diam ips elementum pretium hendrerit ultricies.
+                Para ajudar, separamos as principais dúvidas dos nossos pacientes na hora de optar por uma prótese.
               </p>
               <div className="flex mt-50">
                 <div className="item flex full-width">
@@ -49,12 +49,10 @@ const Section = () => {
                   </div>
                 </div>
               </div>
-              <Link href="https://davinciclinic.com.br">
-                <a className="butn butn-md blue-bg text-light radius-30 mt-40">
+                <a href="https://davinciclinic.com.br" target="_blank" rel="noopener noreferrer" className="butn butn-md blue-bg text-light radius-30 mt-40">
                   <span className="text slide-up">Saiba Mais</span>
                   <span className="text slide-down">Saiba Mais</span>
                 </a>
-              </Link>
             </div>
           </div>
           {/* <div className="col-lg-6 wow slideInUp">

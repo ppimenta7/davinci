@@ -152,7 +152,6 @@ const getServerSideProps = async ({ query  })=>{
     const historyID = history[0].replace(/historico/i, "").replace(/-pdf/i, "");
     const paramID = type == "historico" ? historyID : paramSplit[1];
     const id = typeof params === "string" ? paramID : "";
-    console.log(id);
     try {
         let bugets;
         if (type == "historico") {

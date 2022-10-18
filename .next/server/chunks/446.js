@@ -17,7 +17,7 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 ;// CONCATENATED MODULE: ./src/data/business/team.json
-const team_namespaceObject = JSON.parse('[{"picture":"img/davinci/pedro-pimenta.png","name":"Pedro Pimenta","position":"Co-Fundador e Diretor Executivo","about":"Lorem Ipsum"},{"picture":"img/davinci/jairo.png","name":"Jairo Bluementhal","position":"Co-fundador e Diretor Clínico Ortesista e Protesista","about":"Primeiro Brasileiro graduado em O&P nos Estados Unidos. Ministrou cursos e palestras em mais de 30 países, sendo membro atuante da Academia Americana de Protesistas e Ortesistas (AAOP) e da International Society for Prosthetics and Orthotics (ISPO)."},{"picture":"img/davinci/monica.png","name":"Mônica Yamaoka","position":"Fisioterapeuta","about":"Fisioterapeuta formada pela PUCCAMP, especializada na reabilitação de amputados de MMII (membros inferiores). Palestrou em várias Universidades, tais como UNICID, UNIFESP, UNASP e em Congressos da SBOT – Salvador. Palestra na Reabilitar na Santa Casa de São Paulo."},{"picture":"img/davinci/leandro.png","name":"Leandro Silva","position":"Diretor Técnico","about":"Considerado um dos mais experientes protesistas do Brasil. São 26 anos de experiência com certificação pela Abotec (Associação Brasileira de Ortopedia Técnica), Touch Bionics em membros superiores, Ossur em encaixes Direct Socket TT, TF e Saddle Casting."}]');
+const team_namespaceObject = JSON.parse('[{"picture":"img/davinci/pedro-pimenta.png","name":"Pedro Pimenta","position":"Co-Fundador e Diretor Executivo","about":"Vítima de uma meningite meningocócica ao 18 anos, Pedro Pimenta teve partes dos braços e das pernas amputadas. Superou as expectativas dos médicos e criou a própria empresa, Centro de Excelência em reabilitação de pessoas com amputação."},{"picture":"img/davinci/jairo.png","name":"Jairo Bluementhal","position":"Co-fundador e Diretor Clínico Ortesista e Protesista","about":"Primeiro Brasileiro graduado em O&P nos Estados Unidos. Ministrou cursos e palestras em mais de 30 países, sendo membro atuante da Academia Americana de Protesistas e Ortesistas (AAOP) e da International Society for Prosthetics and Orthotics (ISPO)."},{"picture":"img/davinci/monica.png","name":"Mônica Yamaoka","position":"Fisioterapeuta","about":"Fisioterapeuta formada pela PUCCAMP, especializada na reabilitação de amputados de MMII (membros inferiores). Palestrou em várias Universidades, tais como UNICID, UNIFESP, UNASP e em Congressos da SBOT – Salvador. Palestra na Reabilitar na Santa Casa de São Paulo."},{"picture":"img/davinci/leandro.png","name":"Leandro Silva","position":"Diretor Técnico","about":"Considerado um dos mais experientes protesistas do Brasil. São 26 anos de experiência com certificação pela Abotec (Associação Brasileira de Ortopedia Técnica), Touch Bionics em membros superiores, Ossur em encaixes Direct Socket TT, TF e Saddle Casting."}]');
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: external "react-modal-video"
@@ -82,6 +82,11 @@ const Team = ()=>{
     const openVideo = (e)=>{
         e.preventDefault();
         setOpen(true);
+    };
+    const timeID1 = (member)=>{
+        const nameMember = member.name.split(" ");
+        const timeID = nameMember[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        return timeID;
     };
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("section", {
         className: "team-shape section-padding",
@@ -149,8 +154,11 @@ const Team = ()=>{
                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                         className: "row col-lg-10 col-md-12 pt-60 justify-content-center margin-rl-auto",
                         children: team_namespaceObject.map((member, index)=>/*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                className: "col-lg-3 col-md-6",
+                                className: "card-team col-lg-3 col-md-6",
                                 children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                    style: {
+                                        height: "100%"
+                                    },
                                     className: "item md-mb50",
                                     children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
                                         className: "img",
@@ -169,7 +177,7 @@ const Team = ()=>{
                                                         children: member.about
                                                     }),
                                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                        className: "shape blue-light-bg"
+                                                        className: "shape"
                                                     })
                                                 ]
                                             }),

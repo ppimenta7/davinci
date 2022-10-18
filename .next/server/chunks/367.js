@@ -138,7 +138,7 @@ __webpack_async_result__();
 /***/ 3482:
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"g":2,"f":"No primeiro ano de vida a Da Vinci Clinic já reabilitou mais de 100 pacientes! E você tambem pode ser um deles..."}');
+module.exports = JSON.parse('{"g":2,"f":"No primeiro ano de vida, a Da Vinci Clinic já reabilitou mais de 100 pacientes! E você também pode ser um deles..."}');
 
 /***/ })
 

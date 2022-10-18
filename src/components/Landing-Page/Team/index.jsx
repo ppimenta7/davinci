@@ -13,6 +13,12 @@ const Team = () => {
     setOpen(true);
   };
 
+  const timeID = (member) => {
+    const nameMember = member.name.split(' ')
+    const timeID = nameMember[0].normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    return timeID
+  }
+
   return (
     <section className="team-shape section-padding" data-scroll-index="1">
       <div className="container-fluid">
@@ -66,8 +72,8 @@ const Team = () => {
         </div>*/}
         <div className="row col-lg-10 col-md-12 pt-60 justify-content-center margin-rl-auto">
           {team.map((member, index) => (
-            <div className="col-lg-3 col-md-6" key={index}>
-              <div className="item md-mb50">
+            <div className="card-team col-lg-3 col-md-6" key={index}>
+              <div style={{height: "100%"}} className="item md-mb50">
                 <div className="img">
                   <img src={member.picture} className="primery-shadow" alt="" />
                   <div className="cont text-dark">
@@ -75,7 +81,7 @@ const Team = () => {
                       <span className="fz-14 opacity-8">{ member.position }</span> */}
                     <hr />
                     <p className="fz-14 opacity-8 text-dark">{member.about}</p>
-                    <div className="shape blue-light-bg"></div>
+                    <div className="shape"></div>
                   </div>
                   <div
                     className="mt-30 mb-30 text-dark text-center bg-gray "
@@ -88,6 +94,7 @@ const Team = () => {
                       {member.name}
                     </h6>
                     <p className="fz-16 pt-10">{member.position}</p>
+                    {/* <span style={{textDecoration: "underline", color: "#ccc"}} className="fz-12">saiba mais</span> */}
                   </div>
                 </div>
                 {/* <div className="cont mt-30 mb-30 text-center bg-gray">

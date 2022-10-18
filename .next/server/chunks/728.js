@@ -253,7 +253,7 @@ const Pricing = ({ bugets , customers , products  })=>{
                                                                     className: "fw-700",
                                                                     children: "Assist\xeancia T\xe9cnica:"
                                                                 }),
-                                                                " Toda e qualquer assist\xeancia t\xe9cnica do material ser\xe1 prestado por esta empresa sempre que necess\xe1rio, sendo recomendado a cada oito meses de manuten\xe7\xe3o para conserva\xe7\xe3o do material. Certos de contarmos com a sua prefer\xeancia, colocamo-nos ao inteiro dispor para qualquer eventual esclarecimento "
+                                                                " Toda e qualquer assist\xeancia t\xe9cnica do material ser\xe1 prestado por esta empresa sempre que necess\xe1rio, sendo recomendado a cada oito meses de manuten\xe7\xe3o para conserva\xe7\xe3o do material. Certos de contarmos com a sua prefer\xeancia, colocamo-nos ao inteiro dispor para qualquer eventual esclarecimento."
                                                             ]
                                                         })
                                                     })

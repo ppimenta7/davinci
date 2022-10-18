@@ -80,7 +80,7 @@ const Pricing = ({ bugets, customers, products}) => {
                       </tr>
                       <tr>
                       <td colSpan={3}><span className="fw-700">Assistência Técnica:</span> Toda e qualquer assistência técnica do material será prestado por esta empresa sempre que necessário, sendo recomendado a cada oito meses de manutenção para conservação do material. 
-                          Certos de contarmos com a sua preferência, colocamo-nos ao inteiro dispor para qualquer eventual esclarecimento </td>
+                          Certos de contarmos com a sua preferência, colocamo-nos ao inteiro dispor para qualquer eventual esclarecimento.</td>
                       </tr>
                     </table>
                   </div>

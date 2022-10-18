@@ -27,14 +27,14 @@
   "index.tsx -> ./404": {
     "id": 8609,
     "files": [
-      "static/chunks/664-41844e7ff48658f9.js",
+      "static/chunks/664-63234660f1b2e410.js",
       "static/chunks/609.bc0d63828a28bdd1.js"
     ]
   },
   "index.tsx -> ./landing-page": {
     "id": 6007,
     "files": [
-      "static/chunks/664-41844e7ff48658f9.js",
+      "static/chunks/664-63234660f1b2e410.js",
       "static/chunks/7.034f562d15b7c178.js"
     ]
   },
@@ -46,7 +46,7 @@
       "static/chunks/e78312c5-93877492029a840c.js",
       "static/chunks/647-5ae4ada0c3ee9baa.js",
       "static/chunks/412-5d7d8799053eaa46.js",
-      "static/chunks/53-f0a9eb1932d68704.js"
+      "static/chunks/53-0fa4147cefcc5d0a.js"
     ]
   },
   "landing-page.tsx -> ../components/Footers/MainFooter": {
@@ -94,7 +94,7 @@
     "id": 2248,
     "files": [
       "static/chunks/352.178a7fde45f547ae.js",
-      "static/chunks/248.468898857aa84024.js"
+      "static/chunks/248.ec732738e1ccf134.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Portfolio1": {
@@ -107,14 +107,14 @@
     "id": 5728,
     "files": [
       "static/chunks/647-5ae4ada0c3ee9baa.js",
-      "static/chunks/728.d76efb734735d142.js"
+      "static/chunks/728.1dabc7221719a442.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Section": {
     "id": 2739,
     "files": [
       "static/css/b48a2d331a296f22.css",
-      "static/chunks/739.6dea30d36a7b4636.js"
+      "static/chunks/739.0a406f621c69e4d8.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Services": {
@@ -128,7 +128,7 @@
     "files": [
       "static/chunks/627.fc454b09ae6a4d8e.js",
       "static/css/4f881434dcbd6f6d.css",
-      "static/chunks/255.cbfb2dd9f69b1fd6.js"
+      "static/chunks/255.0ac397bae111005a.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Testimonials": {
