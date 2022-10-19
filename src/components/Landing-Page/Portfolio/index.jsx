@@ -17,7 +17,7 @@ const Portfolio = ({products, categories, bugets}) => {
             </div>
       </div>
     </section>
-    <section className="work-carsouel crv section-padding pb-0 pt-30 bg-dark-gray bg-color" data-scroll-index="2" >
+    <section className="work-carsouel crv section-padding pb-30 pt-30 bg-dark-gray bg-color" data-scroll-index="2" >
       <div className="container">
         <div className="row">
           {/* <div className="col-12">

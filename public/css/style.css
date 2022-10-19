@@ -88,6 +88,9 @@
 
 /* ====================== [ End Utility  ] ====================== */
 /* ====================== [ Start Typography  ] ====================== */
+html{
+  overflow-x: hidden;
+}
 * {
   margin: 0;
   padding: 0;
