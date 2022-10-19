@@ -16,12 +16,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: external "react-slidedown"
 var external_react_slidedown_ = __webpack_require__(172);
-// EXTERNAL MODULE: ./node_modules/next/link.js
-var next_link = __webpack_require__(1664);
 ;// CONCATENATED MODULE: ./src/data/business/accordions.json
 const accordions_namespaceObject = JSON.parse('[{"id":1,"title":"Quando começar a reabilitação protética?","details":"Após a cirurgia da amputação e após a alta hospitalar, o paciente deverá dar continuidade à fisioterapia num serviço especializado. Isto fará toda a diferença na reabilitação e no sucesso do programa. A reabilitação de amputados pós-alta hospitalar tem duas etapas – a pré e pós – protética.","closed":false},{"id":2,"title":"De quanto em quanto tempo eu devo ver meu protesista?","details":"É recomendado que faça, no mínimo, uma visita ao ano ao nosso Centro para nos certificarmos que sua prótese permanece segura e funcional. Lembrando que na Da Vinci estamos sempre disponíveis via nossos canais de comunicação com o paciente.","closed":true},{"id":3,"title":"Em quanto tempo após minha amputação de membro inferior conseguirei voltar a andar novamente?","details":"Depende de quão rápida é sua recuperação pós-cirúrgica. Uma pessoa saudável, sem complicações vasculares e outras comorbidades pode começar sua protetização em três a cinco semanas após a cirurgia.","closed":true},{"id":4,"title":"Quando receberei minha prótese definitiva?","details":"Na Da Vinci, através de nosso método Reabilitação 360, prezamos sempre pelo melhor resultado possível, onde o paciente possa readquirir sua mobilidade, independência e confiança. Partindo deste princípio, usamos quantos cartuchos de prova forem necessários, até que o paciente se sinta confortável e confiante neles. Este processo pode durar de uma a dez semanas.","closed":true},{"id":5,"title":"Quando poderei levar a prótese para casa?","details":"Em paralelo ao treino de marcha o paciente passará por um treinamento específico de uso e manuseio da prótese, como a colocação correta da mesma e o ajuste da interface liner-prótese através de meias,por exemplo. É aconselhável que o paciente passe em treinamento pelo menos por duas semanas consecutivas, principalmente para aqueles que residem fora da capital ou do estado de São Paulo. O coto de amputação também sofre mudanças de volume principalmente neste período. Na Da Vinci, aceleramos ao máximo este processo através de nosso método Reabilitação 360, para que todos os ajustes necessários sejam feitos na prótese, assegurando uma adaptação mais rápida ao paciente.","closed":true},{"id":6,"title":"Quanto tempo poderei usar a prótese durante o dia?","details":"É aconselhável que o tempo de uso da prótese ocorra de forma gradativa. Nos pacientes diabéticos, os cuidados devem ser redobrados, com verificação constante da pele. Atentar-se a alterações de cor, presença de flictemas ou bolhas no coto, lesões de pele, perda de volume do coto, extremidades e saliências ósseas. O treinamento nestes casos, poderá ser supervisionado por familiar e/ou cuidador que levará um folheto explicativo de todos os cuidados com o coto e com a prótese. O uso da prótese ocorrerá em dois ou três períodos de forma lenta e gradual, aumentando o tempo de uso e permanência com a prótese, inserindo aos poucos nas atividades de vida diária. Para os demais pacientes, o uso da prótese ocorrerá de forma gradativa, de acordo com a sensibilidade e condicionamento do coto, uma vez que se trata de um novo membro. Este deverá ser condicionado desde a primeira etapa da reabilitação. O coto se contrai dentro do encaixe, ativando os diferentes grupos musculares de acordo com a fase de marcha. O paciente poderá ter exaustão dos músculos do coto no primeiro dia, se exagerar no tempo de uso e na intensidade da atividade praticada com a prótese.","closed":true},{"id":7,"title":"Eu ainda sinto meus dedos mesmo após minha amputação. Isso é normal?","details":"Sim, é super normal. Sensação fantasma do membro fantasma é comum na maioria dos casos. Se houver muito desconforto, recomendamos que entre em contato com um médico especialista para saber se há opções de tratamento.","closed":true},{"id":8,"title":"Que tipos de sapatos poderei usar com minhas próteses?","details":"Quase todos os tipos de calçados são compatíveis com pés protéticos. Porém, no caso de diferentes alturas do calcanhar, como saltos altos, ajustes de alinhamento do pé são necessários. Se o paciente for diabético o tipo de calçado dependerá do grau de comprometimento da sensibilidade protetora do pé. Se ele já fizer uso de um calçado especial com palmilha termo moldável feita sob medida, recomenda-se a troca apenas da cor do calçado, ou modelo, desde que seja da mesma marca comercial ou feito sob medida.","closed":true},{"id":9,"title":"Como minha prótese se conectará a meu membro amputado?","details":"Na Da Vinci, fabricamos nossos próprios cartuchos a partir de moldes tirados especialmente de cada paciente, capturando perfeitamente o formato e o volume do membro amputado. Após análise minuciosa, será escolhido o tipo de suspensão a ser usado, como sucção direta, pino distal ou através de liners de suspensão.","closed":true},{"id":10,"title":"É comum sentir dor ao usar a prótese?","details":"Não. Nosso método Reabilitação 360 contempla passos graduais até que o amputado se acostume 100% com sua prótese. Se estiver sentindo dor, entre em contato conosco imediatamente.","closed":true},{"id":11,"title":"Quanto tempo meu liner, cartucho e componentes devem durar?","details":"Liners tendem a durar de seis meses a um ano, dependo do nível de cuidado e higiene. Cartuchos podem ter vida útil de até quatro anos se não houver mudança brusca de volume do membro amputado. Por fim, diferentes componentes terão durabilidades e garantias distintas. Se tiver quaisquer dúvidas em relação a componentes específicos, entre em contato conosco.","closed":true},{"id":12,"title":"Poderei praticar esportes com minha prótese?","details":"Na maioria dos casos o amputado consegue voltar às suas atividades com sua prótese. Há alguns esportes, como corrida e natação, que exigem a fabricação de próteses específicas. Entre em contato através de nossos canais de comunicação com o paciente; adoraríamos te ajudar.","closed":true},{"id":13,"title":"Estou tendo que usar mais meias com minha prótese. Preciso de um novo cartucho?","details":"O uso de meias ajuda no controle da mudança de volume no cartucho. Porém, se o encolhimento do membro amputado persiste, é recomendada a troca de cartucho. Estamos à disposição para uma avaliação gratuita.","closed":true},{"id":14,"title":"Posso tomar banho com minha prótese?","details":"Não. A não ser que a prótese seja específica para banho ou uso na água.","closed":true},{"id":15,"title":"Posso nadar com minha prótese?","details":"Há diversos tipos de prótese feitos especificamente para atividades que envolvem água e areia. Nossos cartuchos são projetados para “abraçar” o membro amputado perfeitamente, permitindo, na maioria dos casos, o uso em água também. Entre em contato conosco para saber mais","closed":true},{"id":16,"title":"A prótese mais cara é a melhor?","details":"Não. Cada paciente tem uma particularidade (tamanho do coto, tipo de cirurgia realizada, presença ou não de espículas ósseas, neuromas, capacidade de descarga distal do coto, aderências, comorbidades) que influenciará na escolha de todos os componentes da prótese, aliada às expectativas e necessidades de cada paciente. Por este motivo, a escolha da prótese só será possível após uma avaliação completa e minuciosa da equipe da clínica. Entre em contato conosco para agendar uma avaliação gratuita.","closed":true}]');
 ;// CONCATENATED MODULE: ./src/components/Landing-Page/Section/index.jsx
@@ -29,21 +25,30 @@ const accordions_namespaceObject = JSON.parse('[{"id":1,"title":"Quando começar
 /* eslint-disable @next/next/no-img-element */ 
 
 
-
-
 const Section = ()=>{
-    const { 0: accordions , 1: setAccordions  } = (0,external_react_.useState)(accordions_namespaceObject);
+    let accordions = accordions_namespaceObject;
     const openAccordion = (e)=>{
-        document.querySelectorAll(".accordion.shadwo .item").forEach((accordion)=>accordion.classList.remove("active")
-        );
         let item = e.target.closest(".item");
-        item.classList.add("active");
-        let newAccordions = accordions.map((accordion, idx)=>{
-            if (item.id.split("-")[1] == idx) accordion.closed = false;
-            else accordion.closed = true;
-            return accordion;
+        const accordionItem = item.children[0].children[1];
+        document.querySelectorAll(".accordion.shadwo .item").forEach((accordion)=>{
+            const accordionAco = accordion.children[0].children[1];
+            if (accordion == item) {
+                if (item.classList.contains("active")) {
+                    item.classList.remove("active");
+                    accordionItem.classList.add("active");
+                    accordionItem.classList.remove("closed");
+                    accordionItem.setAttribute("closed", false);
+                } else {
+                    item.classList.add("active");
+                    accordionItem.classList.remove("active");
+                    accordionItem.setAttribute("closed", true);
+                }
+            } else {
+                accordion.classList.add("active");
+                accordionAco.classList.remove("active");
+                accordionAco.setAttribute("closed", true);
+            }
         });
-        setAccordions(newAccordions);
     };
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("section", {
         className: "section-padding position-re",
@@ -132,9 +137,9 @@ const Section = ()=>{
                             children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                 className: "content",
                                 children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                    className: "accordion bord mt-50",
+                                    className: "accordion shadwo bord mt-50",
                                     children: accordions.map((accordion, idx)=>/*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                            className: `item ${idx == 1 ? "active" : ""}`,
+                                            className: `item ${idx > 0 ? "active" : ""}`,
                                             id: `accordion-${idx}`,
                                             onClick: openAccordion,
                                             children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -153,7 +158,7 @@ const Section = ()=>{
                                                     }),
                                                     /*#__PURE__*/ jsx_runtime_.jsx(external_react_slidedown_.SlideDown, {
                                                         className: "accordion-info active",
-                                                        closed: accordion.closed,
+                                                        closed: idx == 0 ? false : true,
                                                         children: /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                                             children: accordion.details
                                                         })

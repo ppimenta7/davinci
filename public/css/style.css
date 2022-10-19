@@ -9613,32 +9613,32 @@ td{
   margin-bottom: 30px;
 }
 
-.accordion.shadwo .item .title {
-  padding: 17px 30px;
-  border: 1px solid #e3e3e3;
-  border-radius: 30px;
-  background-color: #ccc;
+.accordion-info.active {
+  height: auto!important;
+  transition-property: none!important;
 }
 
-.accordion.shadwo .item .title .ico {
-  left: auto;
+/* .accordion.shadwo .item .title {
+  padding: 17px 30px;
+  /* border: 1px solid #e3e3e3;
+  border-radius: 30px;
+  background-color: #ccc; 
+}*/
+
+/* .accordion.shadwo .item .title .ico {
+  /* left: auto; 
   right: 25px;
 }
 
 .accordion.shadwo .item .accordion-info {
   margin-top: 20px;
   margin-bottom: 30px;
-}
-
-.accordion.shadwo .item.active .title {
-  background: #aaa;
-  border-color: transparent;
-}
+} 
 
 .accordion .item {
   margin-bottom: 10px;
-  /**/
-}
+  /*
+} */
 
 .accordion .title {
   padding: 15px 30px 15px 50px;

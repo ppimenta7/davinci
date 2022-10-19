@@ -26,34 +26,34 @@
         }
     }
 
-    &.shadwo{
+    // &.shadwo{
         
-        .item{
+    //     .item{
 
-            .title{
-                padding: 17px 30px;
-                border: 1px solid #e3e3e3;
-                border-radius: 30px;
+    //         .title{
+    //             padding: 17px 30px;
+    //             border: 1px solid #e3e3e3;
+    //             border-radius: 30px;
 
-                .ico{
-                    left: auto;
-                    right: 25px;
-                }
-            }
+    //             .ico{
+    //                 left: auto;
+    //                 right: 25px;
+    //             }
+    //         }
 
-            .accordion-info{
-                margin-top: 20px;
-            }
-        }
+    //         .accordion-info{
+    //             margin-top: 20px;
+    //         }
+    //     }
 
-        .item.active{
+    //     .item.active{
             
-            .title{
-                background: #f6f6ff;
-                border-color: transparent;
-            }
-        }
-    }
+    //         .title{
+    //             background: #f6f6ff;
+    //             border-color: transparent;
+    //         }
+    //     }
+    // }
 
     .item{
         margin-bottom: 30px;
