@@ -182,7 +182,7 @@ const Team = ()=>{
                                                 ]
                                             }),
                                             /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                                className: "mt-30 mb-30 text-dark text-center bg-gray ",
+                                                className: "mt-30 text-dark text-center bg-gray ",
                                                 style: {
                                                     minHeight: "16vh"
                                                 },

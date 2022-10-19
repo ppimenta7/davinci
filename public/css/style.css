@@ -6240,9 +6240,9 @@ header.simple-header .path a:after {
 }
 
 .slide-item h6{
-  transform: rotate(270deg);
-  position: relative;
-  right: 0;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  margin-right: 15px;
 }
 
 .portfolio {
@@ -7811,6 +7811,10 @@ td{
 
 /* ====================== [ Start tabs & list ] ====================== */
 /* ====================== [ Start Team ] ====================== */
+.card-team{
+  margin-bottom: 30px;
+}
+
 .team-shape .item .img {
   position: relative;
   overflow: hidden;
@@ -7847,6 +7851,9 @@ td{
   transition: all .4s;
   z-index: 3;
   height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 
 .team-shape .item .img .cont .shape {

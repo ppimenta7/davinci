@@ -84,7 +84,7 @@ const Team = () => {
                     <div className="shape"></div>
                   </div>
                   <div
-                    className="mt-30 mb-30 text-dark text-center bg-gray "
+                    className="mt-30 text-dark text-center bg-gray "
                     style={{ minHeight: "16vh" }}
                   >
                     <h6
