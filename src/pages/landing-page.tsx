@@ -79,6 +79,7 @@ const LandingPage = ({ bugets, products, categories, customers }) => {
               <main className="position-re">
                 <Team />
                 <Services />
+                <Info />
                 <Portfolio1 />
                 <Portfolio
                   bugets={bugets}
@@ -86,14 +87,14 @@ const LandingPage = ({ bugets, products, categories, customers }) => {
                   categories={categories}
                 />
                 <About products={products} categories={categories} />
-                <Section />
-                <Testimonials />
-                <Info />
                 <Pricing
                   bugets={bugets}
                   customers={customers}
                   products={products}
                 />
+                <Section />
+                <Testimonials />
+
                 <Footer />
               </main>
             </>

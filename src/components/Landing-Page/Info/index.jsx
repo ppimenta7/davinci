@@ -2,7 +2,7 @@ const Info = () => {
   return (
     <>
       <section
-        className="work-carsouel crv section-padding pt-30"
+        className="work-carsouel crv section-padding"
         data-scroll-index="2"
       >
         <div className="container">
@@ -15,7 +15,7 @@ const Info = () => {
           </div>
         </div>
       </section>
-      <section className="process-simp position-re">
+      {/* <section className="process-simp position-re">
         <div className="curve-cls top">
           <svg
             version="1.1"
@@ -34,7 +34,7 @@ const Info = () => {
             ></path>
           </svg>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
