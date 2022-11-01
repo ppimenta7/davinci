@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 
 import MainLightLayout from "../layouts/main-light";
 import Navbar from "../components/Navbars/MainNavbar/index";
+import FixedSearch from "../components/Common/FixedSearch";
 
 const Header = dynamic(() => import("../components/Landing-Page/Header"));
 const Services = dynamic(() => import("../components/Landing-Page/Services"));
@@ -73,6 +74,7 @@ const LandingPage = ({ bugets, products, categories, customers }) => {
         {acess ? (
           status || acessType == "admin" ? (
             <>
+              <FixedSearch />
               <Header bugets={bugets} />
               <main className="position-re">
                 <Team />
@@ -85,14 +87,14 @@ const LandingPage = ({ bugets, products, categories, customers }) => {
                 />
                 <About products={products} categories={categories} />
                 <Section />
-                <Testimonials/>
+                <Testimonials />
                 <Info />
                 <Pricing
                   bugets={bugets}
                   customers={customers}
                   products={products}
                 />
-                <Footer/>
+                <Footer />
               </main>
             </>
           ) : (
