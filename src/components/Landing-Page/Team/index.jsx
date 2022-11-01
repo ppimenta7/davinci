@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import team from "../../../data/business/team.json";
 import Video from "../../Video";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/css/modal-video.css";
 
@@ -44,16 +44,28 @@ const Team = () => {
             </div>
           </div>
         </div>
+
         <div className="sec-head">
-            <div className="s-title valign justify-content-center">
-              <a href="https://youtu.be/hq8-I0N5BM4"
-            onClick={openVideo}>
+          <div className="s-title valign justify-content-center flex-direction">
+            <a href="https://youtu.be/hq8-I0N5BM4" onClick={openVideo}>
               <h6>
-                  <p>Conheça a equipe Da Vinci Clinic</p>
-                <span style={{color: "black"}} className="icon pe-7s-angle-right"></span>
+                <p>Conheça a equipe Da Vinci Clinic</p>
+                <span
+                  style={{ color: "black" }}
+                  className="icon pe-7s-angle-right"
+                ></span>
               </h6>
+            </a>
+            <div className="play-button">
+              <a
+                href="https://youtu.be/WRwJE1S7iuw"
+                className="vid ttt"
+                onClick={openVideo}
+              >
+                <i className="fas fa-play"></i>
               </a>
             </div>
+          </div>
         </div>
         {/* <div className="valign justify-content-center">
           <a
@@ -67,13 +79,13 @@ const Team = () => {
             <i className="fas fa-play fz-12 ml-5"></i>
           </a>
         </div> */}
-         {/*<div className="row col-lg-8 col-md-10 margin-rl-auto">
+        {/*<div className="row col-lg-8 col-md-10 margin-rl-auto">
           <Video /> 
         </div>*/}
         <div className="row col-lg-10 col-md-12 pt-60 justify-content-center margin-rl-auto">
           {team.map((member, index) => (
             <div className="card-team col-lg-3 col-md-6" key={index}>
-              <div style={{height: "100%"}} className="item md-mb50">
+              <div style={{ height: "100%" }} className="item md-mb50">
                 <div className="img">
                   <img src={member.picture} className="primery-shadow" alt="" />
                   <div className="cont text-dark">
@@ -106,18 +118,15 @@ const Team = () => {
           ))}
         </div>
       </div>
-      {
-        typeof window !== "undefined" && 
-          (
-            <ModalVideo
-              channel="youtube"
-              autoplay
-              isOpen={isOpen}
-              videoId="hq8-I0N5BM4"
-              onClose={() => setOpen(false)}
-            />
-          )
-      }
+      {typeof window !== "undefined" && (
+        <ModalVideo
+          channel="youtube"
+          autoplay
+          isOpen={isOpen}
+          videoId="hq8-I0N5BM4"
+          onClose={() => setOpen(false)}
+        />
+      )}
     </section>
   );
 };

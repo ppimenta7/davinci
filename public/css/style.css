@@ -493,6 +493,10 @@ img.left {
   display: flex;
 }
 
+.flex-direction{
+  flex-direction: column;
+}
+
 .horizontal-link li {
   display: inline-block;
 }
@@ -7835,6 +7839,22 @@ td{
   stroke-dashoffset: 0;
 }
 
+
+
+.team-shape .play-button {
+    color: #fff;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    border-radius: 50%;
+    background: rgb(0 0 0 / 10%);
+    border: 1px solid rgba(238, 238, 238, 0.29);
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+    margin: 20px auto;
+}
 /* ====================== [ Start tabs & list ] ====================== */
 /* ====================== [ Start Team ] ====================== */
 .card-team{
