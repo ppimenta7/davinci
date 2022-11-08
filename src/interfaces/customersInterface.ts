@@ -1,5 +1,5 @@
 export interface CustomersInterface {
-  records: any;
+  [x: string]: any;
   id: string;
   full_name: string;
   address: string;

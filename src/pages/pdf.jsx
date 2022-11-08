@@ -25,26 +25,8 @@ const Pdf = ({ products, bugets, customers }) => {
 
   const bgTitle = bugets?.title;
   const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
-  
-  const version = bugets?.version
-
-  let comment = "";
-  products?.map((prod) => {
-    comment += `${prod?.technical_details}. `;
-  });
-
-  const text = htmlToText(comment, {
-    wordwrap: 130,
-  });
-
+  const version = bugets?.version;
   const contentProduct = contentProducts(products, bugets);
-
-  let res = false;
-  const tt = () => {
-    res = true;
-    return totalValueBugets(value);
-  };
-
   const filename = friendlyFilename(customers?.full_name);
 
   function gerarPDF() {
@@ -104,79 +86,40 @@ const Pdf = ({ products, bugets, customers }) => {
           table: {
             headerRows: 1,
             widths: ["*", "auto"],
-            // dontBreakRows: false,
-            // keepWithHeaderRows: 1,
             body: [
               [
-                { text: "PROPOSTA COMERCIAL PARA SOLUÇÃO I", bold: true, noWrap: true, alignment: 'left' },
-                { text: `v${version}`, bold: true, alignment: 'right', noWrap: true,},
+                {
+                  text: "PROPOSTA COMERCIAL PARA SOLUÇÃO I",
+                  bold: true,
+                  noWrap: true,
+                  alignment: "left",
+                },
+                {
+                  text: `v${version}.0`,
+                  bold: true,
+                  alignment: "right",
+                  noWrap: true,
+                },
               ],
             ],
-          },layout: "noBorders", margin: [10, 0, 15, 0]
+          },
+          layout: "noBorders",
+          margin: [10, 0, 15, 0],
         },
         {
           margin: [0, 5, 0, 15],
           table: {
             headerRows: 1,
             widths: ["auto", "*", "auto"],
-            // dontBreakRows: false,
-            // keepWithHeaderRows: 1,
             body: [
               [
                 { text: "Item", style: "tableHeader" },
                 { text: "Descrição", style: "tableHeader" },
                 { text: "Valor Unit.", style: "tableHeader" },
               ],
-              contentProduct.length > 0
-                ? contentProduct[0]
-                : res == false
-                ? tt()
-                : nada,
-              contentProduct.length > 1
-                ? contentProduct[1]
-                : res == false
-                ? tt()
-                : nada,
-              contentProduct.length > 2
-                ? contentProduct[2]
-                : res == false
-                ? tt()
-                : nada,
-              contentProduct.length > 3
-                ? contentProduct[3]
-                : res == false
-                ? tt()
-                : nada,
-              contentProduct.length > 4
-                ? contentProduct[4]
-                : res == false
-                ? tt()
-                : nada,
-              contentProduct.length > 5
-                ? contentProduct[5]
-                : res == false
-                ? tt()
-                : nada,
-              contentProduct.length > 6
-                ? contentProduct[6]
-                : res == false
-                ? tt()
-                : nada,
-              contentProduct.length > 7
-                ? contentProduct[7]
-                : res == false
-                ? tt()
-                : nada,
-              contentProduct.length > 8
-                ? contentProduct[8]
-                : res == false
-                ? tt()
-                : nada,
-              contentProduct.length > 9
-                ? contentProduct[9]
-                : res == false
-                ? tt()
-                : nada,
+              contentProduct[0],
+              contentProduct[1],
+              totalValueBugets(discount),
             ],
             margin: [0, 0, 0, 20],
           },

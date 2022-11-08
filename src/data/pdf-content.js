@@ -31,30 +31,24 @@ export const nada = [
 ];
 
 export const contentProducts = (products, bugets) => {
-  const contentProducts = [];
+  let allProducts = [];
   products?.map((prod, idx) => {
-    const { htmlToText } = require("html-to-text");
-    const comment = htmlToText(prod.technical_details, {
-      wordwrap: 130,
-    });
+    allProducts.push(
+      { text: `${prod.name} - ${prod.short_description}: `, bold: true },
+      `${prod.technical_description}\n`
+    );
+  })
+
+  const contentProducts = [];
     contentProducts.push([
-      { text: ++idx, alignment: "center", margin: [5, 5] },
-      {
-        text: [
-          { text: `${prod.name} - ${prod.short_description}`, bold: true },
-          ": ",
-          { text: prod?.technical_description },
-          // { text: comment}
-        ],
-        margin: [5, 5],
-      },
-      {
-        text: formateValue(prod.value == null ? 0 : prod.value),
-        alignment: "center",
-        margin: [5, 5],
-      },
-    ]);
-  });
+    { text: 1, alignment: "center", margin: [5, 5] },
+    {
+      text: allProducts,
+      margin: [5, 5],
+    },
+
+    { text: formateValue(bugets.value), alignment: "center", margin: [5, 5] },
+  ]);
 
   bugets?.comments_report != ""
     ? contentProducts.push([

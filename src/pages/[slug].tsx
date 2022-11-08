@@ -65,7 +65,7 @@ export const getServerSideProps = async ({ query }) => {
     const IDCategorys = await products.map((products: ProductsInterface) => products.category);
     const categories = await getCategories(IDCategorys).then((res) => res.data.records);
 
-    const customers = await getCustomers(bugets.customer).then((res) => res.data.records);
+    const customers = await getCustomers(bugets.customer).then((res) => res.data.records[0]);
 
     return {
       props: {
