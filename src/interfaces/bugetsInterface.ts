@@ -10,5 +10,5 @@ export interface BugetsInterface {
     version:              string;
     discount:             string;
     payment_conditions:   string;
-
+    creation_date:        Date;
 }

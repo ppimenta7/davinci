@@ -60,12 +60,12 @@ export const getServerSideProps = async ({ query }) => {
 
     const IDproducts = bugets.products.join()
 
-    const products = await getProducts(IDproducts).then((res) => res.data.results);
+    const products = await getProducts(IDproducts).then((res) => res.data.records);
 
     const IDCategorys = await products.map((products: ProductsInterface) => products.category);
-    const categories = await getCategories(IDCategorys).then((res) => res.data.results);
+    const categories = await getCategories(IDCategorys).then((res) => res.data.records);
 
-    const customers = await getCustomers(bugets.customer);
+    const customers = await getCustomers(bugets.customer).then((res) => res.data.records);
 
     return {
       props: {
@@ -78,6 +78,7 @@ export const getServerSideProps = async ({ query }) => {
       },
     };
   } catch (error) {
+    console.log(error)
     return {
       redirect: {
         destination: "/404",
