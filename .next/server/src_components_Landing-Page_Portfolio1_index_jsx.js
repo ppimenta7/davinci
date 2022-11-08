@@ -27,7 +27,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \****************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('[{"id":1,"image":"img/davinci/d2.png","title":"Kids"},{"id":2,"image":"img/davinci/d5.png","title":"Senior"},{"id":3,"image":"img/davinci/d6.png","title":"Performance"}]');
+module.exports = JSON.parse('[{"id":1,"image":"img/davinci/d2.png","title":"Kids"},{"id":2,"image":"img/davinci/btn.png","title":"Senior"},{"id":3,"image":"img/davinci/d6.png","title":"Performance"}]');
 
 /***/ })
 
