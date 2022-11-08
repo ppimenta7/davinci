@@ -1,3 +1,11 @@
+import {
+  formateDate,
+  formateValue,
+  formataCPF,
+  formateDateNow,
+  friendlyFilename,
+} from "../../public/js/index";
+
 export const totalValueBugets = (value) => {
   const totalValueBugets = [
     {
@@ -30,18 +38,21 @@ export const contentProducts = (products, bugets) => {
       wordwrap: 130,
     });
     contentProducts.push([
-      { text: +idx, alignment: "center", margin: [5, 5] },
+      { text: ++idx, alignment: "center", margin: [5, 5] },
       {
         text: [
-          { text: prod.name, bold: true },
+          { text: `${prod.name} - ${prod.short_description}`, bold: true },
           ": ",
-          { text: prod?.description },
+          { text: prod?.technical_description },
           // { text: comment}
         ],
         margin: [5, 5],
       },
-
-      { text: "", alignment: "center", margin: [5, 5] },
+      {
+        text: formateValue(prod.value == null ? 0 : prod.value),
+        alignment: "center",
+        margin: [5, 5],
+      },
     ]);
   });
 

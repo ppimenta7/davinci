@@ -5551,12 +5551,23 @@ header.simple-header .path a:after {
   position: relative;
   -webkit-box-shadow: 0px 0px 30px rgba(59, 63, 130, 0.09);
   box-shadow: 0px 0px 30px rgba(59, 63, 130, 0.09);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  /* object-fit: contain!important; */
+  justify-content: center;
+}
+
+.intro-two-img .img2 img{
+  /* width: 100%; */
+  object-fit: contain!important;
 }
 
 .intro-two-img .img2 .play-button {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  /* top: 50%;
+  left: 50%; */
+  bottom: -8%;
+  right: -8%;
   -webkit-transform: translateY(-50%) translateX(-50%);
   -ms-transform: translateY(-50%) translateX(-50%);
   transform: translateY(-50%) translateX(-50%);
@@ -5564,7 +5575,7 @@ header.simple-header .path a:after {
 
 .intro-two-img .img2 .play-button .btn {
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.45);
   line-height: 85px;
   height: 98px;
   width: 98px;
@@ -6602,7 +6613,13 @@ header.simple-header .path a:after {
   opacity: 1;
 }
 
-
+.work-carsouel.crv{
+  background: rgb(0 0 0 / 30%) url(../img/davinci/btn.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+}
 
 .work-carsouel .work-crsol {
   -webkit-clip-path: inset(-100vw -100vw -100vw 0);
@@ -7215,8 +7232,8 @@ header.simple-header .path a:after {
 }
 
 .fixed-search .search-area.scroll {
-  height: 48px;
-  width: 48px;
+  height: 50px;
+  width: 50px;
   bottom: 90px;
   right: 28px;
 

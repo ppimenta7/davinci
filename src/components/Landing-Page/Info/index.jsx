@@ -2,7 +2,7 @@ const Info = () => {
   return (
     <>
       <section
-        className="work-carsouel crv section-padding"
+        className="work-carsouel section-padding"
         data-scroll-index="2"
       >
         <div className="container">

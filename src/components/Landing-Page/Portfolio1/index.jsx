@@ -22,7 +22,7 @@ const Portfolio1 = () => {
         <div className="text-center pb-50 mt-30">
           <h2>Uma clínica para todos.</h2>
           <p className="col-6 fz-18 margin-rl-auto">
-            De quem ainda vai passar por uma amputação àqueles que busca melhor
+            De quem ainda vai passar por uma amputação àqueles que buscam melhorar
             sua qualidade de vida com próteses.
           </p>
         </div>

@@ -19,7 +19,7 @@ const FixedSearch = () => {
 
   const toggleSearch = () => {
    window.open(
-     "https://wa.me/5511971707515?text=Olá!%Gostaria%20de%falar%20com%20um%20de%20seus%20atendentes",
+     "https://wa.me/5511971707515?text=Olá!%20Gostaria%20de%20falar%20com%20um%20de%20seus%20atendentes",
      "_blank"
    );
   }

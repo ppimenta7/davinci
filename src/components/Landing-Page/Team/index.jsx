@@ -38,7 +38,7 @@ const Team = () => {
               </p>
               <p className="fz-16">
                 Nossos profissionais têm décadas de experiência com reabilitação
-                de amputados, utilizando das técnicas mais avançadas somadas à o
+                de amputados, utilizando das técnicas mais avançadas somadas ao
                 que há de mais tecnológico no mercado
               </p>
             </div>
