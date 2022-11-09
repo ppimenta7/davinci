@@ -10,8 +10,7 @@ const Team = () => {
 
   const openVideo = (e) => {
     e.preventDefault();
-    // setOpen(true);
-    console.log(e.target)
+    setOpen(true);
   };
 
   const timeID = (member) => {
@@ -19,24 +18,6 @@ const Team = () => {
     const timeID = nameMember[0].normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
     return timeID
   }
-
-  const [scrollY, setScrollY] = useState(0);
-
-  function logit() {
-    const el = document.querySelector("#test");
-    const tt = document.querySelector(".test1");
-    // console.log(tt)
-     setScrollY(window.pageYOffset);
-
-    if (window.pageYOffset > 300 && window.pageYOffset < 1400){
-      // el.style.animationIterationCount = '2';
-      //animation-iteration-count: 2;
-      // console.log("scrool", scrollY);
-    }
-        
-  }
-window.addEventListener("scroll", logit);
-
 
   return (
     <section className="team-shape section-padding" data-scroll-index="1">
@@ -64,7 +45,7 @@ window.addEventListener("scroll", logit);
           </div>
         </div>
 
-        <div className="sec-head">
+        <div className="sec-head valign justify-content-center flex-direction">
           <div
             id="test"
             className="s-title valign justify-content-center flex-direction test"
@@ -99,10 +80,21 @@ window.addEventListener("scroll", logit);
               </a>
             </div> */}
           </div>
-          <div className="fz-14 ls2 fw-600 text-u test1">
-            <span className="gr-orange-text">
+
+          {/* <div className="fz-14 ls2 fw-600 text-u ">
+            <span className="test2-1">
               Quem Somos <i className="fas fa-play"></i>
             </span>
+          </div> */}
+
+          <div className="valign justify-content-center flex-direction testtt" >
+            <a href="https://youtu.be/hq8-I0N5BM4" onClick={openVideo}>
+              <h6 className="testtt sub-head  gr-orange-text radius mt-20 mb-20  pt-25 pb-20">
+                <span className="test2-1 fz-14 ls2 fw-600  gr-orange-text text-u padding-rl-15">
+                  Quem Somos <i className="fas fa-play"></i>
+                </span>
+              </h6>
+            </a>
           </div>
         </div>
         {/* <div className="valign justify-content-center">
