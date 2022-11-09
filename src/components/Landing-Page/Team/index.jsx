@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import team from "../../../data/business/team.json";
 import Video from "../../Video";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/css/modal-video.css";
 
@@ -10,7 +10,8 @@ const Team = () => {
 
   const openVideo = (e) => {
     e.preventDefault();
-    setOpen(true);
+    // setOpen(true);
+    console.log(e.target)
   };
 
   const timeID = (member) => {
@@ -19,17 +20,35 @@ const Team = () => {
     return timeID
   }
 
+  const [scrollY, setScrollY] = useState(0);
+
+  function logit() {
+    const el = document.querySelector("#test");
+    const tt = document.querySelector(".test1");
+    // console.log(tt)
+     setScrollY(window.pageYOffset);
+
+    if (window.pageYOffset > 300 && window.pageYOffset < 1400){
+      // el.style.animationIterationCount = '2';
+      //animation-iteration-count: 2;
+      // console.log("scrool", scrollY);
+    }
+        
+  }
+window.addEventListener("scroll", logit);
+
+
   return (
     <section className="team-shape section-padding" data-scroll-index="1">
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-md-10">
             <div className="section-head text-center">
-              <h6 className="sub-head radius mb-20">
+              {/* <h6 className="sub-head radius mb-20">
                 <span className="fz-12 ls2 text-u gr-orange-text">
                   Quem Somos
                 </span>
-              </h6>
+              </h6> */}
               <h2>Experiência Conta</h2>
               <p className="fz-24">O &quot;Dream Team&quot; Brasileiro</p>
               <p className="fz-16">
@@ -46,8 +65,11 @@ const Team = () => {
         </div>
 
         <div className="sec-head">
-          <div className="s-title valign justify-content-center flex-direction">
-            <a href="https://youtu.be/hq8-I0N5BM4" onClick={openVideo}>
+          <div
+            id="test"
+            className="s-title valign justify-content-center flex-direction test"
+          >
+            {/* <a href="https://youtu.be/hq8-I0N5BM4" onClick={openVideo}>
               <h6>
                 <p>Conheça a equipe Da Vinci Clinic</p>
                 <span
@@ -55,8 +77,19 @@ const Team = () => {
                   className="icon pe-7s-angle-right"
                 ></span>
               </h6>
+            </a> */}
+            <a
+              // className="test"
+              href="https://youtu.be/hq8-I0N5BM4"
+              onClick={openVideo}
+            >
+              <h6 className="test sub-head radius mt-20 mb-20">
+                <span className="fz-14 ls2 fw-600 text-u gr-orange-text padding-rl-15 pt-15 pb-15">
+                  Quem Somos <i className="fas fa-play"></i>
+                </span>
+              </h6>
             </a>
-            <div className="play-button">
+            {/* <div className="play-button">
               <a
                 href="https://youtu.be/WRwJE1S7iuw"
                 className="vid ttt"
@@ -64,7 +97,12 @@ const Team = () => {
               >
                 <i className="fas fa-play"></i>
               </a>
-            </div>
+            </div> */}
+          </div>
+          <div className="fz-14 ls2 fw-600 text-u test1">
+            <span className="gr-orange-text">
+              Quem Somos <i className="fas fa-play"></i>
+            </span>
           </div>
         </div>
         {/* <div className="valign justify-content-center">

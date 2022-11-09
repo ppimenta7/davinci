@@ -5,7 +5,6 @@ import Modal from 'react-bootstrap/Modal';
 const MyVerticallyCenteredModal = (props) => {
 
     const product = props.product
-    console.log(product.details);
     return (
       <Modal
         {...props}

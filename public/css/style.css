@@ -11094,3 +11094,74 @@ body.index-main .bg-gray {
     transform: rotate(1turn);
   }
 }
+
+.test{
+  animation-name: tremer;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes tremer {
+    0% {margin-left: 0;}
+    3% {margin-left: 7px;}
+    6% {margin-left: 0;}
+    10% {margin-left: -7px;}
+    12% {margin-left: 0;}
+    15% {margin-left: 7px;}
+    17% {margin-left: 0;}
+    20% {margin-left: -7px;}
+    25% {margin-left: 0px;}
+    100% {margin-left: 0;}
+}
+
+.test1{
+  padding: 24px 35px;
+  margin: 10px;
+  font-size: 12px;
+  line-height: 24px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 400ms ease;
+  transform-style: preserve-3d;
+  background: #E9EEF4;
+  display: inline-block;
+  text-align: center;
+
+  animation-name: tt;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.test1:after{
+  top: -100%;
+  left: 0px;
+  width: 100%;
+  padding: 24px 35px;
+  position: absolute;
+  border: 2px solid #E9EEF4;
+  border-radius: 30px;
+  box-sizing: border-box;
+  content: 'Assista!';
+  transform-origin: left bottom;
+  transform: rotateX(90deg);
+
+  background-image: linear-gradient(18deg, rgba(241,156,73,1) 14%, rgba(1,202,200,1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.test1:hover{
+  transform-origin: center bottom;
+  transform: rotateX(-90deg) translateY(100%);
+}
+
+
+
+@keyframes tt {
+0% { -webkit-transform:rotate(0deg); -moz-transform:rotate(0deg); -ms-transform:rotate(0deg); -o-transform:rotate(0deg); transform:rotate(0deg); }
+	50% { -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); -ms-transform:rotate(180deg); -o-transform:rotate(180deg); transform:rotate(180deg); }
+	100% { -webkit-transform:rotate(360deg); -moz-transform:rotate(360deg); -ms-transform:rotate(360deg); -o-transform:rotate(360deg); transform:rotate(360deg); }
+} 

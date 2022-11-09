@@ -3,7 +3,6 @@ import { formateDate, formateValue, formataCPF } from "../../../../public/js/ind
 const { htmlToText } = require('html-to-text');
 
 const Pricing = ({ bugets, customers, products}) => {
-  console.log(customers);
   const dataBirthdate = formateDate(customers?.birth_date)
   const cpf = formataCPF(customers?.cpf);
   const value = formateValue(bugets.value);
