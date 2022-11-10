@@ -47,7 +47,7 @@ export const contentProducts = (products, bugets) => {
       margin: [5, 5],
     },
 
-    { text: formateValue(bugets.value), alignment: "center", margin: [5, 5] },
+    { text: formateValue(bugets?.value), alignment: "center", margin: [5, 5] },
   ]);
 
   bugets?.comments_report != ""
