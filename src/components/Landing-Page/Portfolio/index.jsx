@@ -87,7 +87,7 @@ const Portfolio = ({ products, categories, bugets }) => {
                   </div>
                 </div>
               </div>
-              <div className="container pt-50">
+              {/* <div className="container pt-50">
                 <div className="round-head text-center mb-20">
                   <h2
                     style={{ textDecoration: "underline" }}
@@ -97,7 +97,7 @@ const Portfolio = ({ products, categories, bugets }) => {
                     {title}
                   </h2>
                 </div>
-              </div>
+              </div> */}
             </section>
 
             {/* <div className="col-lg-12">
@@ -139,6 +139,17 @@ const Portfolio = ({ products, categories, bugets }) => {
           </div>
         </div>
       </section>
+      <div className="container pt-50">
+        <div className="round-head text-center mb-20">
+          <h2
+            style={{ textDecoration: "underline" }}
+            className="orange-color text-u fz-35 pt-40 pb-30 underline"
+          >
+            <span className="fw-600 text-black">Orçamento para</span>
+            {title}
+          </h2>
+        </div>
+      </div>
     </>
   );
 };
