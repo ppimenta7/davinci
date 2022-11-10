@@ -193,6 +193,7 @@ const getServerSideProps = async ({ query  })=>{
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 7915:
 /***/ ((module) => {
 
@@ -224,6 +225,11 @@ module.exports = require("@mui/material/Icon");
 /***/ 816:
 /***/ ((module) => {
 
+=======
+/***/ 816:
+/***/ ((module) => {
+
+>>>>>>> 32fc6e52894b209e077ffd32813166c358068166
 module.exports = require("html-to-text");
 
 /***/ }),

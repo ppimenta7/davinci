@@ -17,6 +17,7 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 ;// CONCATENATED MODULE: ./src/data/business/support.json
+<<<<<<< HEAD
 const support_namespaceObject = JSON.parse('[{"id":1,"image":"img/davinci/d2.png","title":"Kids","icon":"fa-fist-raised","Ticon":"<AbcIcon />"},{"id":2,"image":"img/davinci/d8.png","title":"Senior","icon":"fa-fist-raised","Ticon":"<DeleteIcon />"},{"id":3,"image":"img/davinci/d6.png","title":"Performance","icon":"fa-fist-raised","Ticon":"<DeleteIcon />"}]');
 // EXTERNAL MODULE: external "@mui/icons-material/Delete"
 var Delete_ = __webpack_require__(3188);
@@ -50,6 +51,12 @@ const Icons = [
         }
     }, ""), 
 ];
+=======
+const support_namespaceObject = JSON.parse('[{"id":1,"image":"img/davinci/d2.png","title":"Kids"},{"id":2,"image":"img/davinci/btn.png","title":"Senior"},{"id":3,"image":"img/davinci/d6.png","title":"Performance"}]');
+;// CONCATENATED MODULE: ./src/components/Landing-Page/Portfolio1/index.jsx
+
+
+>>>>>>> 32fc6e52894b209e077ffd32813166c358068166
 const Portfolio1 = ()=>{
     return /*#__PURE__*/ jsx_runtime_.jsx("section", {
         className: "portfolio-simp-crus pt-0 section-padding",
@@ -60,11 +67,16 @@ const Portfolio1 = ()=>{
                     className: "row col-lg-10 col-md-12 pt-60 justify-content-center margin-rl-auto",
                     children: support_namespaceObject.map((slide, idx)=>/*#__PURE__*/ jsx_runtime_.jsx("div", {
                             className: "col-lg-3 col-md-6",
+<<<<<<< HEAD
                             children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+=======
+                            children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+>>>>>>> 32fc6e52894b209e077ffd32813166c358068166
                                 style: {
                                     backgroundImage: `url(${slide.image})`
                                 },
                                 className: "slide-item img info mt-20 text-center",
+<<<<<<< HEAD
                                 children: [
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "text-white margin-rl-auto",
@@ -78,6 +90,12 @@ const Portfolio1 = ()=>{
                                         children: slide.title
                                     })
                                 ]
+=======
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("h6", {
+                                    className: "fw-600 text-u text-light fz-24",
+                                    children: slide.title
+                                })
+>>>>>>> 32fc6e52894b209e077ffd32813166c358068166
                             })
                         }, idx)
                     )

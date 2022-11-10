@@ -43,7 +43,11 @@ const Video = ()=>{
                 className: "container-fluid",
                 children: /*#__PURE__*/ _jsx("div", {
                     className: "video-wrapper section-padding bg-img parallaxie valign",
+<<<<<<< HEAD
                     // data-background="img/davinci/equipe1.jpg" 
+=======
+                    "data-background": "img/davinci/equipe1.jpg",
+>>>>>>> 32fc6e52894b209e077ffd32813166c358068166
                     "data-overlay-dark": "4",
                     children: /*#__PURE__*/ _jsx("div", {
                         className: "full-width text-center",

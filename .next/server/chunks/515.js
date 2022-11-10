@@ -76,6 +76,7 @@ const Header = dynamic_default()(()=>__webpack_require__.e(/* import() */ 57).th
         ]
     }
 });
+<<<<<<< HEAD
 const Header2 = dynamic_default()(()=>__webpack_require__.e(/* import() */ 319).then(__webpack_require__.bind(__webpack_require__, 5319))
 , {
     loadableGenerated: {
@@ -84,6 +85,8 @@ const Header2 = dynamic_default()(()=>__webpack_require__.e(/* import() */ 319).
         ]
     }
 });
+=======
+>>>>>>> 32fc6e52894b209e077ffd32813166c358068166
 const Services = dynamic_default()(()=>__webpack_require__.e(/* import() */ 800).then(__webpack_require__.bind(__webpack_require__, 1800))
 , {
     loadableGenerated: {
@@ -229,7 +232,11 @@ const LandingPage = ({ bugets , products , categories , customers  })=>{
                 children: acess ? status || acessType == "admin" ? /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
                     children: [
                         /*#__PURE__*/ jsx_runtime_.jsx(Common_FixedSearch, {}),
+<<<<<<< HEAD
                         /*#__PURE__*/ jsx_runtime_.jsx(Header2, {
+=======
+                        /*#__PURE__*/ jsx_runtime_.jsx(Header, {
+>>>>>>> 32fc6e52894b209e077ffd32813166c358068166
                             bugets: bugets
                         }),
                         /*#__PURE__*/ (0,jsx_runtime_.jsxs)("main", {

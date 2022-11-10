@@ -35,7 +35,11 @@
     "id": 4515,
     "files": [
       "static/chunks/664-63234660f1b2e410.js",
+<<<<<<< HEAD
       "static/chunks/515.5d3d5cbebaf05a0d.js"
+=======
+      "static/chunks/515.f96dcd3ceb5252b8.js"
+>>>>>>> 32fc6e52894b209e077ffd32813166c358068166
     ]
   },
   "index.tsx -> ./pdf": {
@@ -59,10 +63,17 @@
     "id": 5814,
     "files": [
       "static/chunks/647-5ae4ada0c3ee9baa.js",
+<<<<<<< HEAD
       "static/chunks/627.56b4743b3044842e.js",
       "static/chunks/43.8008c37ab2d54897.js",
       "static/css/0f9f4fd29e0d7902.css",
       "static/chunks/33.daab8b19a914b28e.js"
+=======
+      "static/chunks/627.fc454b09ae6a4d8e.js",
+      "static/chunks/408.10c4443bd4661b0d.js",
+      "static/css/4f881434dcbd6f6d.css",
+      "static/chunks/33.bc253ea858565c3a.js"
+>>>>>>> 32fc6e52894b209e077ffd32813166c358068166
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/ExpiratePage": {
@@ -74,6 +85,7 @@
   "landing-page.tsx -> ../components/Landing-Page/Header": {
     "id": 57,
     "files": [
+<<<<<<< HEAD
       "static/chunks/627.56b4743b3044842e.js",
       "static/css/0f9f4fd29e0d7902.css",
       "static/chunks/486.0cbe9e729d5dfb54.js"
@@ -85,6 +97,11 @@
       "static/chunks/627.56b4743b3044842e.js",
       "static/css/0f9f4fd29e0d7902.css",
       "static/chunks/541.88190d2a0ae712a9.js"
+=======
+      "static/chunks/627.fc454b09ae6a4d8e.js",
+      "static/css/4f881434dcbd6f6d.css",
+      "static/chunks/486.0cbe9e729d5dfb54.js"
+>>>>>>> 32fc6e52894b209e077ffd32813166c358068166
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Info": {
@@ -109,8 +126,12 @@
   "landing-page.tsx -> ../components/Landing-Page/Portfolio1": {
     "id": 2960,
     "files": [
+<<<<<<< HEAD
       "static/chunks/45.787e2772978b0089.js",
       "static/chunks/960.76abf05962926757.js"
+=======
+      "static/chunks/960.dde73fab0d841fdd.js"
+>>>>>>> 32fc6e52894b209e077ffd32813166c358068166
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Pricing": {
@@ -136,8 +157,13 @@
   "landing-page.tsx -> ../components/Landing-Page/Team": {
     "id": 3446,
     "files": [
+<<<<<<< HEAD
       "static/chunks/627.56b4743b3044842e.js",
       "static/css/0f9f4fd29e0d7902.css",
+=======
+      "static/chunks/627.fc454b09ae6a4d8e.js",
+      "static/css/4f881434dcbd6f6d.css",
+>>>>>>> 32fc6e52894b209e077ffd32813166c358068166
       "static/chunks/255.d1d8271965228830.js"
     ]
   },
