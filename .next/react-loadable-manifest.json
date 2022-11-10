@@ -1,122 +1,152 @@
 {
   "..\\..\\node_modules\\jspdf\\dist\\jspdf.es.min.js -> canvg": {
-    "id": "..\\..\\node_modules\\jspdf\\dist\\jspdf.es.min.js -> canvg",
+    "id": 4668,
     "files": [
-      "static/chunks/node_modules_canvg_lib_index_es_js.js"
+      "static/chunks/72a30a16.9ca1d3804e111872.js",
+      "static/chunks/812.2390eda4c3cc5fdd.js"
     ]
   },
   "..\\..\\node_modules\\jspdf\\dist\\jspdf.es.min.js -> dompurify": {
-    "id": "..\\..\\node_modules\\jspdf\\dist\\jspdf.es.min.js -> dompurify",
+    "id": 7856,
     "files": [
-      "static/chunks/node_modules_dompurify_dist_purify_js.js"
+      "static/chunks/856.2ceff76c32922298.js"
     ]
   },
   "..\\..\\node_modules\\jspdf\\dist\\jspdf.es.min.js -> html2canvas": {
-    "id": "..\\..\\node_modules\\jspdf\\dist\\jspdf.es.min.js -> html2canvas",
+    "id": 1120,
     "files": [
-      "static/chunks/node_modules_html2canvas_dist_html2canvas_js.js"
+      "static/chunks/ad7f724d.a1a0900eadd4038f.js"
     ]
   },
   "[slug].tsx -> .": {
-    "id": "[slug].tsx -> .",
+    "id": 5970,
     "files": [
-      "static/chunks/src_pages_index_tsx.js"
+      "static/chunks/970.dde8f67d51c238d1.js"
     ]
   },
   "index.tsx -> ./404": {
-    "id": "index.tsx -> ./404",
+    "id": 8609,
     "files": [
-      "static/chunks/src_pages_404_js.js"
+      "static/chunks/664-63234660f1b2e410.js",
+      "static/chunks/609.bc0d63828a28bdd1.js"
     ]
   },
   "index.tsx -> ./landing-page": {
-    "id": "index.tsx -> ./landing-page",
+    "id": 4515,
     "files": [
-      "static/chunks/src_pages_landing-page_tsx.js"
+      "static/chunks/664-63234660f1b2e410.js",
+      "static/chunks/515.5d3d5cbebaf05a0d.js"
     ]
   },
   "index.tsx -> ./pdf": {
-    "id": "index.tsx -> ./pdf",
+    "id": 6053,
     "files": [
-      "static/chunks/src_pages_pdf_jsx.js"
+      "static/chunks/1644ddea-e0270f35e484dc4c.js",
+      "static/chunks/bb02c0f2-702766d1b4d33d73.js",
+      "static/chunks/e78312c5-93877492029a840c.js",
+      "static/chunks/647-5ae4ada0c3ee9baa.js",
+      "static/chunks/412-5d7d8799053eaa46.js",
+      "static/chunks/53-1d88de7b8cec3f0d.js"
     ]
   },
   "landing-page.tsx -> ../components/Footers/MainFooter": {
-    "id": "landing-page.tsx -> ../components/Footers/MainFooter",
+    "id": 4794,
     "files": [
-      "static/chunks/src_components_Footers_MainFooter_index_jsx.js"
+      "static/chunks/794.10dd885f4ca556e4.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/About": {
-    "id": "landing-page.tsx -> ../components/Landing-Page/About",
+    "id": 5814,
     "files": [
-      "static/chunks/src_components_Landing-Page_About_index_jsx.js"
+      "static/chunks/647-5ae4ada0c3ee9baa.js",
+      "static/chunks/627.56b4743b3044842e.js",
+      "static/chunks/43.8008c37ab2d54897.js",
+      "static/css/0f9f4fd29e0d7902.css",
+      "static/chunks/33.daab8b19a914b28e.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/ExpiratePage": {
-    "id": "landing-page.tsx -> ../components/Landing-Page/ExpiratePage",
+    "id": 3298,
     "files": [
-      "static/chunks/src_components_Landing-Page_ExpiratePage_index_jsx.js"
+      "static/chunks/298.b5f809cc33080c2b.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Header": {
-    "id": "landing-page.tsx -> ../components/Landing-Page/Header",
+    "id": 57,
     "files": [
-      "static/chunks/src_components_Landing-Page_Header_index_tsx.js"
+      "static/chunks/627.56b4743b3044842e.js",
+      "static/css/0f9f4fd29e0d7902.css",
+      "static/chunks/486.0cbe9e729d5dfb54.js"
+    ]
+  },
+  "landing-page.tsx -> ../components/Landing-Page/Header2": {
+    "id": 5319,
+    "files": [
+      "static/chunks/627.56b4743b3044842e.js",
+      "static/css/0f9f4fd29e0d7902.css",
+      "static/chunks/541.88190d2a0ae712a9.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Info": {
-    "id": "landing-page.tsx -> ../components/Landing-Page/Info",
+    "id": 97,
     "files": [
-      "static/chunks/src_components_Landing-Page_Info_index_jsx.js"
+      "static/chunks/97.59dff1287479d6b5.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Login": {
-    "id": "landing-page.tsx -> ../components/Landing-Page/Login",
+    "id": 2798,
     "files": [
-      "static/chunks/src_components_Landing-Page_Login_index_jsx.js"
+      "static/chunks/798.99d4be8bc44b5894.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Portfolio": {
-    "id": "landing-page.tsx -> ../components/Landing-Page/Portfolio",
+    "id": 2248,
     "files": [
-      "static/chunks/src_components_Landing-Page_Portfolio_index_jsx.js"
+      "static/chunks/352.178a7fde45f547ae.js",
+      "static/chunks/248.34305bae6de4e37f.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Portfolio1": {
-    "id": "landing-page.tsx -> ../components/Landing-Page/Portfolio1",
+    "id": 2960,
     "files": [
-      "static/chunks/src_components_Landing-Page_Portfolio1_index_jsx.js"
+      "static/chunks/45.787e2772978b0089.js",
+      "static/chunks/960.76abf05962926757.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Pricing": {
-    "id": "landing-page.tsx -> ../components/Landing-Page/Pricing",
+    "id": 5728,
     "files": [
-      "static/chunks/src_components_Landing-Page_Pricing_index_jsx.js"
+      "static/chunks/647-5ae4ada0c3ee9baa.js",
+      "static/chunks/728.eff4aa50cd8908f3.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Section": {
-    "id": "landing-page.tsx -> ../components/Landing-Page/Section",
+    "id": 2739,
     "files": [
-      "static/chunks/src_components_Landing-Page_Section_index_jsx.js"
+      "static/css/b48a2d331a296f22.css",
+      "static/chunks/739.e0462ae5bd67ce48.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Services": {
-    "id": "landing-page.tsx -> ../components/Landing-Page/Services",
+    "id": 1800,
     "files": [
-      "static/chunks/src_components_Landing-Page_Services_index_jsx.js"
+      "static/chunks/800.fb68a34a85ea4ec4.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Team": {
-    "id": "landing-page.tsx -> ../components/Landing-Page/Team",
+    "id": 3446,
     "files": [
-      "static/chunks/src_components_Landing-Page_Team_index_jsx.js"
+      "static/chunks/627.56b4743b3044842e.js",
+      "static/css/0f9f4fd29e0d7902.css",
+      "static/chunks/255.d1d8271965228830.js"
     ]
   },
   "landing-page.tsx -> ../components/Landing-Page/Testimonials": {
-    "id": "landing-page.tsx -> ../components/Landing-Page/Testimonials",
+    "id": 7190,
     "files": [
-      "static/chunks/src_components_Landing-Page_Testimonials_index_jsx.js"
+      "static/chunks/352.178a7fde45f547ae.js",
+      "static/css/8292de043a10ca3b.css",
+      "static/chunks/190.c2d245421d9d007d.js"
     ]
   }
 }

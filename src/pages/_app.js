@@ -10,18 +10,33 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Da vinci</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
       </Head>
 
       <Component {...pageProps} />
       <ProgressScroll />
 
-      <Script strategy="beforeInteractive" src="/js/bootstrap.bundle.min.js"></Script>
+      <Script
+        strategy="beforeInteractive"
+        src="/js/bootstrap.bundle.min.js"
+      ></Script>
       <Script strategy="beforeInteractive" src="/js/wow.min.js"></Script>
       <Script strategy="beforeInteractive" src="/js/splitting.min.js"></Script>
-      <Script strategy="beforeInteractive"src="/js/simpleParallax.min.js"></Script>
-      <Script strategy="beforeInteractive" src="/js/isotope.pkgd.min.js"></Script>
-      <Script strategy="beforeInteractive" src="/landing-preview/js/parallax.min.js"></Script>
+      <Script
+        strategy="beforeInteractive"
+        src="/js/simpleParallax.min.js"
+      ></Script>
+      <Script
+        strategy="beforeInteractive"
+        src="/js/isotope.pkgd.min.js"
+      ></Script>
+      <Script
+        strategy="beforeInteractive"
+        src="/landing-preview/js/parallax.min.js"
+      ></Script>
       <Script strategy="lazyOnload" src="/js/main.js"></Script>
     </>
   );

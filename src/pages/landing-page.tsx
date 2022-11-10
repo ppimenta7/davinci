@@ -9,6 +9,7 @@ import Navbar from "../components/Navbars/MainNavbar/index";
 import FixedSearch from "../components/Common/FixedSearch";
 
 const Header = dynamic(() => import("../components/Landing-Page/Header"));
+const Header2 = dynamic(() => import("../components/Landing-Page/Header2"));
 const Services = dynamic(() => import("../components/Landing-Page/Services"));
 const Team = dynamic(() => import("../components/Landing-Page/Team"));
 const Portfolio = dynamic(() => import("../components/Landing-Page/Portfolio"));
@@ -75,7 +76,8 @@ const LandingPage = ({ bugets, products, categories, customers }) => {
           status || acessType == "admin" ? (
             <>
               <FixedSearch />
-              <Header bugets={bugets} />
+              {/* <Header bugets={bugets} /> */}
+              <Header2 bugets={bugets} />
               <main className="position-re">
                 <Team />
                 <Services />

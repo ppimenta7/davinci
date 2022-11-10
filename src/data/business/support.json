@@ -2,16 +2,22 @@
   {
     "id": 1,
     "image": "img/davinci/d2.png",
-    "title": "Kids"
+    "title": "Kids",
+    "icon": "fa-fist-raised",
+    "Ticon": "<AbcIcon />"
   },
   {
     "id": 2,
-    "image": "img/davinci/btn.png",
-    "title": "Senior"
+    "image": "img/davinci/d8.png",
+    "title": "Senior",
+    "icon": "fa-fist-raised",
+    "Ticon": "<DeleteIcon />"
   },
   {
     "id": 3,
     "image": "img/davinci/d6.png",
-    "title": "Performance"
+    "title": "Performance",
+    "icon": "fa-fist-raised",
+    "Ticon": "<DeleteIcon />"
   }
 ]

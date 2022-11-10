@@ -59,7 +59,7 @@ const Team = () => {
                 ></span>
               </h6>
             </a> */}
-            <a
+            {/* <a
               // className="test"
               href="https://youtu.be/hq8-I0N5BM4"
               onClick={openVideo}
@@ -69,7 +69,7 @@ const Team = () => {
                   Quem Somos <i className="fas fa-play"></i>
                 </span>
               </h6>
-            </a>
+            </a> */}
             {/* <div className="play-button">
               <a
                 href="https://youtu.be/WRwJE1S7iuw"
