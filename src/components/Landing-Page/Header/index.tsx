@@ -52,7 +52,6 @@ const Header = ({ bugets }) => {
                       </div>
                     </div>
                   </div>
-                  {/* <h1 className="orange-color text-u fz-40 pt-40"><span className="fw-300 ">Orçamento para</span>{title}</h1> */}
                   <h1 className="fw-300 text-u fz-40 pt-40">A <span className="orange-color fw-600 ">Da Vinci Clinic</span> é o centro de reabilitação mais avançado da América Latina </h1>
                   <p 
                   // style={{

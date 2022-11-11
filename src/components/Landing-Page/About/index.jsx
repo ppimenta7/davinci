@@ -8,7 +8,10 @@ import MyVerticallyCenteredModal from "../../../../public/js/modal";
 
 const { htmlToText } = require("html-to-text");
 
-const About = ({ products, categories }) => {
+const About = ({ products, categories, bugets }) => {
+    const bgTitle = bugets?.title;
+    const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
+
   const [isOpen, setOpen] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   const [productSelect, setProductSelect] = useState("");
@@ -30,6 +33,17 @@ const About = ({ products, categories }) => {
   return (
     <>
       <div data-scroll-index="3">
+        <div className="container pt-50">
+          <div className="round-head text-center mb-20">
+            <h2
+              style={{ textDecoration: "underline" }}
+              className="orange-color text-u fz-35 pt-40 pb-30 underline"
+            >
+              <span className="fw-600 text-black">Orçamento para</span>
+              {title}
+            </h2>
+          </div>
+        </div>
         {products?.map((product) => (
           <section
             style={{ backgroundColor: "#f0f0f0" }}
@@ -117,14 +131,8 @@ const About = ({ products, categories }) => {
                 </div>
                 <div className="col-lg-6 valign">
                   <div className="content pl-50">
-                    {/* <div className="sub-head radius fz-12 ls2 text-u mb-10">
-                    <span>Highly expertise</span>
-                  </div> */}
                     <h2 className="mb-20 fw-800">
                       {product.short_description}.{/* <br />{product.name}. */}
-                      {/* <span style={{ display: "block", color: '#b8b8b8' }} className="fz-30 fw-600">
-                        - {product.name}
-                      </span> */}
                       <span style={{ display: "block" }} className="blue-color">
                         {" "}
                         {categories.map((category) =>

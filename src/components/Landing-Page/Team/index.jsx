@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import team from "../../../data/business/team.json";
 import Video from "../../Video";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/css/modal-video.css";
 

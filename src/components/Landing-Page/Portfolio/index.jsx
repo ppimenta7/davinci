@@ -1,39 +1,56 @@
-/* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
+/* eslint-disable react/jsx-no-undef */
+import support from "../../../data/business/support.json";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { EscalatorWarning, Elderly, SportsHandball } from "@mui/icons-material";
+import Icon from "@mui/material/Icon";
 import features from "../../../data/business/features.json";
 
-const Portfolio = ({ products, categories, bugets }) => {
-  const bgTitle = bugets?.title;
-  const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
+const Icons = [
+  <EscalatorWarning key="" sx={{ fontSize: 100 }} />,
+  <Elderly key="" sx={{ fontSize: 100 }} />,
+  <SportsHandball key="" sx={{ fontSize: 100 }} />,
+];
 
+const Portfolio = () => {
   return (
     <>
-      {/* <section
-        className="work-carsouel crv section-padding pb-0 pt-30"
-        data-scroll-index="2"
-      >
-        <div className="container">
-            <div className="round-head text-center mb-20">
-              <h2 className="orange-color text-u fz-35 pt-40 pb-30"><span className="fw-300 text-dark">Orçamento para</span>{title}</h2>
+    <section className="portfolio-simp-crus pt-0 section-padding">
+      <div className="container">
+        <div className="row col-lg-10 col-md-12 pt-60 justify-content-center margin-rl-auto">
+          {support.map((slide, idx) => (
+            <div key={idx} className="col-lg-3 col-md-6">
+              <div
+                style={{ backgroundImage: `url(${slide.image})` }}
+                className="slide-item img info mt-20 text-center"
+              >
+                <div className="text-white margin-rl-auto" style={{opacity:'.5'}}>
+                  {Icons[idx]}
+                </div>
+
+                {/* <i className={`text-white fas ${slide.icon} i-span`}></i> */}
+                <h6 className="fw-600 text-u text-light fz-24">
+                  {slide.title}
+                </h6>
+              </div>
             </div>
-      </div> 
-      </section>*/}
-      <section
+          ))}
+        </div>
+
+        <div className="text-center pb-50 mt-30">
+          <h2>Uma clínica para todos.</h2>
+          <p className="col-6 fz-18 margin-rl-auto">
+            De quem ainda vai passar por uma amputação àqueles que buscam
+            melhorar sua qualidade de vida com próteses.
+          </p>
+        </div>
+      </div>
+    </section>
+<section
         className="work-carsouel crv section-padding pb-30 pt-30 bg-color "
         data-scroll-index="2"
       >
         <div className="container">
           <div className="row">
-            {/* <div className="col-12">
-            <div className="round-head text-center mb-40 ">
-              {/* <h6 className="ls2 text-u fz-12 mb-15 gr-orange-text">
-                Produtos<span></span>
-              </h6> 
-              <h2 className="orange-color text-u fz-35 pt-40 pb-30"><span className="fw-300">Orçamento para</span>{title}</h2>
-            </div>
-          </div> */}
-
             <section
               className="feat-exp"
               style={{ padding: 0 }}
@@ -87,70 +104,11 @@ const Portfolio = ({ products, categories, bugets }) => {
                   </div>
                 </div>
               </div>
-              {/* <div className="container pt-50">
-                <div className="round-head text-center mb-20">
-                  <h2
-                    style={{ textDecoration: "underline" }}
-                    className="orange-color text-u fz-35 pt-40 pb-30 underline"
-                  >
-                    <span className="fw-300 text-white">Orçamento para</span>
-                    {title}
-                  </h2>
-                </div>
-              </div> */}
             </section>
-
-            {/* <div className="col-lg-12">
-            <Swiper
-              className="work-crsol position-re"
-              slidesPerView="auto"
-              spaceBetween={60}
-              // loop={true}
-            >
-              {products.map((product) => (
-                <SwiperSlide key={product.id}>
-                  <figure>
-                    <Link href="/project-details">
-                      <a>
-                        <img src={product.image} alt="" />
-                      </a>
-                    </Link>
-                  </figure>
-                  <div className="cont">
-                    <div className="info pr-30">
-                      <span style={{padding:"1px 3px"}} className="fz-13 opacity-7 bg-gray-light text-black radius-5">{
-              
-              categories.map((category) => (
-                category.id == product.category ? category.name : '' )
-                )
-              
-            }</span>
-                      <h6 className="fw-600 mt-5">
-                        <Link href="/project-details">
-                          <a>{product.nome}</a>
-                        </Link>
-                      </h6>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div> */}
           </div>
         </div>
       </section>
-      <div className="container pt-50">
-        <div className="round-head text-center mb-20">
-          <h2
-            style={{ textDecoration: "underline" }}
-            className="orange-color text-u fz-35 pt-40 pb-30 underline"
-          >
-            <span className="fw-600 text-black">Orçamento para</span>
-            {title}
-          </h2>
-        </div>
-      </div>
-    </>
+      </>
   );
 };
 

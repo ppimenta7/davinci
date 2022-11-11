@@ -1,19 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
-import { formateDate, formateValue, formataCPF } from "../../../../public/js/index";
-const { htmlToText } = require('html-to-text');
-
-const Pricing = ({ bugets, customers, products}) => {
-  const dataBirthdate = formateDate(customers?.birth_date)
+import {
+  formateDate,
+  formateValue,
+  formataCPF,
+} from "../../../../public/js/index";
+const Pricing = ({ bugets, customers, products }) => {
+  const dataBirthdate = formateDate(customers?.birth_date);
   const cpf = formataCPF(customers?.cpf);
   const value = formateValue(bugets.value);
 
-  const comment = ""
-  products.map(prod => {
+  const comment = "";
+  products.map((prod) => {
     comment += `${prod.technical_description}. `;
-  })
-//   const text = htmlToText(comment, {
-//     wordwrap: 130
-// });
+  });
 
   return (
     <section className="price section-padding" data-scroll-index="4">

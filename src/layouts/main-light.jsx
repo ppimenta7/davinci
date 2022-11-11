@@ -4,7 +4,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbars/AppNavbar";
 
 
-const MainLayout = ({ children, links}) => {
+const MainLayout = ({ children }) => {
 
   // const navbarRef = useRef(null);
 
