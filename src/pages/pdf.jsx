@@ -1,8 +1,9 @@
 // import jsPDF from "jspdf";
-import Head from "next/head";
-import pdfMake from "pdfmake/build/pdfmake";
-import pdfFonts from "pdfmake/build/vfs_fonts";
 import { useEffect } from "react";
+import Head from "next/head";
+import dynamic from "next/dynamic";
+const pdfMake = dynamic(() => import("pdfmake/build/pdfmake"));
+const pdfFonts = dynamic(() => import("pdfmake/build/vfs_fonts"));
 import { logo, fundo, ass } from "../../public/img/imgs-datauri";
 import {
   formateDate,
@@ -11,7 +12,7 @@ import {
   formateDateNow,
   friendlyFilename,
 } from "../../public/js/index";
-import { totalValueBugets, nada, contentProducts } from "../data/pdf-content";
+import { totalValueBugets, contentProducts } from "../data/pdf-content";
 // const { htmlToText } = require("html-to-text");
 
 const Pdf = ({ products, bugets, customers }) => {
