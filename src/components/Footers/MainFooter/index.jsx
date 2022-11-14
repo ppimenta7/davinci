@@ -4,16 +4,8 @@ import Link from 'next/link';
 import footerData from '../../../data/footers/main-footer.json';
 
 const Footer = () => {
-
-  const creative = undefined
-  const footerRef = useRef(null);
-
-  useEffect(() => {
-    if (!creative) footerRef.current.setAttribute("data-overlay-dark", "0");
-  }, [creative]);
-
   return (
-    <footer className="main-footer bg-dark-blue bg-img" style={{ backgroundImage: "url('img/background/8.jpg')" }} ref={footerRef}>
+    <footer className="main-footer bg-dark-blue bg-img" style={{ backgroundImage: "url('img/background/8.jpg')" }}>
       <div className={`sub-footer pt-0 no-bord`}>
         <div className="container">
           <div className="row">

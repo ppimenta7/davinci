@@ -2,6 +2,7 @@
 import { SlideDown } from "react-slidedown";
 import "react-slidedown/lib/slidedown.css";
 import accordionsData from "../../../data/business/accordions.json";
+import Image from "next/image";
 
 const Section = () => {
   let accordions = accordionsData;
@@ -79,14 +80,10 @@ const Section = () => {
               </a>
             </div>
           </div>
-          {/* <div className="col-lg-6 wow slideInUp">
-            <div className="img wow imago">
-              <img style={{width: "100px"}} src="img/davinci/p.png" alt="" />
-            </div>
-          </div> */}
           <div className="col-lg-6 wow slideInUp">
             <div className="img wow">
               <img src="img/davinci/p.png" alt="" />
+              {/* <Image src={"img/davinci/p.png"} alt="" layout="fill" /> */}
             </div>
           </div>
           <div className="col-lg-12">

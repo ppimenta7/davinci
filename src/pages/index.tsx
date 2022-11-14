@@ -20,12 +20,12 @@ interface IndexPageInterface {
 }
 
 const IndexPage: NextPage<IndexPageInterface> = ({ bugets, products, categories, customers, pdf, params }) => {
-  // console.log(pdf == true ? 'simm' : 'não');
-  return params == undefined ? <NotFoundPage /> : (
-    pdf == true ? 
-        <Pdf bugets={bugets} products={products} customers={customers} />
-      : <LandingPage bugets={bugets} products={products} categories={categories} customers={customers} />
-      );
+  if(params == undefined) return <NotFoundPage />;
+  if(pdf == true ) return <Pdf bugets={bugets} products={products} customers={customers} />;
+  else{
+    return <LandingPage bugets={bugets} products={products} categories={categories} customers={customers} />
+  }
 };
+
 
 export default IndexPage;

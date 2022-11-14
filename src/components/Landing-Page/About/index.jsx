@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
-import Link from "next/link";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/css/modal-video.css";
 import Modal from "react-bootstrap/Modal";
 import MyVerticallyCenteredModal from "../../../../public/js/modal";
+import Image from "next/image";
 
 const { htmlToText } = require("html-to-text");
 
@@ -95,7 +95,14 @@ const About = ({ products, categories, bugets }) => {
                       </div>
                     </div>
                     <div className="img2">
-                      <img src={product.image} alt="" />
+                      {/* <img src={product.image} alt="" /> */}
+                      <Image
+                        src={product.image}
+                        alt=""
+                        layout="fill"
+                        // width={'auto'}
+                        // height={'auto'}
+                      />
                       {/* {product.link_video && product.link_video != 'https://www.link-video.com' ? ( */}
                       {product.link_video ? (
                         <div className="play-button">

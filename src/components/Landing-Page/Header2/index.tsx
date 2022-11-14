@@ -4,8 +4,11 @@ import ModalVideo from "react-modal-video";
 import "react-modal-video/css/modal-video.css";
 import parallaxie from "../../../common/parallaxie";
 import { goToSection } from "../../Navbars/AppNavbar";
-import { Autoplay } from "swiper";
-import Video from "../../Video";
+// import { Autoplay } from "swiper";
+// import Video from "../../Video";
+
+import Image from "next/image";
+import pngVideo from "../../../../public/img/davinci/png-video.png";
 
 const Header = ({ bugets }) => {
   const [isOpen, setOpen] = useState(false);
@@ -155,9 +158,9 @@ const Header = ({ bugets }) => {
                   className="vid"
                   onClick={openVideo}
                 >
-                  <img
+                  <Image
                     className="radius-20"
-                    src="/img/davinci/png-video.png"
+                    src={pngVideo}
                     alt=""
                   />
                 </a>

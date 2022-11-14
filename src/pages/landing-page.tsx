@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
 const MainLightLayout = dynamic(() => import("../layouts/main-light"));
 const FixedSearch = dynamic(() => import("../components/Common/FixedSearch"));
-const Header = dynamic(() => import("../components/Landing-Page/Header"));
+// const Header = dynamic(() => import("../components/Landing-Page/Header"));
 const Header2 = dynamic(() => import("../components/Landing-Page/Header2"));
 const Services = dynamic(() => import("../components/Landing-Page/Services"));
 const Team = dynamic(() => import("../components/Landing-Page/Team"));
@@ -19,34 +19,21 @@ const ExpiratePage = dynamic(() => import("../components/Landing-Page/ExpiratePa
 const Footer = dynamic(() => import("../components/Footers/MainFooter"));
 
 const LandingPage = ({ bugets, products, categories, customers }) => {
-
   const dateNow = new Date();
   const expirationDate = new Date(bugets?.expiration_date);
   const status = expirationDate.getTime() >= dateNow.getTime();
 
-  const [acessType, setAcessType] = useState("");
-  const handleTypeAcess = () => {
-    setAcessType("admin");
+  const [acessType, setAcessType] = useState("negate");
+  const handleTypeAcess = (type: "admin" | "user" | "negate" ) => {
+    setAcessType(type);
   };
-
-  const [acess, setAcess] = useState(false); //false
-  const handleAcess = () => {
-    setAcess(true);
-  };
-
-  useEffect(() => {
-    document.body.classList.add("index-main");
-  }, []);
-
   return (
     <>
       <Head>
         <title>Davinci - Orçamento Hotsite</title>
       </Head>
-
       <MainLightLayout>
-        {acess ? (
-          status || acessType == "admin" ? (
+        { status || acessType == "admin" ? (
             <>
               <FixedSearch />
               {/* <Header bugets={bugets} /> */}
@@ -56,7 +43,11 @@ const LandingPage = ({ bugets, products, categories, customers }) => {
                 <Services />
                 <Info />
                 <Portfolio />
-                <About bugets={bugets} products={products} categories={categories} />
+                <About
+                  bugets={bugets}
+                  products={products}
+                  categories={categories}
+                />
                 <Pricing
                   bugets={bugets}
                   customers={customers}
@@ -68,15 +59,13 @@ const LandingPage = ({ bugets, products, categories, customers }) => {
               </main>
             </>
           ) : (
-            <ExpiratePage />
-          )
-        ) : (
-          <Login
-            handleAcess={handleAcess}
+            acessType == 'negate' ? 
+            (<Login
             handleTypeAcess={handleTypeAcess}
             bugetsPassword={bugets?.password_access_code}
-          />
-        )}
+            />): <ExpiratePage />
+            
+          )}
       </MainLightLayout>
     </>
   );
