@@ -20,6 +20,7 @@ interface IndexPageInterface {
 }
 
 const IndexPage: NextPage<IndexPageInterface> = ({ bugets, products, categories, customers, pdf, params }) => {
+  // console.log(pdf == true ? 'simm' : 'não');
   return params == undefined ? <NotFoundPage /> : (
     pdf == true ? 
         <Pdf bugets={bugets} products={products} customers={customers} />

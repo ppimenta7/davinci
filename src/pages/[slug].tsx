@@ -9,6 +9,7 @@ import { getCustomers } from "../services/getCustomers";
 import { getProducts } from "../services/getProducts";
 import dynamic from "next/dynamic";
 import { getBugetsHistory } from "../services/getBugetsHistory";
+import { useState } from 'react';
 const IndexPage = dynamic(() => import("."));
 
 interface SlugInterface {
@@ -21,8 +22,9 @@ interface SlugInterface {
     slug: string;
   };
 }
-
 const Slug: NextPage<SlugInterface> = ({ pdf, bugets, products, categories, customers, params }) => {
+  // const [pdf, setPdf] = useState('false');
+
   return (
     <>
       <IndexPage params={params} bugets={bugets} products={products} categories={categories} customers={customers} pdf={pdf}
@@ -55,17 +57,15 @@ export const getServerSideProps = async ({ query }) => {
     let bugets;
 
     if (type == 'historico') { bugets = await getBugetsHistory(id).then((res) => res.data); }
-    else { bugets = await getBugets(id).then((res) => res.data); }
-    // bugets = await getBugets(id).then((res) => res.data);
-
+    else { bugets = await getBugets(id)}
     const IDproducts = bugets.products.join()
-
-    const products = await getProducts(IDproducts).then((res) => res.data.records);
-
-    const IDCategorys = await products.map((products: ProductsInterface) => products.category);
-    const categories = await getCategories(IDCategorys).then((res) => res.data.records);
-
+    const products = await getProducts(IDproducts)
+    let IDCategorys = [];
+    for(let prop in products) { IDCategorys.push(products[prop].category); }
+    
+    const categories = await getCategories(IDCategorys)
     const customers = await getCustomers(bugets.customer).then((res) => res.data.records[0]);
+    console.log(customers);
 
     return {
       props: {

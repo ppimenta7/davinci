@@ -23,5 +23,5 @@ export const getBugets = async (
       }
     );
   
-    return response;
+    return response.data;
   };

@@ -18,5 +18,5 @@ export const getProducts = async (
       }
     );
   
-    return response;
+    return response.data.records;
   };
