@@ -64,8 +64,7 @@ export const getServerSideProps = async ({ query }) => {
     for(let prop in products) { IDCategorys.push(products[prop].category); }
     
     const categories = await getCategories(IDCategorys)
-    const customers = await getCustomers(bugets.customer).then((res) => res.data.records[0]);
-    console.log(customers);
+    const customers = await getCustomers(bugets.customer);
 
     return {
       props: {

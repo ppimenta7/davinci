@@ -37,10 +37,10 @@ export const contentProducts = (products, bugets) => {
       { text: `${prod.name} - ${prod.short_description}: `, bold: true },
       `${prod.technical_description}\n`
     );
-  })
+  });
 
   const contentProducts = [];
-    contentProducts.push([
+  contentProducts.push([
     { text: 1, alignment: "center", margin: [5, 5] },
     {
       text: allProducts,

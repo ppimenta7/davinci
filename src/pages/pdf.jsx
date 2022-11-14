@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-css-tags */
-import jsPDF from "jspdf";
+// import jsPDF from "jspdf";
 import Head from "next/head";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
@@ -13,7 +12,7 @@ import {
   friendlyFilename,
 } from "../../public/js/index";
 import { totalValueBugets, nada, contentProducts } from "../data/pdf-content";
-const { htmlToText } = require("html-to-text");
+// const { htmlToText } = require("html-to-text");
 
 const Pdf = ({ products, bugets, customers }) => {
 
@@ -238,7 +237,6 @@ const Pdf = ({ products, bugets, customers }) => {
         <link rel="stylesheet" href="/css/style.css" />
       </Head>
       <section>
-        {/* <div id="bla" dangerouslySetInnerHTML={{__html:"&amp;nbsp;"}}/> */}
         <div id="teste">
           <div className="container loader-container">
             <h2 className="orange-color text-u fz-35 pt-40 pb-30">
@@ -247,9 +245,9 @@ const Pdf = ({ products, bugets, customers }) => {
             </h2>
             <h3 id="title">Gerando PDF</h3>
             <p className="fz-16">
-              Se a geração não ocorrer{" "}
+              A geração não ocorreu automaticamente{" "}
               <span style={{ textDecoration: "underline" }} onClick={gerarPDF}>
-                tente novamente
+                Tente Novamente
               </span>
             </p>
             <div id="loader" className="c-loader"></div>
