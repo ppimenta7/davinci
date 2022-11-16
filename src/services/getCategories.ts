@@ -1,7 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { CategoriesInterface } from "../interfaces/categoriesInterface";
-import { CustomAxiosResponse } from "./axiosService";
-import { options } from "./getBugets";
+import { options } from "./getBudgets";
 
 export const getCategories = async (
   IDCategorys

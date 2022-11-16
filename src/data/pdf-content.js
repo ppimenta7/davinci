@@ -1,13 +1,7 @@
-import {
-  formateDate,
-  formateValue,
-  formataCPF,
-  formateDateNow,
-  friendlyFilename,
-} from "../../public/js/index";
+import { formateValue } from "../../public/js/index";
 
-export const totalValueBugets = (value) => {
-  const totalValueBugets = [
+export const totalValueBudgets = (value) => {
+  const totalValueBudgets = [
     {
       border: [false, false, true, false],
       text: "",
@@ -19,7 +13,7 @@ export const totalValueBugets = (value) => {
     },
     { text: `${value}`, bold: true, margin: [10, 5, 10, 5] },
   ];
-  return totalValueBugets;
+  return totalValueBudgets;
 };
 
 export const nada = [
@@ -30,7 +24,7 @@ export const nada = [
   },
 ];
 
-export const contentProducts = (products, bugets) => {
+export const contentProducts = (products, budgets) => {
   let allProducts = [];
   products?.map((prod, idx) => {
     allProducts.push(
@@ -47,16 +41,16 @@ export const contentProducts = (products, bugets) => {
       margin: [5, 5],
     },
 
-    { text: formateValue(bugets?.value), alignment: "center", margin: [5, 5] },
+    { text: formateValue(budgets?.value), alignment: "center", margin: [5, 5] },
   ]);
 
-  bugets?.comments_report != ""
+  budgets?.comments_report != ""
     ? contentProducts.push([
         { border: [false, false, false, false], text: "" },
         {
           text: [
             { text: "Comentário/Laudo: ", bold: true },
-            bugets?.comments_report,
+            budgets?.comments_report,
           ],
           alignment: "center",
           margin: [5, 5],

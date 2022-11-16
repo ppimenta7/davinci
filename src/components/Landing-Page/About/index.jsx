@@ -1,16 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/css/modal-video.css";
-import Modal from "react-bootstrap/Modal";
 import MyVerticallyCenteredModal from "../../../../public/js/modal";
-import Image from "next/image";
 
 const { htmlToText } = require("html-to-text");
 
-const About = ({ products, categories, bugets }) => {
-    const bgTitle = bugets?.title;
-    const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
+const About = ({ products, categories, budgets }) => {
+  const bgTitle = budgets?.title;
+  const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
 
   const [isOpen, setOpen] = useState(false);
   const [modalShow, setModalShow] = useState(false);
@@ -23,12 +22,11 @@ const About = ({ products, categories, bugets }) => {
 
   const strlenText = (text) => {
     if (text.length > 255) {
-      return text.substring(0, 255)+'...';
-    }
-    else {
+      return text.substring(0, 255) + "...";
+    } else {
       return text;
     }
-  }
+  };
 
   return (
     <>

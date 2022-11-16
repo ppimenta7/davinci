@@ -1,32 +1,32 @@
+/* eslint-disable @next/next/no-css-tags */
 // import jsPDF from "jspdf";
-import { useEffect } from "react";
-import Head from "next/head";
 import dynamic from "next/dynamic";
-const pdfMake = dynamic(() => import("pdfmake/build/pdfmake"));
-const pdfFonts = dynamic(() => import("pdfmake/build/vfs_fonts"));
-import { logo, fundo, ass } from "../../public/img/imgs-datauri";
+import Head from "next/head";
+import { useEffect } from "react";
+import { ass, fundo, logo } from "../../public/img/imgs-datauri";
 import {
-  formateDate,
-  formateValue,
   formataCPF,
+  formateDate,
   formateDateNow,
+  formateValue,
   friendlyFilename,
 } from "../../public/js/index";
-import { totalValueBugets, contentProducts } from "../data/pdf-content";
+import { contentProducts, totalValueBudgets } from "../data/pdf-content";
+const pdfMake = dynamic(() => import("pdfmake/build/pdfmake"));
+const pdfFonts = dynamic(() => import("pdfmake/build/vfs_fonts"));
 // const { htmlToText } = require("html-to-text");
 
-const Pdf = ({ products, bugets, customers }) => {
-
+const Pdf = ({ products, budgets, customers }) => {
   const dataBirthdate = formateDate(customers?.birth_date);
   const cpf = formataCPF(customers?.cpf);
-  const value = formateValue(bugets?.value);
-  const discount = formateValue(bugets?.value - bugets?.discount);
+  const value = formateValue(budgets?.value);
+  const discount = formateValue(budgets?.value - budgets?.discount);
   const data_atual = formateDateNow();
 
-  const bgTitle = bugets?.title;
-  const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
-  const version = bugets?.version;
-  const contentProduct = contentProducts(products, bugets);
+  const bgTitle = budgets?.title;
+  const title =  bgTitle?.replace(/Orçamento para/g, "");
+  const version = budgets?.version;
+  const contentProduct = contentProducts(products, budgets);
   const filename = friendlyFilename(customers?.full_name);
 
   function gerarPDF() {
@@ -119,7 +119,7 @@ const Pdf = ({ products, bugets, customers }) => {
               ],
               contentProduct[0],
               contentProduct[1],
-              totalValueBugets(discount),
+              totalValueBudgets(discount),
             ],
             margin: [0, 0, 0, 20],
           },
@@ -131,7 +131,7 @@ const Pdf = ({ products, bugets, customers }) => {
             widths: ["*"],
             body: [
               [{ text: "Condição de Pagamento", style: "tableHeader" }],
-              [{ text: `${bugets?.payment_conditions}`, alignment: "center" }],
+              [{ text: `${budgets?.payment_conditions}`, alignment: "center" }],
             ],
           },
         },

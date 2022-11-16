@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import {
+  formataCPF,
   formateDate,
   formateValue,
-  formataCPF,
 } from "../../../../public/js/index";
-const Pricing = ({ bugets, customers, products }) => {
+const Pricing = ({ budgets, customers, products }) => {
   const dataBirthdate = formateDate(customers?.birth_date);
   const cpf = formataCPF(customers?.cpf);
-  const value = formateValue(bugets.value);
+  const value = formateValue(budgets.value);
 
   const comment = "";
   products.map((prod) => {
@@ -47,7 +47,7 @@ const Pricing = ({ bugets, customers, products }) => {
                 <h6 className="ls2 text-u fz-12">
                   Proposta Comercial para Solução I
                 </h6>
-                <span className="ls2 fz-12 fw-600">v{bugets?.version}</span>
+                <span className="ls2 fz-12 fw-600">v{budgets?.version}</span>
               </div>
               <div className="amount text-center">
                 <table className="table-border">
@@ -62,7 +62,7 @@ const Pricing = ({ bugets, customers, products }) => {
                       <td>{++idx}</td>
                       <td>
                         {prod.technical_description}
-                        {/* {bugets.comments_report == "" ? comment : bugets.comments_report} 
+                        {/* {budgets.comments_report == "" ? comment : budgets.comments_report} 
                       </td>
                       <td>
                         {formateValue(prod.value == null ? 0 : prod.value)}
@@ -73,7 +73,7 @@ const Pricing = ({ bugets, customers, products }) => {
                     <td>1</td>
                     <td>
                       {comment}
-                      {/* // {bugets.comments_report == "" ? comment : bugets.comments_report}  */}
+                      {/* // {budgets.comments_report == "" ? comment : budgets.comments_report}  */}
                     </td>
                     <td>{value}</td>
                   </tr>
@@ -81,7 +81,7 @@ const Pricing = ({ bugets, customers, products }) => {
                     <td style={{ border: "none" }}></td>
                     <td style={{ textAlign: "right" }}>Total c/ Desconto</td>
                     <td className="fw-700">
-                      {formateValue(bugets.value - bugets.discount)}
+                      {formateValue(budgets.value - budgets.discount)}
                     </td>
                   </tr>
                 </table>
@@ -92,7 +92,7 @@ const Pricing = ({ bugets, customers, products }) => {
                 </tr>
                 <tr>
                   {/* <td>O valor normal pode ser dividido em até <span>10</span> parcelas iguais de <span>R$ 233.714,00</span> no cartão de credito.</td> */}
-                  <td>{bugets.payment_conditions}</td>
+                  <td>{budgets.payment_conditions}</td>
                 </tr>
               </table>
               <div>

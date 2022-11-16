@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { BugetsInterface } from "../interfaces/bugetsInterface";
+import { BudgetsInterface } from "../interfaces/budgetsInterface";
 
 export const options = {
   headers: {
@@ -9,19 +9,18 @@ export const options = {
   },
 };
 
-export const getBugets = async (
+export const getBudgets = async (
   id
-  ): Promise<AxiosResponse<BugetsInterface>> => {
-  
-    const response = await axios.get(
-      `https://data.jetadmin.io/projects/da_vinci/prod/jet_database_8fl3/models/budget_generation/${id}/`,
-      {
-        headers: {
-          Authorization: options.headers.Authorization,
-          // "X-Bridge-Settings": options.headers["X-Bridge-Settings"],
-        },
-      }
-    );
-  
-    return response.data;
-  };
+): Promise<AxiosResponse<BudgetsInterface>> => {
+  const response = await axios.get(
+    `https://data.jetadmin.io/projects/da_vinci/prod/jet_database_8fl3/models/budget_generation/${id}/`,
+    {
+      headers: {
+        Authorization: options.headers.Authorization,
+        // "X-Bridge-Settings": options.headers["X-Bridge-Settings"],
+      },
+    }
+  );
+
+  return response.data;
+};

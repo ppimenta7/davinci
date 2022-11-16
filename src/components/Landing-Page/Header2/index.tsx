@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/css/modal-video.css";
 import parallaxie from "../../../common/parallaxie";
@@ -10,7 +10,7 @@ import { goToSection } from "../../Navbars/AppNavbar";
 import Image from "next/image";
 import pngVideo from "../../../../public/img/davinci/png-video.png";
 
-const Header = ({ bugets }) => {
+const Header = ({ budgets }) => {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Header = ({ bugets }) => {
     setOpen(true);
   };
 
-  const bgTitle = bugets?.title;
+  const bgTitle = budgets?.title;
   const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
   return (
     <>
@@ -158,11 +158,7 @@ const Header = ({ bugets }) => {
                   className="vid"
                   onClick={openVideo}
                 >
-                  <Image
-                    className="radius-20"
-                    src={pngVideo}
-                    alt=""
-                  />
+                  <Image className="radius-20" src={pngVideo} alt="" />
                 </a>
               </div>
             </div>

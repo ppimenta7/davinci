@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { CustomersInterface } from "../interfaces/customersInterface";
-import { options } from "./getBugets";
+import { options } from "./getBudgets";
 
 export const getCustomers = async (
   id

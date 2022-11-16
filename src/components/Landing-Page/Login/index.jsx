@@ -2,32 +2,32 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 
-const Login = ({ bugetsPassword, handleTypeAcess }) => {
+const Login = ({ budgetsPassword, handleTypeAcess }) => {
   const [password, setPassword] = useState("");
 
   const [errMessage, setErrMessage] = useState(null);
 
   const validatePassword = (pass) => {
-    if(pass == bugetsPassword || pass == "admin123"){
+    if (pass == budgetsPassword || pass == "admin123") {
       handleTypeAcess("user");
       return true;
-    }else{
+    } else {
       setErrMessage("Verifique que o código de acesso está correto");
       return false;
     }
   };
 
   const handleChange = (e) => {
-    setPassword(e.target.value)
+    setPassword(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!validatePassword(password)) return; 
+    if (!validatePassword(password)) return;
     setErrMessage("");
 
-    password == "admin123" ? handleTypeAcess('admin') : null
+    password == "admin123" ? handleTypeAcess("admin") : null;
   };
 
   return (

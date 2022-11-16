@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/css/modal-video.css";
 import parallaxie from "../../../common/parallaxie";
 import { goToSection } from "../../Navbars/AppNavbar";
-import { Autoplay } from "swiper";
 
-const Header = ({ bugets }) => {
+const Header = ({ budgets }) => {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
@@ -18,7 +17,7 @@ const Header = ({ bugets }) => {
     setOpen(true);
   };
 
-  const bgTitle = bugets?.title;
+  const bgTitle = budgets?.title;
   const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
   return (
     <>
@@ -28,39 +27,66 @@ const Header = ({ bugets }) => {
           // data-background="img/davinci/fundo.jpg"
           // data-background="img/davinci/d3.png"
           data-background="img/davinci/image2.png"
-          data-overlay-dark="4">
+          data-overlay-dark="4"
+        >
           <div className="container padding-rl-50">
             <div className="row">
               <div className="col-lg-8 col-md-10">
                 <div className="caption">
-                  <div style={{display:"flex", alignItems:"center"}}>
-                    <div className="pr-30"> 
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <div className="pr-30">
                       <img src="/img/davinci/d7.png" alt="" />
                     </div>
-                    <div className="row" style={{borderLeft: "2px solid white", paddingLeft: "10px"}}>
+                    <div
+                      className="row"
+                      style={{
+                        borderLeft: "2px solid white",
+                        paddingLeft: "10px",
+                      }}
+                    >
                       <div className="social">
                         <ul className="rest">
                           <li>
-                            <a href="https://www.facebook.com/davinciclinicbr"><i className="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/davincibrasil/"><i className="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/channel/UCa1K4UCwNtivaLBs_zF25VQ"><i className="fab fa-youtube"></i></a>
+                            <a href="https://www.facebook.com/davinciclinicbr">
+                              <i className="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/davincibrasil/">
+                              <i className="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCa1K4UCwNtivaLBs_zF25VQ">
+                              <i className="fab fa-youtube"></i>
+                            </a>
                           </li>
                         </ul>
                       </div>
                       <div>
-                        <h6 className="fw-400 fz-16">Cada prótese, Uma obra de arte</h6>
+                        <h6 className="fw-400 fz-16">
+                          Cada prótese, Uma obra de arte
+                        </h6>
                       </div>
                     </div>
                   </div>
-                  <h1 className="fw-300 text-u fz-40 pt-40">A <span className="orange-color fw-600 ">Da Vinci Clinic</span> é o centro de reabilitação mais avançado da América Latina </h1>
-                  <p 
-                  // style={{
-                  //       backgroundColor:"#ccccccab",
-                  //       padding: "5px 10px",
-                  //       borderRadius: "10px",
-                  //       color: "black",
-                  //   }}
-                  className="fz-18">A Da Vinci Clinic reúne os mais experientes profissionais do país que, juntos somam mais de 100 anos de experiência e milhares de pacientes reabilitados. Sua próxima experiência pode ser aqui</p>
+                  <h1 className="fw-300 text-u fz-40 pt-40">
+                    A{" "}
+                    <span className="orange-color fw-600 ">
+                      Da Vinci Clinic
+                    </span>{" "}
+                    é o centro de reabilitação mais avançado da América Latina{" "}
+                  </h1>
+                  <p
+                    // style={{
+                    //       backgroundColor:"#ccccccab",
+                    //       padding: "5px 10px",
+                    //       borderRadius: "10px",
+                    //       color: "black",
+                    //   }}
+                    className="fz-18"
+                  >
+                    A Da Vinci Clinic reúne os mais experientes profissionais do
+                    país que, juntos somam mais de 100 anos de experiência e
+                    milhares de pacientes reabilitados. Sua próxima experiência
+                    pode ser aqui
+                  </p>
                   <a
                     href="#0"
                     data-scroll-nav={1}
