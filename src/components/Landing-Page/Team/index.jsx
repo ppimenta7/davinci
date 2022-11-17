@@ -23,7 +23,7 @@ const Team = () => {
     <section className="team-shape section-padding" data-scroll-index="1">
       <div className="container-fluid">
         <div className="row justify-content-center">
-          <div className="col-lg-8 col-md-10">
+          <div className="col-lg-8 col-md-8">
             <div className="section-head text-center">
               {/* <h6 className="sub-head radius mb-20">
                 <span className="fz-12 ls2 text-u gr-orange-text">
@@ -112,7 +112,7 @@ const Team = () => {
         {/*<div className="row col-lg-8 col-md-10 margin-rl-auto">
           <Video /> 
         </div>*/}
-        <div className="row col-lg-10 col-md-12 pt-60 justify-content-center margin-rl-auto">
+        <div className="row col-lg-10 col-md-8 pt-60 justify-content-center margin-rl-auto">
           {team.map((member, index) => (
             <div className="card-team col-lg-3 col-md-6" key={index}>
               <div style={{ height: "100%" }} className="item md-mb50">

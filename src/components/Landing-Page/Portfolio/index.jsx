@@ -11,7 +11,7 @@ const Icons = [
 const Portfolio = () => {
   return (
     <>
-      <section className="portfolio-simp-crus pt-0 section-padding">
+      <section className="portfolio-simp-crus section-padding">
         <div className="container">
           <div className="row col-lg-10 col-md-12 pt-60 justify-content-center margin-rl-auto">
             {support.map((slide, idx) => (
