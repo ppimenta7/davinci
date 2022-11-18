@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import dynamic from "next/dynamic";
+import { useState } from 'react';
 
 import { BudgetsInterface } from "../interfaces/budgetsInterface";
 import { CategoriesInterface } from "../interfaces/categoriesInterface";
@@ -8,6 +9,7 @@ import { ProductsInterface } from "../interfaces/productsInterface";
 
 const LandingPage = dynamic(() => import("./landing-page"));
 const Pdf = dynamic(() => import("./pdf"));
+const Login = dynamic(() => import("./login"));
 const NotFoundPage = dynamic(() => import("./404"));
 
 interface IndexPageInterface {
@@ -15,7 +17,6 @@ interface IndexPageInterface {
   products: ProductsInterface;
   categories: CategoriesInterface;
   customers: CustomersInterface;
-  pdf: boolean;
   params: any;
 }
 
@@ -24,20 +25,26 @@ const IndexPage: NextPage<IndexPageInterface> = ({
   products,
   categories,
   customers,
-  pdf,
   params,
 }) => {
+
+  const pdf = params?.includes("pdf") ? true : false;
+
+  const [acessType, setAcessType] = useState("negate");
+  const handleTypeAcess = (type: "admin" | "user" | "negate") => {
+    setAcessType(type);
+  };
   if (params == undefined) return <NotFoundPage />;
   if (pdf == true)
     return <Pdf budgets={budgets} products={products} customers={customers} />;
   else {
     return (
-      <LandingPage
-        budgets={budgets}
-        products={products}
-        categories={categories}
-        customers={customers}
-      />
+        acessType !== "negate" ? (
+          <LandingPage budgets={budgets} products={products} categories={categories} customers={customers} acessType={acessType} />
+        ) : (<Login
+        handleTypeAcess={handleTypeAcess}
+        budgetsPassword={budgets?.password_access_code}
+      />)
     );
   }
 };
