@@ -16,5 +16,5 @@ export const getProducts = async (
     }
   );
 
-  return response.data.records;
+  return response;
 };

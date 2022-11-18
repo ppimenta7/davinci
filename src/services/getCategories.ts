@@ -17,5 +17,5 @@ export const getCategories = async (
       }
     );
   
-    return response.data.records;
+    return response;
   };

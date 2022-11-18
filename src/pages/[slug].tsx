@@ -70,20 +70,23 @@ export const getServerSideProps = async ({ query }) => {
   try {
     let budgets;
     if (type == "historico") {
-      budgets = await getBudgetsHistory(id);
+      budgets = await getBudgetsHistory(id).then((res) => res.data);
     } else {
-      budgets = await getBudgets(id);
+      budgets = await getBudgets(id).then((res) => res.data);
     }
 
-    const IDproducts = budgets.products.join();
-    const products = await getProducts(IDproducts);
+    const IDproducts = budgets?.products.join();
+    const products = await getProducts(IDproducts).then(
+      (res) => res.data.results
+    );
     let IDCategorys = [];
     for (let prop in products) {
-      IDCategorys.push(products[prop].category);
+      IDCategorys?.push(products[prop].category);
     }
+    
+    const categories = await getCategories(IDCategorys).then((res) => res.data.results);
 
-    const categories = await getCategories(IDCategorys);
-    const customers = await getCustomers(budgets.customer);
+    const customers = await getCustomers(budgets.customer).then((res) => res.data.results[0]);
 
     return {
       props: {

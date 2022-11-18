@@ -22,5 +22,5 @@ export const getBudgets = async (
     }
   );
 
-  return response.data;
+  return response;
 };

@@ -15,5 +15,5 @@ export const getBudgetsHistory = async (
     }
   );
 
-  return response.data;
+  return response;
 };

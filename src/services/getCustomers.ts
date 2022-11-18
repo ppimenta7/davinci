@@ -16,5 +16,5 @@ export const getCustomers = async (
     }
   );
 
-  return response.data.records[0];
+  return response;
 };
