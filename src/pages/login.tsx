@@ -3,8 +3,6 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useState } from "react";
 
-const MainLightLayout = dynamic(() => import("../layouts/main-light"));
-
 const Login = ({ handleTypeAcess, budgetsPassword }) => {
 
   const [password, setPassword] = useState("");
@@ -39,7 +37,6 @@ const Login = ({ handleTypeAcess, budgetsPassword }) => {
       <Head>
         <title>Davinci - Orçamento Hotsite - Login</title>
       </Head>
-      <MainLightLayout>
         <>
           <section className="contact-crv container-fluid">
             <div className="row col-12 justify-content-center">
@@ -93,7 +90,6 @@ const Login = ({ handleTypeAcess, budgetsPassword }) => {
             </div>
           </section>
         </>
-      </MainLightLayout>
     </>
   );
 };

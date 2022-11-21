@@ -1,10 +1,5 @@
-//= Layout
-import MainLightLayout from "../../../layouts/main-light";
-
 const ExpiratePage = () => {
   return (
-    <>
-      <MainLightLayout>
         <main className="position-re">
           <section>
             <div className="container content-404 ">
@@ -20,8 +15,6 @@ const ExpiratePage = () => {
             </div>
           </section>
         </main>
-      </MainLightLayout>
-    </>
   );
 };
 

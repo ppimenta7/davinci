@@ -50,10 +50,6 @@ export const getServerSideProps = async ({ query }) => {
   // const params = "historico-pdf3=orcamento-para-solucao-de-amputacao-chopart&22-versao=2"
 
   const typeHistorico = params.includes("historico")
-    // ? "historico"
-    // : params.includes("pdf")
-    // ? "pdf"
-    // : "hotsite";
 
   const paramSplit = params.split("&");
   const history = paramSplit[0].split("=");
@@ -78,12 +74,8 @@ export const getServerSideProps = async ({ query }) => {
       (res) => res.data.results
     );
 
-    const IDCategorys = await products?.map(
-      (products: ProductsInterface) => products?.category
-    );
-    const categories = await getCategories(IDCategorys).then(
-      (res) => res.data.results
-    );
+    const IDCategorys = products?.map((products: ProductsInterface) => products?.category);
+    const categories = await getCategories(IDCategorys)
 
     const customers = await getCustomers(budgets?.customer).then(
       (res) => res.data.results[0]

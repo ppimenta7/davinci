@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
-const MainLightLayout = dynamic(() => import("../layouts/main-light"));
 const FixedSearch = dynamic(() => import("../components/Common/FixedSearch"));
 // const Header = dynamic(() => import("../components/Landing-Page/Header"));
 const Header2 = dynamic(() => import("../components/Landing-Page/Header2"));
@@ -26,7 +25,6 @@ const LandingPage = ({ budgets, products, categories, customers, acessType }) =>
       <Head>
         <title>Davinci - Orçamento Hotsite</title>
       </Head>
-      <MainLightLayout>
         {status || acessType == "admin" ? (
           <>
             <FixedSearch />
@@ -53,7 +51,6 @@ const LandingPage = ({ budgets, products, categories, customers, acessType }) =>
             </main>
           </>
         ) : ( <ExpiratePage />)}
-      </MainLightLayout>
     </>
   );
 };

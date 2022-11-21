@@ -17,5 +17,5 @@ export const getCategories = async (
       }
     );
   
-    return response;
+    return response.data.results;
   };

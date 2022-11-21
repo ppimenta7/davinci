@@ -1,10 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import MainLightLayout from "../layouts/main-light";
-
 const NotFoundPage = () => {
   return (
-    <>
-      <MainLightLayout>
         <main className="position-re">
           <section>
             <div className="container content-404 ">
@@ -28,8 +24,6 @@ const NotFoundPage = () => {
             </div>
           </section>
         </main>
-      </MainLightLayout>
-    </>
   );
 };
 
