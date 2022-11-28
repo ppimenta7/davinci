@@ -79,9 +79,9 @@ const Info = () => {
             <Image src={infoImg} alt="" />
           </div> */}
 
-          <div className="container flex justify-content-center">
-            <div className="row col-lg-10 justify-content-center">
-              <div className="col-lg-6 valign justify-content-center">
+          <div className="container">
+            <div className="row col-lg-10 col-md-12 margin-rl-auto justify-content-center">
+              <div className="col-lg-5 col-md-10 valign justify-content-center">
                 <svg
                   style={{ backgroundColor: '#fff',borderRadius: '50%'}}
                   id="svg"
@@ -163,12 +163,12 @@ const Info = () => {
                   </g>
                 </svg>
               </div>
-              <div className="col-lg-6 valign flex-direction">
+              <div className="col-lg-5 col-md-10 valign flex-direction">
                 {/* <h1>Teste de Texto</h1> */}
                 <div className="container-content">
                   <div
                     style={{ backgroundColor: "transparent" }}
-                    className="card col-lg-10 col-md-6 "
+                    className="card col-12 col-lg-10 col-md-8"
                   >
                     <div className="slide slide1">
                       <div className="content">

@@ -23,21 +23,18 @@ function MyApp({ Component, pageProps }) {
         strategy="beforeInteractive"
         src="/js/bootstrap.bundle.min.js"
       ></Script>
-      <Script strategy="beforeInteractive" src="/js/wow.min.js"></Script>
+        <Script strategy="lazyOnload" src="/js/main.js"></Script>
+      {/* <Script strategy="beforeInteractive" src="/js/wow.min.js"></Script>
       <Script strategy="beforeInteractive" src="/js/splitting.min.js"></Script>
       <Script
         strategy="beforeInteractive"
         src="/js/simpleParallax.min.js"
-      ></Script>
-      <Script
+      ></Script> */}
+      {/* <Script
         strategy="beforeInteractive"
         src="/js/isotope.pkgd.min.js"
-      ></Script>
-      <Script
-        strategy="beforeInteractive"
-        src="/landing-preview/js/parallax.min.js"
-      ></Script>
-      <Script strategy="lazyOnload" src="/js/main.js"></Script>
+      ></Script> */}
+      {/* <Script strategy="beforeInteractive" src="/landing-preview/js/parallax.min.js" ></Script> */}
     </>
   );
 }

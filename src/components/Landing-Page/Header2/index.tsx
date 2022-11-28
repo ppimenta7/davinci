@@ -6,8 +6,8 @@ import parallaxie from "../../../common/parallaxie";
 import { goToSection } from "../../Navbars/AppNavbar";
 // import { Autoplay } from "swiper";
 // import Video from "../../Video";
-
 import Image from "next/image";
+import ImgLogo from "../../../../public/img/davinci/d7.png";
 import pngVideo from "../../../../public/img/davinci/png-video.png";
 
 const Header = ({ budgets }) => {
@@ -37,7 +37,13 @@ const Header = ({ budgets }) => {
           <div className="container padding-rl-50">
             <div style={{ display: "flex", alignItems: "center" }}>
               <div className="pr-30">
-                <img src="/img/davinci/d7.png" alt="" />
+                <Image
+                  src={ImgLogo}
+                  alt=""
+                  layout="fixed"
+                  //width={"180px"}
+                  //height={'auto'}
+                />
               </div>
               <div
                 className="row"
@@ -71,40 +77,6 @@ const Header = ({ budgets }) => {
             <div style={{ flexDirection: "row" }} className="row">
               <div className="col-lg-7 col-md-4">
                 <div className="caption">
-                  {/* <div style={{ display: "flex", alignItems: "center" }}>
-                    <div className="pr-30">
-                      <img src="/img/davinci/d7.png" alt="" />
-                    </div>
-                    <div
-                      className="row"
-                      style={{
-                        borderLeft: "2px solid white",
-                        paddingLeft: "10px",
-                      }}
-                    >
-                      <div className="social">
-                        <ul className="rest">
-                          <li>
-                            <a href="https://www.facebook.com/davinciclinicbr">
-                              <i className="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="https://www.instagram.com/davincibrasil/">
-                              <i className="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.youtube.com/channel/UCa1K4UCwNtivaLBs_zF25VQ">
-                              <i className="fab fa-youtube"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h6 className="fw-400 fz-16">
-                          Cada prótese, Uma obra de arte
-                        </h6>
-                      </div>
-                    </div>
-                  </div> */}
-                  {/* <h1 className="orange-color text-u fz-40 pt-40"><span className="fw-300 ">Orçamento para</span>{title}</h1> */}
                   <h1 className="fw-300 text-u fz-38 pt-40">
                     A{" "}
                     <span className="orange-color fw-600 ">

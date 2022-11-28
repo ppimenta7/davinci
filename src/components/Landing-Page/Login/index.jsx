@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
+import Image from "next/image";
+import ImgLogo from "../../../../public/img/davinci/png-video.png";
 
 const Login = ({ budgetsPassword, handleTypeAcess }) => {
   const [password, setPassword] = useState("");

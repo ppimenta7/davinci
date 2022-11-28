@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import dynamic from "next/dynamic";
 import { BudgetsInterface } from "../interfaces/budgetsInterface";
 import { CategoriesInterface } from "../interfaces/categoriesInterface";
 import { CustomersInterface } from "../interfaces/customersInterface";
@@ -9,7 +8,7 @@ import { getBudgetsHistory } from "../services/getBudgetsHistory";
 import { getCategories } from "../services/getCategories";
 import { getCustomers } from "../services/getCustomers";
 import { getProducts } from "../services/getProducts";
-const IndexPage = dynamic(() => import("."));
+import IndexPage from ".";
 
 interface SlugInterface {
   budgets: BudgetsInterface;
@@ -63,11 +62,6 @@ export const getServerSideProps = async ({ query }) => {
     let budgets;
     typeHistorico ? (budgets = await getBudgetsHistory(id).then((res) => res.data))
     : (budgets = await getBudgets(id).then((res) => res.data));
-    // if (typeHistorico) {
-    //   budgets = await getBudgetsHistory(id).then((res) => res.data);
-    // } else {
-    //   budgets = await getBudgets(id).then((res) => res.data);
-    // }
 
     const IDproducts = budgets?.products.join();
     const products = await getProducts(IDproducts).then(

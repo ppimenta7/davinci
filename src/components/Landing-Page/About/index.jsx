@@ -93,7 +93,6 @@ const About = ({ products, categories, budgets }) => {
                       </div>
                     </div>
                     <div className="img2">
-                      {/* <img src={product.image} alt="" /> */}
                       <Image
                         src={product.image}
                         alt=""

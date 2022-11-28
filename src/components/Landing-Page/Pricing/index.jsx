@@ -4,6 +4,11 @@ import {
   formateDate,
   formateValue,
 } from "../../../../public/js/index";
+
+import Image from "next/image";
+import ImgAss from "../../../../public/img/davinci/ass.png";
+import ImgLogo from "../../../../public/img/davinci/logo.png";
+
 const Pricing = ({ budgets, customers, products }) => {
   const dataBirthdate = formateDate(customers?.birth_date);
   const cpf = formataCPF(customers?.cpf);
@@ -145,10 +150,12 @@ const Pricing = ({ budgets, customers, products }) => {
                 style={{ flexDirection: "column", alignItems: "flex-end" }}
                 className="flex pb-30 pr-30"
               >
-                <img
+                <Image
                   style={{ width: "250px", transform: "translateY(45px)" }}
-                  src="/img/davinci/ass.png"
+                  src={ImgAss}
                   alt=""
+                  width={"250px"}
+                  height={"128.2px"}
                 />
                 <span
                   style={{ width: "250px", borderBottom: "2px black solid" }}
@@ -156,10 +163,11 @@ const Pricing = ({ budgets, customers, products }) => {
               </div>
 
               <div className="valign pl-30">
-                <img
+                <Image
                   style={{ width: "140px" }}
-                  src="/img/davinci/logo.png"
+                  src={ImgLogo}
                   alt=""
+                  width={"140px"}
                 />
                 <p className="fz-16 pl-30">
                   Av. Aruanâ, nº 280/352 - 1º andar - Sala 7 - Tamboré - Barueri
