@@ -26,7 +26,7 @@ const Pricing = ({ budgets, IDCustomer, products }) => {
 
   const dataBirthdate = formateDate(customers?.birth_date);
   const cpf = formataCPF(customers?.cpf);
-  const value = formateValue(budgets.value);
+  const value = formateValue(budgets?.value);
 
   const comment = "";
   products?.map((prod) => {
@@ -100,7 +100,7 @@ const Pricing = ({ budgets, IDCustomer, products }) => {
                     <td style={{ border: "none" }}></td>
                     <td style={{ textAlign: "right" }}>Total c/ Desconto</td>
                     <td className="fw-700">
-                      {formateValue(budgets.value - budgets.discount)}
+                      {formateValue(budgets?.value - budgets?.discount)}
                     </td>
                   </tr>
                 </table>
@@ -111,7 +111,7 @@ const Pricing = ({ budgets, IDCustomer, products }) => {
                 </tr>
                 <tr>
                   {/* <td>O valor normal pode ser dividido em até <span>10</span> parcelas iguais de <span>R$ 233.714,00</span> no cartão de credito.</td> */}
-                  <td>{budgets.payment_conditions}</td>
+                  <td>{budgets?.payment_conditions}</td>
                 </tr>
               </table>
               <div>
