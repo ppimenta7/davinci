@@ -8,6 +8,7 @@ import MyVerticallyCenteredModal from "../../../../public/js/modal";
 const { htmlToText } = require("html-to-text");
 
 const About = ({ products, categories, budgets }) => {
+  console.log(categories)
   const bgTitle = budgets?.title;
   const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
 
@@ -139,7 +140,7 @@ const About = ({ products, categories, budgets }) => {
                       {product.short_description}.{/* <br />{product.name}. */}
                       <span style={{ display: "block" }} className="blue-color">
                         {" "}
-                        {categories.map((category) =>
+                        {categories?.map((category) =>
                           category.id == product.category ? category.name : ""
                         )}{" "}
                       </span>

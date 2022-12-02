@@ -1,56 +1,48 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { NextPage } from "next";
 import { useState } from "react";
-
-import { BudgetsInterface } from "../interfaces/budgetsInterface";
-import { CategoriesInterface } from "../interfaces/categoriesInterface";
-import { CustomersInterface } from "../interfaces/customersInterface";
-import { ProductsInterface } from "../interfaces/productsInterface";
-
 import LandingPage from './landing-page';
-import Pdf from './pdf';
 import Login from './login';
-import NotFoundPage from './404';
+import ExpiratePage from "../components/Landing-Page/ExpiratePage";
+import { useEffect } from 'react';
+import { getBudgets } from "../services/getBudgets";
+import { getBudgetsHistory } from "../services/getBudgetsHistory";
 
 interface IndexPageInterface {
-  budgets: BudgetsInterface;
-  products: ProductsInterface;
-  categories: CategoriesInterface;
-  customers: CustomersInterface;
+  id: string;
   params: any;
 }
 
 const IndexPage: NextPage<IndexPageInterface> = ({
-  budgets,
-  products,
-  categories,
-  customers,
-  params,
+  params, id,
 }) => {
-  const pdf = params?.includes("pdf") ? true : false;
+
 
   const [acessType, setAcessType] = useState("negate");
   const handleTypeAcess = (type: "admin" | "user" | "negate") => {
     setAcessType(type);
   };
-  if (params == undefined) return <NotFoundPage />;
-  if (pdf == true)
-    return <Pdf budgets={budgets} products={products} customers={customers} />;
-  else {
-    return acessType !== "negate" ? (
-      <LandingPage
-        budgets={budgets}
-        products={products}
-        categories={categories}
-        customers={customers}
-        acessType={acessType}
-      />
-    ) : (
-      <Login
-        handleTypeAcess={handleTypeAcess}
-        budgetsPassword={budgets?.password_access_code}
-      />
-    );
-  }
+
+  const [budgets, setBudgets] = useState(null)
+
+  useEffect(() => {
+    const typeHistorico = params.includes("historico")
+      
+    typeHistorico ? (getBudgetsHistory(id).then((res) => res.data).then((data) => { setBudgets(data) }))
+    : (getBudgets(id).then((res) => res.data).then((data) => { setBudgets(data) }));
+  }, [])
+
+  const dateNow = new Date();
+  const expirationDate = new Date(budgets?.expiration_date);
+  const status = expirationDate.getTime() >= dateNow.getTime();
+
+  if(acessType == 'negate') return <Login handleTypeAcess={handleTypeAcess} budgetsPassword={budgets?.password_access_code} />
+
+  if(!status && acessType !== "admin") return <ExpiratePage />
+    
+  return (
+      <LandingPage budgets={budgets} />
+    )
 };
 
 export default IndexPage;

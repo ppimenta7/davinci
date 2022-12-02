@@ -9,6 +9,8 @@ import { getCategories } from "../services/getCategories";
 import { getCustomers } from "../services/getCustomers";
 import { getProducts } from "../services/getProducts";
 import IndexPage from ".";
+import Pdf from './pdf';
+import NotFoundPage from './404';
 
 interface SlugInterface {
   budgets: BudgetsInterface;
@@ -16,71 +18,43 @@ interface SlugInterface {
   categories: CategoriesInterface;
   customers: CustomersInterface;
   params: {
+    includes(arg0: string): unknown;
     slug: string;
   };
+  id: string;
 }
 const Slug: NextPage<SlugInterface> = ({
-  budgets,
-  products,
-  categories,
-  customers,
   params,
+  id,
 }) => {
-  return (
-    <>
+    const pdf = params.includes("pdf") ? true : false;
+    // if(pdf) return <Pdf budgets={budgets} products={products} customers={customers} />;
+    if (params == undefined) return <NotFoundPage />;
+    return (
       <IndexPage
+        id={id}
         params={params}
-        budgets={budgets}
-        products={products}
-        categories={categories}
-        customers={customers}
       />
-    </>
   );
 };
 
 export const getServerSideProps = async ({ query }) => {
-  const params = query.slug;
-
-  // const params = "orcamento-para-solucao-de-amputacao-chopart&19"
-  // const params = "pdf=orcamento-para-solucao-de-amputacao-chopart&22"
-
-  // const params = "historico2=orcamento-para-solucao-de-amputacao-chopart&22-versao=1"
-  // const params = "historico-pdf3=orcamento-para-solucao-de-amputacao-chopart&22-versao=2"
-
-  const typeHistorico = params.includes("historico")
-
-  const paramSplit = params.split("&");
-  const history = paramSplit[0].split("=");
-
-  const historyID = history[0].replace(/historico/i, "").replace(/-pdf/i, "");
-  const paramID = typeHistorico ? historyID : paramSplit[1];
-
-  const id = typeof params === "string" ? paramID : "";
-
   try {
-    let budgets;
-    typeHistorico ? (budgets = await getBudgetsHistory(id).then((res) => res.data))
-    : (budgets = await getBudgets(id).then((res) => res.data));
+    const params = query.slug;
 
-    const IDproducts = budgets?.products.join();
-    const products = await getProducts(IDproducts).then(
-      (res) => res.data.results
-    );
+    const typeHistorico = params.includes("historico")
 
-    const IDCategorys = products?.map((products: ProductsInterface) => products?.category);
-    const categories = await getCategories(IDCategorys)
+    const paramSplit = params.split("&");
+    const history = paramSplit[0].split("=");
 
-    const customers = await getCustomers(budgets?.customer).then(
-      (res) => res.data.results[0]
-    );
+    const historyID = history[0].replace(/historico/i, "").replace(/-pdf/i, "");
+    const paramID = typeHistorico ? historyID : paramSplit[1];
+
+    const id = typeof params === "string" ? paramID : "";
 
     return {
       props: {
-        budgets,
-        products,
-        categories,
-        customers,
+        id: id,
         params: params,
       },
     };
