@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { NextPage } from "next";
+import { NextPage, NextPageContext } from "next";
 import { useState } from "react";
 import LandingPage from './landing-page';
 import Login from './login';
@@ -7,30 +7,19 @@ import ExpiratePage from "../components/Landing-Page/ExpiratePage";
 import { useEffect } from 'react';
 import { getBudgets } from "../services/getBudgets";
 import { getBudgetsHistory } from "../services/getBudgetsHistory";
+import { BudgetsInterface } from '../interfaces/budgetsInterface';
 
 interface IndexPageInterface {
-  id: string;
-  params: any;
+  budgets: BudgetsInterface;
 }
 
 const IndexPage: NextPage<IndexPageInterface> = ({
-  params, id,
+  budgets,
 }) => {
-
-
   const [acessType, setAcessType] = useState("negate");
   const handleTypeAcess = (type: "admin" | "user" | "negate") => {
     setAcessType(type);
   };
-
-  const [budgets, setBudgets] = useState(null)
-
-  useEffect(() => {
-    const typeHistorico = params.includes("historico")
-      
-    typeHistorico ? (getBudgetsHistory(id).then((res) => res.data).then((data) => { setBudgets(data) }))
-    : (getBudgets(id).then((res) => res.data).then((data) => { setBudgets(data) }));
-  }, [])
 
   const dateNow = new Date();
   const expirationDate = new Date(budgets?.expiration_date);
@@ -45,4 +34,18 @@ const IndexPage: NextPage<IndexPageInterface> = ({
     )
 };
 
+
+// interface Context extends NextPageContext {
+//   // any modifications to the default context, e.g. query types
+// }
+
+// IndexPage.getInitialProps = async (ctx) => {
+//   // ...
+//   return {
+//       props: {
+//         // id: id,
+//         // params: params,
+//       },
+//     };
+// }
 export default IndexPage;

@@ -18,22 +18,20 @@ interface SlugInterface {
   categories: CategoriesInterface;
   customers: CustomersInterface;
   params: {
-    includes(arg0: string): unknown;
+    includes: any;
     slug: string;
   };
-  id: string;
 }
 const Slug: NextPage<SlugInterface> = ({
   params,
-  id,
+  budgets,
 }) => {
     const pdf = params.includes("pdf") ? true : false;
     // if(pdf) return <Pdf budgets={budgets} products={products} customers={customers} />;
     if (params == undefined) return <NotFoundPage />;
     return (
       <IndexPage
-        id={id}
-        params={params}
+        budgets={budgets}
       />
   );
 };
@@ -43,19 +41,22 @@ export const getServerSideProps = async ({ query }) => {
     const params = query.slug;
 
     const typeHistorico = params.includes("historico")
-
     const paramSplit = params.split("&");
-    const history = paramSplit[0].split("=");
 
-    const historyID = history[0].replace(/historico/i, "").replace(/-pdf/i, "");
+    let historyID = undefined;
+    if(typeHistorico){historyID = paramSplit[0].split("=")[0].replace(/historico/i, "").replace(/-pdf/i, "");}
+
     const paramID = typeHistorico ? historyID : paramSplit[1];
-
     const id = typeof params === "string" ? paramID : "";
+
+    const budgets = typeHistorico ? ( await getBudgetsHistory(id).then((res) => res.data))
+      : (await getBudgets(id).then((res) => res.data));
 
     return {
       props: {
         id: id,
         params: params,
+        budgets: budgets,
       },
     };
   } catch (error) {
