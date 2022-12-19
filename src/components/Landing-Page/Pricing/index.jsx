@@ -12,20 +12,12 @@ import ImgLogo from "../../../../public/img/davinci/logo.png";
 import { useEffect, useState } from 'react';
 import { getCustomers } from "../../../services/getCustomers";
 
-const Pricing = ({ budgets, IDCustomer, products }) => {
-  const [customers, setCustomers] = useState(null)
+const Pricing = ({ budgets }) => {
+  const products = budgets?.products_json
+  const customer= budgets?.customer_json
 
-  useEffect(() => {
-    async function fetchData() {
-      const customers = await getCustomers(IDCustomer).then((res) => res.data.results[0])
-      .then((data) => setCustomers(data));
-    }
-    fetchData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]);
-
-  const dataBirthdate = formateDate(customers?.birth_date);
-  const cpf = formataCPF(customers?.cpf);
+  const dataBirthdate = formateDate(customer?.customer_birth_date);
+  const cpf = formataCPF(customer?.customer_cpf);
   const value = formateValue(budgets?.value);
 
   const comment = "";
@@ -41,10 +33,10 @@ const Pricing = ({ budgets, IDCustomer, products }) => {
           <div className="row justify-content-center primery-shadow bg-light">
             <div className="customer">
               <p className="inline">
-                <span>Nome:</span> {customers?.full_name}
+                <span>Nome:</span> {customer?.customer_full_name}
               </p>
               <p className="inline">
-                <span>Endereço:</span> {customers?.address}
+                <span>Endereço:</span> {customer?.customer_address}
               </p>
               <p className="inline">
                 <span>CPF:</span> {cpf}
@@ -53,10 +45,10 @@ const Pricing = ({ budgets, IDCustomer, products }) => {
                 <span>Data de Nascimento:</span> {dataBirthdate}
               </p>
               <p>
-                <span>Doutor Responsável:</span> {customers?.dr_responsible}
+                <span>Doutor Responsável:</span> {customer?.customer_dr_responsible}
               </p>
               <p>
-                <span>Tipo de Amputação:</span> {customers?.type_of_amputation}
+                <span>Tipo de Amputação:</span> {customer?.customer_type_of_amputation}
               </p>
               {/* "reference": "teste" */}
             </div>

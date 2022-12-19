@@ -7,8 +7,9 @@ import MyVerticallyCenteredModal from "../../../../public/js/modal";
 
 const { htmlToText } = require("html-to-text");
 
-const About = ({ products, categories, budgets }) => {
-  console.log(categories)
+const About = ({ categories, budgets }) => {
+  const products = budgets?.products_json
+  
   const bgTitle = budgets?.title;
   const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
 

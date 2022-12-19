@@ -3,35 +3,33 @@ import { BudgetsInterface } from "../interfaces/budgetsInterface";
 import { CategoriesInterface } from "../interfaces/categoriesInterface";
 import { CustomersInterface } from "../interfaces/customersInterface";
 import { ProductsInterface } from "../interfaces/productsInterface";
-import { getBudgets } from "../services/getBudgets";
+import { getBudgetCompiled } from "../services/getBudgetCompiled";
 import { getBudgetsHistory } from "../services/getBudgetsHistory";
-import { getCategories } from "../services/getCategories";
-import { getCustomers } from "../services/getCustomers";
-import { getProducts } from "../services/getProducts";
 import IndexPage from ".";
 import Pdf from './pdf';
 import NotFoundPage from './404';
+import { BudgetCompiledInterface } from '../interfaces/budgetCompiledInterface';
+import { getCategories } from '../services/getCategories';
 
 interface SlugInterface {
   budgets: BudgetsInterface;
+  budgetCompiled: BudgetCompiledInterface;
   products: ProductsInterface;
   categories: CategoriesInterface;
   customers: CustomersInterface;
+  type: 'pdf' | 'historico' | 'hotsite';
   params: {
-    includes: any;
     slug: string;
   };
 }
 const Slug: NextPage<SlugInterface> = ({
-  params,
-  budgets,
+  type, budgetCompiled, categories,
 }) => {
-    const pdf = params.includes("pdf") ? true : false;
-    // if(pdf) return <Pdf budgets={budgets} products={products} customers={customers} />;
-    if (params == undefined) return <NotFoundPage />;
+    if(type == 'pdf') return <Pdf budgets={budgetCompiled}/>;
+    // if (params == undefined) return <NotFoundPage />;
     return (
       <IndexPage
-        budgets={budgets}
+        budgets={budgetCompiled} categories={categories}
       />
   );
 };
@@ -40,23 +38,27 @@ export const getServerSideProps = async ({ query }) => {
   try {
     const params = query.slug;
 
-    const typeHistorico = params.includes("historico")
-    const paramSplit = params.split("&");
-
-    let historyID = undefined;
-    if(typeHistorico){historyID = paramSplit[0].split("=")[0].replace(/historico/i, "").replace(/-pdf/i, "");}
-
-    const paramID = typeHistorico ? historyID : paramSplit[1];
+    const setType = () => {
+      if(params.includes("pdf")) return "pdf"
+      if(params.includes("historico")) return "historico" 
+      return "hotsite"
+    }
+    const type = setType()
+    const paramID = params.split("=")[1]
     const id = typeof params === "string" ? paramID : "";
 
-    const budgets = typeHistorico ? ( await getBudgetsHistory(id).then((res) => res.data))
-      : (await getBudgets(id).then((res) => res.data));
+    const budgets = type == 'historico' ? ( await getBudgetsHistory(id).then((res) => res.data))
+      : (await getBudgetCompiled(id).then((res) => res[0]));
 
+    const products = budgets?.products_json || budgets?.products;
+    const IDCategorys = products?.map((product: ProductsInterface) => product?.category);
+    const categories = await getCategories(IDCategorys);
     return {
       props: {
-        id: id,
-        params: params,
-        budgets: budgets,
+        id,
+        type,
+        budgetCompiled: budgets,
+        categories,
       },
     };
   } catch (error) {

@@ -13,30 +13,10 @@ import Section from "../components/Landing-Page/Section";
 import Info from "../components/Landing-Page/Info";
 import Footer from '../components/Footers/MainFooter';
 import { useEffect, useState } from 'react';
-import { getProducts } from '../services/getProducts';
 import { getCategories } from "../services/getCategories";
-import { getCustomers } from "../services/getCustomers";
 import { ProductsInterface } from '../interfaces/productsInterface';
 
-const LandingPage = ({ budgets }) => {
-  const [products, setProducts] = useState(null)
-  const [categories, setCategories] = useState(null)
-  const IDCustomer = budgets?.customer;
-
-  useEffect(() => {
-    async function fetchData() {
-      const IDproducts = budgets?.products.join();
-      const productsA = await getProducts(IDproducts).then((res) => res.data.results);
-       setProducts(await productsA)
-
-      const IDCategorys = productsA?.map((products: ProductsInterface) => products?.category);
-      console.log(IDCategorys)
-      const categoriesA = await getCategories(IDCategorys);
-       setCategories(categoriesA);
-    }
-    fetchData();
-  },[]);
-
+const LandingPage = ({ budgets, categories }) => {
   return (
     <>
       <Head>
@@ -51,13 +31,10 @@ const LandingPage = ({ budgets }) => {
               <Portfolio />
               <About
                 budgets={budgets}
-                products={products}
                 categories={categories}
               />
               <Pricing
                 budgets={budgets}
-                IDCustomer={IDCustomer}
-                products={products}
               /> 
               <Section />
               <Testimonials />
