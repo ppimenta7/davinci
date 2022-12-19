@@ -25,7 +25,7 @@ interface SlugInterface {
 const Slug: NextPage<SlugInterface> = ({
   type, budgetCompiled, categories,
 }) => {
-    if(type == 'pdf') return <Pdf budgets={budgetCompiled}/>;
+    // if(type == 'pdf') return <Pdf budgets={budgetCompiled}/>;
     // if (params == undefined) return <NotFoundPage />;
     return (
       <IndexPage

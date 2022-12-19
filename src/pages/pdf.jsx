@@ -12,13 +12,16 @@ import {
   friendlyFilename,
 } from "../../public/js/index";
 import { contentProducts, totalValueBudgets } from "../data/pdf-content";
-const pdfMake = dynamic(() => import("pdfmake/build/pdfmake"));
-const pdfFonts = dynamic(() => import("pdfmake/build/vfs_fonts"));
+import pdfMake from "pdfmake/build/pdfmake"
+import pdfFonts from "pdfmake/build/vfs_fonts"
 // const { htmlToText } = require("html-to-text");
 
-const Pdf = ({ products, budgets, customers }) => {
-  const dataBirthdate = formateDate(customers?.birth_date);
-  const cpf = formataCPF(customers?.cpf);
+const Pdf = ({ budgets }) => {
+  const products = budgets?.products_json;
+  const customers= budgets?.customer_json;
+
+  const dataBirthdate = formateDate(customers?.customer_birth_date);
+  const cpf = formataCPF(customers?.customer_cpf);
   const value = formateValue(budgets?.value);
   const discount = formateValue(budgets?.value - budgets?.discount);
   const data_atual = formateDateNow();
@@ -27,7 +30,7 @@ const Pdf = ({ products, budgets, customers }) => {
   const title =  bgTitle?.replace(/Orçamento para/g, "");
   const version = budgets?.version;
   const contentProduct = contentProducts(products, budgets);
-  const filename = friendlyFilename(customers?.full_name);
+  const filename = friendlyFilename(customers?.customer_full_name);
 
   function gerarPDF() {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
@@ -53,9 +56,9 @@ const Pdf = ({ products, budgets, customers }) => {
         {
           text: [
             { text: `Nome: `, bold: true },
-            `${customers?.full_name}          `,
+            `${customers?.customer_full_name}          `,
             { text: `Endereço: `, bold: true },
-            `${customers?.address}\n`,
+            `${customers?.customer_address}\n`,
           ],
           margin: [0, 0, 0, 10],
         },
@@ -71,14 +74,14 @@ const Pdf = ({ products, budgets, customers }) => {
         {
           text: [
             { text: `Doutor Responsável: `, bold: true },
-            `${customers?.dr_responsible}\n`,
+            `${customers?.customer_dr_responsible}\n`,
           ],
           margin: [0, 0, 0, 10],
         },
         {
           text: [
             { text: `Tipo de Amputação: `, bold: true },
-            `${customers?.type_of_amputation}`,
+            `${customers?.customer_type_of_amputation}`,
           ],
           margin: [0, 0, 0, 50],
         },
