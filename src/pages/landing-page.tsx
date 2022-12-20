@@ -22,7 +22,8 @@ const LandingPage = ({ budgets, categories }) => {
       <Head>
         <title>Davinci - Orçamento Hotsite</title>
       </Head>
-          <>
+      <h1>Landing Page</h1>
+          {/* <>
             <FixedSearch />
             <Header2 budgets={budgets} />
               <Team />
@@ -39,7 +40,7 @@ const LandingPage = ({ budgets, categories }) => {
               <Section />
               <Testimonials />
               <Footer />
-          </>
+          </> */}
     </>
   );
 };

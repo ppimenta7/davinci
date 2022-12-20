@@ -7,8 +7,10 @@ import { getBudgetCompiled } from "../services/getBudgetCompiled";
 import { getBudgetsHistory } from "../services/getBudgetsHistory";
 import IndexPage from ".";
 import Pdf from './pdf';
+import NotFoundPage from './404';
 import { BudgetCompiledInterface } from '../interfaces/budgetCompiledInterface';
 import { getCategories } from '../services/getCategories';
+import { destroyCookie } from 'nookies';
 
 interface SlugInterface {
   budgets: BudgetsInterface;
@@ -25,7 +27,7 @@ const Slug: NextPage<SlugInterface> = ({
   type, budgetCompiled, categories,
 }) => {
     if(type == 'pdf') return <Pdf budgets={budgetCompiled}/>;
-
+    setTimeout(() => { destroyCookie(undefined, "token") }, 5000);
     return (
       <IndexPage budgets={budgetCompiled} categories={categories} />
       );

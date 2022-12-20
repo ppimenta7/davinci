@@ -34,10 +34,6 @@ const FixedSearch = () => {
           ></img>
         </div>
       </div>
-
-      {/* onClick="window.open('https://api.whatsapp.com/send/?phone=5513991542233&text=Adorei+seu+artigo', '_blank');">
-      {/* onClick="window.open('https://wa.me/5513991542233?text=Adorei%20seu%20artigo', '_blank');">
-      */}
     </>
   );
 }
