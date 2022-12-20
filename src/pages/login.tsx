@@ -1,17 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import Image from "next/image";
 import ImgLogo from "../../public/img/davinci/logo.png";
+import { getBudgetCompiled } from '../services/getBudgetCompiled';
+import { useRouter } from 'next/router';
+import { NextPage } from 'next';
+import { setCookie } from 'nookies';
+import { v4 as uuidv4 } from 'uuid';
 
-const Login = ({ handleTypeAcess, budgetsPassword }) => {
+interface Props {
+  codeAccess?: string;
+}
 
-  const [password, setPassword] = useState("");
+const LoginPage: NextPage<Props> = ({ codeAccess }) => {
+
   const [errMessage, setErrMessage] = useState(null);
 
+  const router = useRouter();
+  const { query } = useRouter()
+  const params = Object.keys(query)[0]+"="+Object.values(query)[0]
+  // const params = "orcamento-para-solucao-de-amputacao-chopart=26"
+
   const validatePassword = (pass) => {
-    if (pass == budgetsPassword || pass == "admin123") {
-      handleTypeAcess("user");
+    if (pass == codeAccess || pass == "admin123") {
+      // handleTypeAcess("user");
       return true;
     } else {
       setErrMessage("Verifique que o código de acesso está correto");
@@ -19,19 +32,22 @@ const Login = ({ handleTypeAcess, budgetsPassword }) => {
     }
   };
 
-  const handleChange = (e) => {
-    setPassword(e.target.value);
-  };
+    async function onSubmit(event: FormEvent) {
+    event.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    const password = (document.querySelector("#password") as HTMLInputElement).value;
+    const ACCESS_TOKEN_KEY = uuidv4();
 
     if (!validatePassword(password)) return;
     setErrMessage("");
 
-    password == "admin123" ? handleTypeAcess("admin") : null;
+    // password == "admin123" ? handleTypeAcess("admin") : null;
 
-  };
+    if(password == "admin123" || password == codeAccess) {
+      setCookie(undefined, 'token', `${ACCESS_TOKEN_KEY}`)
+    }
+    router.push(`/${params}`)
+  }
 
   return (
     <>
@@ -42,7 +58,7 @@ const Login = ({ handleTypeAcess, budgetsPassword }) => {
         <section className="contact-crv container-fluid">
           <div className="row col-12 justify-content-center">
             <div className="radius-20 col-md-10 col-lg-4 box-shadow to-up">
-              <form id="contact-form" method="post" action="/bla">
+              <form id="contact-form" method="post" onSubmit={onSubmit}>
                 <div className="controls row">
                   <div className="col-12">
                     <div className="line-head mb-20">
@@ -61,13 +77,12 @@ const Login = ({ handleTypeAcess, budgetsPassword }) => {
                   <div className="col-lg-12 md-mb30">
                     <div className="form-group mb-30">
                       <input
-                        id="form_name"
+                        id="password"
                         type="text"
                         name="password"
                         placeholder="Código de Acesso"
                         required
-                        onChange={handleChange}
-                        value={password}
+                        // value={}
                       />
                       {errMessage && (
                         <div className="messages">{errMessage}</div>
@@ -80,7 +95,7 @@ const Login = ({ handleTypeAcess, budgetsPassword }) => {
                       <button
                         className="fz-12"
                         type="submit"
-                        onClick={handleSubmit}
+                        // onClick={handleSubmit}
                       >
                         <span>Acessar</span>
                       </button>
@@ -96,4 +111,14 @@ const Login = ({ handleTypeAcess, budgetsPassword }) => {
   );
 };
 
-export default Login;
+LoginPage.getInitialProps = async ({ req }) => {
+  // const budgets = await getBudgetCompiled(36);
+  // const codeAccess = budgets[0].['Password/Access Code'];
+  return { codeAccess: '123456' }
+}
+
+export default LoginPage;
+function uuid() {
+  throw new Error('Function not implemented.');
+}
+

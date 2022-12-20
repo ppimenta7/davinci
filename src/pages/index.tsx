@@ -41,7 +41,7 @@ const IndexPage: NextPage<IndexPageInterface> = ({
   const expirationDate = new Date(budgets?.expiration_date);
   const status = expirationDate.getTime() >= dateNow.getTime();
 
-  if(acessType == 'negate') return <Login handleTypeAcess={handleTypeAcess} budgetsPassword={budgets?.['Password/Access Code']} />
+  // if(acessType == 'negate') return <Login handleTypeAcess={handleTypeAcess} budgetsPassword={budgets?.['Password/Access Code']} />
 
   if(!status && acessType !== "admin") return <ExpiratePage />
     
