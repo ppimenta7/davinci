@@ -26,16 +26,18 @@ interface IndexPageInterface {
 const IndexPage: NextPage<IndexPageInterface> = ({
   budgets, categories
 }) => {
-  // const router = useRouter();
-  // const { query } = useRouter();
-  // const params = query.slug
+  const router = useRouter();
+  const { query } = useRouter();
+  const params = query.slug;
+
   const dateNow = new Date();
   const expirationDate = new Date(budgets?.expiration_date);
   const status = expirationDate.getTime() >= dateNow.getTime();
 
+   
   if(!status && acessType !== "admin") return <ExpiratePage />
 
-  return (
+  if(acessType !== 'negate') return (
       <>
       <Head>
         <title>Davinci - Orçamento Hotsite</title>
@@ -43,10 +45,10 @@ const IndexPage: NextPage<IndexPageInterface> = ({
           <>
             <FixedSearch />
             <Header2 budgets={budgets} />
-            {/* <Team />
-            <Services />
-            <Info />
-            <Portfolio />
+            <Team />
+            {/* <Services /> */}
+            {/* <Info /> */}
+            {/* <Portfolio /> */}
             <About
               budgets={budgets}
               categories={categories}
@@ -56,10 +58,11 @@ const IndexPage: NextPage<IndexPageInterface> = ({
             /> 
             <Section />
             <Testimonials />
-            <Footer /> */}
+            <Footer />
           </>
     </>
     )
+    router.push(`/${params}`)
 };
 
 export default IndexPage;

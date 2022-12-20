@@ -2,8 +2,15 @@
 import React from "react";
 import Script from "next/script";
 import Head from "next/head";
+import Router from 'next/router';
 import ProgressScroll from "../components/Progress-Scroll";
+import nProgress from 'nprogress';
+import 'nprogress/nprogress.css'
 import "../styles/globals.css";
+
+Router.events.on('routeChangeStart', () => { nProgress.start()});
+Router.events.on('routeChangeComplete', () => nProgress.done());
+Router.events.on('routeChangeError', () => nProgress.done());
 
 function MyApp({ Component, pageProps }) {
   return (

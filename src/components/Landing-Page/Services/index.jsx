@@ -3,16 +3,10 @@ import Icon from "@mui/material/Icon";
 
 import { Diversity1, Group, Handyman, RocketLaunch, VolunteerActivism } from "@mui/icons-material";
 const Icons = [
-  <Diversity1 key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,
-  [],
-  <VolunteerActivism key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,
-
-  [],
+  <Diversity1 key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,[],
+  <VolunteerActivism key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,[],
   <RocketLaunch key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,
   <Handyman key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,
-  // <EscalatorWarning key="" sx={{ fontSize: 60, fill: "url(#linearColors)" }} />,
-  // <Elderly key="" sx={{ fontSize: 60, fill: "url(#linearColors)" }} />,
-  // <SportsHandball key="" sx={{ fontSize: 60, fill: "url(#linearColors)" }} />,
 ];
 
 const Services = () => {
@@ -35,7 +29,6 @@ const Services = () => {
                   <i
                     className={`gr-sunrise-text fas ${service.icon} i-span`}
                   ></i>
-                  
                   <svg width={0} height={0}>
                     <linearGradient id="linearColors" x1={1} y1={0} x2={1} y2={1} >
                       <stop offset={0} stopColor="#fdc168" />
@@ -43,17 +36,8 @@ const Services = () => {
                     </linearGradient>
                   </svg>
                   {Icons[idx]}
-                  {/* <span className={`${service.icon} gr-sunrise-text`}></span> */}
                 </div>
                 <h6 className="mb-15 margin-rl-25">{service.title}</h6>
-                {/* <p>{service.detials}</p> */}
-                {/* <div className="tag mt-30">
-                    {service.tags.map((tag, i) => (
-                      <a href="#0" className="me-1" key={i}>
-                        <span>{tag}</span>
-                      </a>
-                    ))}
-                  </div> */}
               </div>
             </div>
           ))}

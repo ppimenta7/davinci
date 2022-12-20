@@ -49,6 +49,7 @@ class MyDocument extends Document {
             referrerPolicy="no-referrer"
             async
           ></Script>
+          <link rel='stylesheet' href='nprogress.css'/>
         </Head>
 
         <body>
