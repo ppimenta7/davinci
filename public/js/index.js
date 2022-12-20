@@ -1,3 +1,9 @@
+export let acessType = "negate";
+export function setAcessType(type){
+  acessType = type
+    return acessType;
+  }
+
 export function formateDate(date){
     const data = new Date(date),
           dia  = data.getDate().toString(),

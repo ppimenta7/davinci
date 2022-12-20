@@ -23,7 +23,9 @@ import Info from "../components/Landing-Page/Info";
 import Footer from '../components/Footers/MainFooter';
 import { getCategories } from "../services/getCategories";
 import { ProductsInterface } from '../interfaces/productsInterface';
-
+import { acessType } from "../../public/js/index";
+import { useRouter } from 'next/router';
+import { destroyCookie } from 'nookies';
 interface IndexPageInterface {
   budgets: BudgetCompiledInterface;
   categories: CategoriesInterface;
@@ -32,18 +34,17 @@ interface IndexPageInterface {
 const IndexPage: NextPage<IndexPageInterface> = ({
   budgets, categories
 }) => {
-  const [acessType, setAcessType] = useState("negate");
-  const handleTypeAcess = (type: "admin" | "user" | "negate") => {
-    setAcessType(type);
-  };
-
+  const router = useRouter();
+  const { query } = useRouter()
+  const params = Object.keys(query)[0]+"="+Object.values(query)[0]
   const dateNow = new Date();
   const expirationDate = new Date(budgets?.expiration_date);
   const status = expirationDate.getTime() >= dateNow.getTime();
 
-  // if(acessType == 'negate') return <Login handleTypeAcess={handleTypeAcess} budgetsPassword={budgets?.['Password/Access Code']} />
+  if(acessType == 'negate') router.push(`/${params}`)
 
   if(!status && acessType !== "admin") return <ExpiratePage />
+  setTimeout(() => { destroyCookie(undefined, "token") }, 5000);
     
   return (
       <>

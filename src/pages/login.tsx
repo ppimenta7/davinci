@@ -8,6 +8,8 @@ import { useRouter } from 'next/router';
 import { NextPage } from 'next';
 import { setCookie } from 'nookies';
 import { v4 as uuidv4 } from 'uuid';
+import { setAcessType } from "../../public/js/index";
+
 
 interface Props {
   codeAccess?: string;
@@ -24,7 +26,7 @@ const LoginPage: NextPage<Props> = ({ codeAccess }) => {
 
   const validatePassword = (pass) => {
     if (pass == codeAccess || pass == "admin123") {
-      // handleTypeAcess("user");
+      setAcessType("user")
       return true;
     } else {
       setErrMessage("Verifique que o código de acesso está correto");
@@ -41,7 +43,7 @@ const LoginPage: NextPage<Props> = ({ codeAccess }) => {
     if (!validatePassword(password)) return;
     setErrMessage("");
 
-    // password == "admin123" ? handleTypeAcess("admin") : null;
+    password == "admin123" ? setAcessType("admin") : null;
 
     if(password == "admin123" || password == codeAccess) {
       setCookie(undefined, 'token', `${ACCESS_TOKEN_KEY}`)

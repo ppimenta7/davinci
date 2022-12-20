@@ -7,10 +7,8 @@ import { getBudgetCompiled } from "../services/getBudgetCompiled";
 import { getBudgetsHistory } from "../services/getBudgetsHistory";
 import IndexPage from ".";
 import Pdf from './pdf';
-import NotFoundPage from './404';
 import { BudgetCompiledInterface } from '../interfaces/budgetCompiledInterface';
 import { getCategories } from '../services/getCategories';
-import { destroyCookie } from 'nookies';
 
 interface SlugInterface {
   budgets: BudgetsInterface;
@@ -26,20 +24,14 @@ interface SlugInterface {
 const Slug: NextPage<SlugInterface> = ({
   type, budgetCompiled, categories,
 }) => {
-    // if(type == 'pdf') return <Pdf budgets={budgetCompiled}/>;
-    // if (params == undefined) return <NotFoundPage />;
-  setTimeout(() => { destroyCookie(undefined, "token") }, 5000);
-  return (
-    //   <>
-    //   <h1>Slug</h1>
-    //   <p>{JSON.stringify(budgetCompiled)}</p>
-    // </>
-    <IndexPage budgets={budgetCompiled} categories={categories} />
-    )
+    if(type == 'pdf') return <Pdf budgets={budgetCompiled}/>;
+
+    return (
+      <IndexPage budgets={budgetCompiled} categories={categories} />
+      );
 };
 
 export const getServerSideProps = async ({ query, req}) => {
-  // const params = ctx.query.slug;
   const params = query.slug;
   const cookies = req.cookies;
   if(!cookies.token) return {
@@ -66,7 +58,7 @@ export const getServerSideProps = async ({ query, req}) => {
     const categories = await getCategories(IDCategorys);
     return {
       props: {
-        // type,
+        type,
         budgetCompiled: budgets,
         categories,
       },
