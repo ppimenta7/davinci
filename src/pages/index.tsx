@@ -62,7 +62,7 @@ const IndexPage: NextPage<IndexPageInterface> = ({
           </>
     </>
     )
-    router.push(`/${params}`)
+    // router.push(`/${params}`)
 };
 
 export default IndexPage;

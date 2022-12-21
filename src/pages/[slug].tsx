@@ -11,10 +11,14 @@ import NotFoundPage from './404';
 import { BudgetCompiledInterface } from '../interfaces/budgetCompiledInterface';
 import { getCategories } from '../services/getCategories';
 import { destroyCookie } from 'nookies';
+import { getBudgets } from '../services/getBudgets';
+import { getProducts } from '../services/getProducts';
+import { getCustomers } from '../services/getCustomers';
 
 interface SlugInterface {
   budgets: BudgetsInterface;
   budgetCompiled: BudgetCompiledInterface;
+  budgetsTeste: any;
   products: ProductsInterface;
   categories: CategoriesInterface;
   customers: CustomersInterface;
@@ -24,12 +28,14 @@ interface SlugInterface {
   };
 }
 const Slug: NextPage<SlugInterface> = ({
-  type, budgetCompiled, categories,
+  type, budgetCompiled, categories, budgetsTeste,
 }) => {
+  console.log(budgetsTeste)
     if(type == 'pdf') return <Pdf budgets={budgetCompiled}/>;
     setTimeout(() => { destroyCookie(undefined, "token") }, 5000);
     return (
-      <IndexPage budgets={budgetCompiled} categories={categories} />
+      // <p>{JSON.stringify(budgetsTeste)}</p>
+      <IndexPage budgets={budgetsTeste} categories={categories} />
       );
 };
 
@@ -52,16 +58,40 @@ export const getServerSideProps = async ({ query, req}) => {
     const paramID = params.split("=")[1]
     const id = typeof params === "string" ? paramID : "";
 
-    const budgets = type == 'historico' ? ( await getBudgetsHistory(id).then((res) => res.data))
-      : (await getBudgetCompiled(id).then((res) => res[0]));
+    // const budgets = type == 'historico' ? ( await getBudgetsHistory(id).then((res) => res.data))
+    //   : (await getBudgetCompiled(id).then((res) => res[0]));
 
-    const products = budgets?.products_json || budgets?.products;
-    const IDCategorys = products?.map((product: ProductsInterface) => product?.category);
-    const categories = await getCategories(IDCategorys);
+    // const products = budgets?.products_json || budgets?.products;
+    // const IDCategorys = products?.map((product: ProductsInterface) => product?.category);
+    // const categories = await getCategories(IDCategorys);
+
+
+
+    const budgets = type == 'historico' ? ( await getBudgetsHistory(id).then((res) => res.data))
+      : ( await getBudgets(id).then((res) => res.data));
+
+    const IDproducts = budgets?.products.join();
+    const products = await getProducts(IDproducts).then(
+      (res) => res.data.results
+    );
+
+    const IDCategorys = products?.map((products: ProductsInterface) => products?.category);
+    const categories = await getCategories(IDCategorys)
+
+    const customers = await getCustomers(budgets?.customer).then(
+      (res) => res.data.results[0]
+    );
+
     return {
       props: {
         type,
-        budgetCompiled: budgets,
+        // budgetCompiled: budgets,
+        budgetsTeste: {
+          budgets,
+          products,
+          categories,
+          customers,
+        },
         categories,
       },
     };
