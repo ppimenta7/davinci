@@ -19,7 +19,7 @@ import { destroyCookie } from 'nookies';
 const Pdf = ({ budgets }) => {
   const products = budgets?.products;
   const customers= budgets?.customers;
-  budgets = budgets.budgets;
+  budgets = budgets?.budgets;
 
   const dataBirthdate = formateDate(customers?.birth_date);
   const cpf = formataCPF(customers?.cpf);
