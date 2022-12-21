@@ -1,11 +1,12 @@
-/* eslint-disable react/jsx-no-undef */
 import support from "../../../data/business/support.json";
-// import { EscalatorWarning, Elderly, SportsHandball } from "@mui/icons-material";
+import EscalatorWarningIcon from '@mui/icons-material/EscalatorWarning';
+import ElderlyIcon from '@mui/icons-material/Elderly';
+import SportsHandballIcon from '@mui/icons-material/SportsHandball';
+
 const Icons = [
-  // <EscalatorWarning key="" sx={{ fontSize: 100 }} />,
-  // <Elderly key="" sx={{ fontSize: 100 }} />,
-  // <SportsHandball key="" sx={{ fontSize: 100 }} />,
-  [],[],[]
+  <EscalatorWarningIcon key="" sx={{ fontSize: 100 }} />,
+  <ElderlyIcon key="" sx={{ fontSize: 100 }} />,
+  <SportsHandballIcon key="" sx={{ fontSize: 100 }} />,
 ];
 
 const Portfolio = () => {

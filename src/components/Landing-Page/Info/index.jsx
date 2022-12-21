@@ -1,6 +1,3 @@
-import Image from "next/image";
-// import infoImg from "../../../../public/img/davinci/info.png";
-// import infoSVG from "../../../../public/img/davinci/infoSVG.svg";
 import info from "../../../data/business/info.json";
 import { useEffect, useState } from "react";
 

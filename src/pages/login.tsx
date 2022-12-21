@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import { FormEvent, useState } from "react";
 import Image from "next/image";
