@@ -1,26 +1,21 @@
 import Image from "next/image";
-import infoImg from "../../../../public/img/davinci/info.png";
-import infoSVG from "../../../../public/img/davinci/infoSVG.svg";
+// import infoImg from "../../../../public/img/davinci/info.png";
+// import infoSVG from "../../../../public/img/davinci/infoSVG.svg";
 import info from "../../../data/business/info.json";
-import { KeyboardDoubleArrowRight } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 
 const Info = () => {
-  
   const [infoTitle, setInfoTitle] = useState()
   const [infoAbout, setInfoAbout] = useState()
 
-  
-
     useEffect(() => {
-
       const slide1 = document.querySelector('.slide1')
       const slide2 = document.querySelector('.slide2')
       const span = document.querySelector('#span-text')
       
-      document.onclick = function(event){
-        console.log(event.target)
-      }
+      // document.onclick = function(event){
+      //   console.log(event.target)
+      // }
 
       document.onmouseover = function (event) {
         const path = event.target;
@@ -69,17 +64,11 @@ const Info = () => {
         </div>
       </div>
       <section
-        // style={{ backgroundImage: "url('/img/davinci/d6.png')" }}
         style={{ backgroundColor: "#ddd" }}
         className=" overlay-light-3 work-carsouel section-padding pt-30 pb-60 bg-light-gray"
         data-scroll-index="2"
       >
         <div className="container">
-          {/* <div>
-            <Image src={infoImg} alt="" />
-          </div> */}
-
-          <div className="container">
             <div className="row col-lg-10 col-md-12 margin-rl-auto justify-content-center">
               <div className="col-lg-5 col-md-10 valign justify-content-center">
                 <svg
@@ -194,7 +183,6 @@ const Info = () => {
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </section>
     </>

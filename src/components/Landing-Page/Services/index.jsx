@@ -1,12 +1,12 @@
 import services from "../../../data/business/services.json";
-import Icon from "@mui/material/Icon";
+//import { Diversity1, Handyman, RocketLaunch, VolunteerActivism } from "@mui/icons-material";
 
-import { Diversity1, Group, Handyman, RocketLaunch, VolunteerActivism } from "@mui/icons-material";
 const Icons = [
-  <Diversity1 key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,[],
-  <VolunteerActivism key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,[],
-  <RocketLaunch key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,
-  <Handyman key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,
+  // <Diversity1 key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,[],
+  // <VolunteerActivism key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,[],
+  // <RocketLaunch key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,
+  // <Handyman key="" sx={{ fontSize: 65, fill: "url(#linearColors)" }} />,
+    [],[],[],[],[],[],
 ];
 
 const Services = () => {

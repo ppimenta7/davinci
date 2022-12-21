@@ -3,7 +3,6 @@ import Head from "next/head";
 import { FormEvent, useState } from "react";
 import Image from "next/image";
 import ImgLogo from "../../public/img/davinci/logo.png";
-import { getBudgetCompiled } from '../services/getBudgetCompiled';
 import { useRouter } from 'next/router';
 import { NextPage } from 'next';
 import { setCookie } from 'nookies';

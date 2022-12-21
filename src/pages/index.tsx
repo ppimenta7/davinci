@@ -46,9 +46,9 @@ const IndexPage: NextPage<IndexPageInterface> = ({
             <FixedSearch />
             <Header2 budgets={budgets} />
             <Team />
-            {/* <Services /> */}
-            {/* <Info /> */}
-            {/* <Portfolio /> */}
+            <Services />
+            <Info />
+            <Portfolio />
             <About
               budgets={budgets}
               categories={categories}

@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-no-undef */
 import support from "../../../data/business/support.json";
-import { EscalatorWarning, Elderly, SportsHandball } from "@mui/icons-material";
-import Icon from "@mui/material/Icon";
+// import { EscalatorWarning, Elderly, SportsHandball } from "@mui/icons-material";
 const Icons = [
-  <EscalatorWarning key="" sx={{ fontSize: 100 }} />,
-  <Elderly key="" sx={{ fontSize: 100 }} />,
-  <SportsHandball key="" sx={{ fontSize: 100 }} />,
+  // <EscalatorWarning key="" sx={{ fontSize: 100 }} />,
+  // <Elderly key="" sx={{ fontSize: 100 }} />,
+  // <SportsHandball key="" sx={{ fontSize: 100 }} />,
+  [],[],[]
 ];
 
 const Portfolio = () => {
@@ -26,8 +26,6 @@ const Portfolio = () => {
                   >
                     {Icons[idx]}
                   </div>
-
-                  {/* <i className={`text-white fas ${slide.icon} i-span`}></i> */}
                   <h6 className="fw-600 text-u text-light fz-24">
                     {slide.title}
                   </h6>
