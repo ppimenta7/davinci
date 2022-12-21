@@ -31,7 +31,8 @@ const Slug: NextPage<SlugInterface> = ({
   type, budgetCompiled,
 }) => {
     if(type == 'pdf') return <Pdf budgets={budgetCompiled}/>;
-    setTimeout(() => { destroyCookie(undefined, "token") }, 5000);
+    destroyCookie(undefined, "token");
+    destroyCookie(undefined, "temp");
     return (
       <IndexPage budgets={budgetCompiled} />
       );
@@ -40,12 +41,13 @@ const Slug: NextPage<SlugInterface> = ({
 export const getServerSideProps = async ({ query, req}) => {
   const params = query.slug;
   const cookies = req.cookies;
-  if(!cookies.token) return {
+  const Base64 = new Buffer('admin123').toString('base64');
+
+  if(!cookies.token && (cookies.token != cookies.temp || cookies.token != Base64)) return {
       redirect: {
         destination: `/login?${params}`,
       },
     };
-
     const setType = () => {
       if(params.includes("pdf")) return "pdf"
       if(params.includes("historico")) return "historico" 
@@ -61,7 +63,6 @@ export const getServerSideProps = async ({ query, req}) => {
 
     // const products = budgets?.products_json || budgets?.products;
     // const IDCategorys = products?.map((product: ProductsInterface) => product?.category);
-    // const categories = await getCategories(IDCategorys);
 
     const budgets = type == 'historico' ? ( await getBudgetsHistory(id).then((res) => res.data))
       : ( await getBudgets(id).then((res) => res.data));

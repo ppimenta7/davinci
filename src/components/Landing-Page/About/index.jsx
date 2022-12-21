@@ -25,11 +25,8 @@ const About = ({ budgets }) => {
   };
 
   const strlenText = (text) => {
-    if (text.length > 255) {
-      return text.substring(0, 255) + "...";
-    } else {
-      return text;
-    }
+    if(text?.length > 255) return text.substring(0, 255) + "...";
+    return text;
   };
 
   return (

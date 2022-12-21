@@ -7,6 +7,8 @@ import { NextPage } from 'next';
 import { setCookie } from 'nookies';
 import { v4 as uuidv4 } from 'uuid';
 import { setAcessType } from "../../public/js/index";
+import { getBudgetsHistory } from '../services/getBudgetsHistory';
+import { getBudgets } from '../services/getBudgets';
 
 
 interface Props {
@@ -36,7 +38,11 @@ const LoginPage: NextPage<Props> = ({ codeAccess }) => {
     event.preventDefault();
 
     const password = (document.querySelector("#password") as HTMLInputElement).value;
-    const ACCESS_TOKEN_KEY = uuidv4();
+    // const ACCESS_TOKEN_KEY = uuidv4();
+    const ACCESS_TOKEN_KEY = new Buffer(password).toString('base64');
+
+    const accessBase64 = new Buffer(codeAccess).toString('base64');
+    setCookie(undefined, 'temp', `${accessBase64}`)
 
     if (!validatePassword(password)) return;
     setErrMessage("");
@@ -111,14 +117,19 @@ const LoginPage: NextPage<Props> = ({ codeAccess }) => {
   );
 };
 
-LoginPage.getInitialProps = async ({ req }) => {
-  // const budgets = await getBudgetCompiled(36);
-  // const codeAccess = budgets[0].['Password/Access Code'];
-  return { codeAccess: '123456' }
+LoginPage.getInitialProps = async ({ query }) => {
+  const params = Object.keys(query)[0];
+  const id = Object.values(query)[0];
+  const setType = () => {
+      if(params.includes("pdf")) return "pdf"
+      if(params.includes("historico")) return "historico" 
+      return "hotsite"
+    }
+  const type = setType()
+  const budgets = type == 'historico' ? ( await getBudgetsHistory(id).then((res) => res.data))
+      : ( await getBudgets(id).then((res) => res.data));
+  const codeAccess = budgets.password_access_code;
+  return { codeAccess }
 }
 
 export default LoginPage;
-function uuid() {
-  throw new Error('Function not implemented.');
-}
-

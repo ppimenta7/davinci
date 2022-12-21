@@ -30,9 +30,9 @@ const IndexPage: NextPage<IndexPageInterface> = ({
   const params = query.slug;
 
   const dateNow = new Date();
-  const expirationDate = new Date(budgets?.expiration_date);
+  const expirationDate = new Date(budgets?.budgets.expiration_date);
   const status = expirationDate.getTime() >= dateNow.getTime();
-   
+
   if(!status && acessType !== "admin") return <ExpiratePage />
 
   if(acessType !== 'negate') return (
