@@ -45,7 +45,7 @@ export const contentProducts = (products, budgets) => {
   ]);
 
   budgets?.comments_report != ""
-    ? contentProducts.push([
+    && contentProducts.push([
         { border: [false, false, false, false], text: "" },
         {
           text: [
@@ -56,8 +56,7 @@ export const contentProducts = (products, budgets) => {
           margin: [5, 5],
         },
         { text: "", alignment: "center", margin: [5, 5] },
-      ])
-    : null;
+      ]);
 
   return contentProducts;
 };

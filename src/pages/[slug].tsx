@@ -30,7 +30,6 @@ interface SlugInterface {
 const Slug: NextPage<SlugInterface> = ({
   type, budgetCompiled,
 }) => {
-  console.log(budgetCompiled)
     if(type == 'pdf') return <Pdf budgets={budgetCompiled}/>;
     setTimeout(() => { destroyCookie(undefined, "token") }, 5000);
     return (
@@ -47,12 +46,12 @@ export const getServerSideProps = async ({ query, req}) => {
       },
     };
 
-  try {
     const setType = () => {
       if(params.includes("pdf")) return "pdf"
       if(params.includes("historico")) return "historico" 
       return "hotsite"
     }
+  try {
     const type = setType()
     const paramID = params.split("=")[1]
     const id = typeof params === "string" ? paramID : "";
@@ -63,8 +62,6 @@ export const getServerSideProps = async ({ query, req}) => {
     // const products = budgets?.products_json || budgets?.products;
     // const IDCategorys = products?.map((product: ProductsInterface) => product?.category);
     // const categories = await getCategories(IDCategorys);
-
-
 
     const budgets = type == 'historico' ? ( await getBudgetsHistory(id).then((res) => res.data))
       : ( await getBudgets(id).then((res) => res.data));

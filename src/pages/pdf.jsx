@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-css-tags */
-// import jsPDF from "jspdf";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useEffect } from "react";
@@ -11,17 +9,20 @@ import {
   formateValue,
   friendlyFilename,
 } from "../../public/js/index";
-import { contentProducts, totalValueBudgets } from "../data/pdf-content";
-import pdfMake from "pdfmake/build/pdfmake"
-import pdfFonts from "pdfmake/build/vfs_fonts"
+import { contentProducts, totalValueBudgets, nada } from "../data/pdf-content";
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+import { destroyCookie } from 'nookies';
 // const { htmlToText } = require("html-to-text");
+// import jsPDF from "jspdf";
 
 const Pdf = ({ budgets }) => {
-  const products = budgets?.products_json;
-  const customers= budgets?.customer_json;
+  const products = budgets?.products;
+  const customers= budgets?.customers;
+  budgets = budgets.budgets;
 
-  const dataBirthdate = formateDate(customers?.customer_birth_date);
-  const cpf = formataCPF(customers?.customer_cpf);
+  const dataBirthdate = formateDate(customers?.birth_date);
+  const cpf = formataCPF(customers?.cpf);
   const value = formateValue(budgets?.value);
   const discount = formateValue(budgets?.value - budgets?.discount);
   const data_atual = formateDateNow();
@@ -29,8 +30,15 @@ const Pdf = ({ budgets }) => {
   const bgTitle = budgets?.title;
   const title =  bgTitle?.replace(/Orçamento para/g, "");
   const version = budgets?.version;
+  const filename = friendlyFilename(customers?.full_name);
   const contentProduct = contentProducts(products, budgets);
-  const filename = friendlyFilename(customers?.customer_full_name);
+
+  let res = false;
+  const tt = () => {
+    res = true;
+    return totalValueBudgets(discount);
+  };
+
 
   function gerarPDF() {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
@@ -56,9 +64,9 @@ const Pdf = ({ budgets }) => {
         {
           text: [
             { text: `Nome: `, bold: true },
-            `${customers?.customer_full_name}          `,
+            `${customers?.full_name}          `,
             { text: `Endereço: `, bold: true },
-            `${customers?.customer_address}\n`,
+            `${customers?.address}\n`,
           ],
           margin: [0, 0, 0, 10],
         },
@@ -74,14 +82,14 @@ const Pdf = ({ budgets }) => {
         {
           text: [
             { text: `Doutor Responsável: `, bold: true },
-            `${customers?.customer_dr_responsible}\n`,
+            `${customers?.dr_responsible}\n`,
           ],
           margin: [0, 0, 0, 10],
         },
         {
           text: [
             { text: `Tipo de Amputação: `, bold: true },
-            `${customers?.customer_type_of_amputation}`,
+            `${customers?.type_of_amputation}`,
           ],
           margin: [0, 0, 0, 50],
         },
@@ -120,9 +128,24 @@ const Pdf = ({ budgets }) => {
                 { text: "Descrição", style: "tableHeader" },
                 { text: "Valor Unit.", style: "tableHeader" },
               ],
-              contentProduct[0],
-              contentProduct[1],
-              totalValueBudgets(discount),
+              // contentProduct[0],
+              // contentProduct[1] != undefined && contentProduct[1], 
+              // totalValueBudgets(discount) ,
+              contentProduct.length > 0
+                ? contentProduct[0]
+                : res == false
+                ? tt()
+                : nada,
+              contentProduct.length > 1
+                ? contentProduct[1]
+                : res == false
+                ? tt()
+                : nada,
+              contentProduct.length > 2
+                ? contentProduct[2]
+                : res == false
+                ? tt()
+                : nada,
             ],
             margin: [0, 0, 0, 20],
           },
@@ -215,6 +238,7 @@ const Pdf = ({ budgets }) => {
     // doc.getBase64((data) => { window.location.href = 'data:application/pdf;base64,' + data; });
     // doc.download(`pdf_${filename}`);
   }
+    setTimeout(() => { destroyCookie(undefined, "token") }, 5000);
 
   useEffect(() => {
     // function gerarPDF() {
@@ -232,14 +256,15 @@ const Pdf = ({ budgets }) => {
     //   });
     // }
     document.body.classList.add("pdf");
-    window.addEventListener("load", gerarPDF);
+    gerarPDF()
+    // window.addEventListener("load", gerarPDF);
   });
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <link rel="stylesheet" href="/css/style.css" />
-      </Head>
+      </Head> */}
       <section>
         <div id="teste">
           <div className="container loader-container">
