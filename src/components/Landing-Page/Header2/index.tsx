@@ -10,7 +10,7 @@ import Image from "next/image";
 import ImgLogo from "../../../../public/img/davinci/d7.png";
 import pngVideo from "../../../../public/img/davinci/png-video.png";
 
-const Header = ({ budgets }) => {
+const Header = ({ }) => {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
@@ -22,8 +22,6 @@ const Header = ({ budgets }) => {
     setOpen(true);
   };
 
-  const bgTitle = budgets?.title;
-  const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
   return (
     <>
       <header className="home-bus1 position-re" data-scroll-index="0">

@@ -17,8 +17,8 @@ import { getCustomers } from '../services/getCustomers';
 
 interface SlugInterface {
   budgets: BudgetsInterface;
-  budgetCompiled: BudgetCompiledInterface;
-  budgetsTeste: any;
+  // budgetCompiled: BudgetCompiledInterface;
+  budgetCompiled: any;
   products: ProductsInterface;
   categories: CategoriesInterface;
   customers: CustomersInterface;
@@ -28,14 +28,13 @@ interface SlugInterface {
   };
 }
 const Slug: NextPage<SlugInterface> = ({
-  type, budgetCompiled, categories, budgetsTeste,
+  type, budgetCompiled,
 }) => {
-  console.log(budgetsTeste)
+  console.log(budgetCompiled)
     if(type == 'pdf') return <Pdf budgets={budgetCompiled}/>;
     setTimeout(() => { destroyCookie(undefined, "token") }, 5000);
     return (
-      // <p>{JSON.stringify(budgetsTeste)}</p>
-      <IndexPage budgets={budgetsTeste} categories={categories} />
+      <IndexPage budgets={budgetCompiled} />
       );
 };
 
@@ -86,13 +85,12 @@ export const getServerSideProps = async ({ query, req}) => {
       props: {
         type,
         // budgetCompiled: budgets,
-        budgetsTeste: {
+        budgetCompiled: {
           budgets,
           products,
           categories,
           customers,
         },
-        categories,
       },
     };
   } catch (error) {

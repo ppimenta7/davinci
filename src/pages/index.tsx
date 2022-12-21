@@ -19,12 +19,11 @@ import { acessType } from "../../public/js/index";
 import { useRouter } from 'next/router';
 
 interface IndexPageInterface {
-  budgets: BudgetCompiledInterface;
-  categories: CategoriesInterface;
+  budgets: any;
 }
 
 const IndexPage: NextPage<IndexPageInterface> = ({
-  budgets, categories
+  budgets
 }) => {
   const router = useRouter();
   const { query } = useRouter();
@@ -33,7 +32,6 @@ const IndexPage: NextPage<IndexPageInterface> = ({
   const dateNow = new Date();
   const expirationDate = new Date(budgets?.expiration_date);
   const status = expirationDate.getTime() >= dateNow.getTime();
-
    
   if(!status && acessType !== "admin") return <ExpiratePage />
 
@@ -44,14 +42,13 @@ const IndexPage: NextPage<IndexPageInterface> = ({
       </Head>
           <>
             <FixedSearch />
-            <Header2 budgets={budgets} />
+            <Header2 />
             <Team />
             <Services />
             <Info />
             <Portfolio />
             <About
               budgets={budgets}
-              categories={categories}
             />
             <Pricing
               budgets={budgets}
@@ -62,7 +59,7 @@ const IndexPage: NextPage<IndexPageInterface> = ({
           </>
     </>
     )
-    // router.push(`/${params}`)
+    router.push(`/${params}`)
 };
 
 export default IndexPage;

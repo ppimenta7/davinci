@@ -13,11 +13,13 @@ import { useEffect, useState } from 'react';
 import { getCustomers } from "../../../services/getCustomers";
 
 const Pricing = ({ budgets }) => {
-  const products = budgets?.products_json
-  const customer= budgets?.customer_json
+  const products = budgets?.products
+  const customer= budgets?.customers
 
-  const dataBirthdate = formateDate(customer?.customer_birth_date);
-  const cpf = formataCPF(customer?.customer_cpf);
+  budgets = budgets.budgets;
+  
+  const dataBirthdate = formateDate(customer?.birth_date);
+  const cpf = formataCPF(customer?.cpf);
   const value = formateValue(budgets?.value);
 
   const comment = "";
@@ -33,10 +35,10 @@ const Pricing = ({ budgets }) => {
           <div className="row justify-content-center primery-shadow bg-light">
             <div className="customer">
               <p className="inline">
-                <span>Nome:</span> {customer?.customer_full_name}
+                <span>Nome:</span> {customer?.full_name}
               </p>
               <p className="inline">
-                <span>Endereço:</span> {customer?.customer_address}
+                <span>Endereço:</span> {customer?.address}
               </p>
               <p className="inline">
                 <span>CPF:</span> {cpf}
@@ -45,10 +47,10 @@ const Pricing = ({ budgets }) => {
                 <span>Data de Nascimento:</span> {dataBirthdate}
               </p>
               <p>
-                <span>Doutor Responsável:</span> {customer?.customer_dr_responsible}
+                <span>Doutor Responsável:</span> {customer?.dr_responsible}
               </p>
               <p>
-                <span>Tipo de Amputação:</span> {customer?.customer_type_of_amputation}
+                <span>Tipo de Amputação:</span> {customer?.type_of_amputation}
               </p>
               {/* "reference": "teste" */}
             </div>
