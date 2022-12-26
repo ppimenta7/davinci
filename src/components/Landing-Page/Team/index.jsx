@@ -112,7 +112,7 @@ const Team = () => {
         {/*<div className="row col-lg-8 col-md-10 margin-rl-auto">
           <Video /> 
         </div>*/}
-        <div className="row col-lg-10 col-md-8 pt-60 justify-content-center margin-rl-auto">
+        <div className="row col-lg-8 col-md-8 pt-60 justify-content-center margin-rl-auto">
           {team.map((member, index) => (
             <div className="card-team col-lg-3 col-md-6" key={index}>
               <div style={{ height: "100%" }} className="item md-mb50">
