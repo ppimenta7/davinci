@@ -6,7 +6,7 @@ export const getProducts = async (
   IDproducts
 ): Promise<AxiosResponse<ProductsInterface[] | any>> => {
   const response = await axios.get(
-    `https://data.jetadmin.io/projects/da_vinci/prod/jet_database_8fl3/models/collection/`,
+    `https://data.jetadmin.app/projects/da_vinci/prod/jet_database_8fl3/models/collection/`,
     {
       params: { id__in: `${IDproducts}` },
       headers: {

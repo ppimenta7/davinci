@@ -5,9 +5,9 @@ import { options } from "./getBudgets";
 export const getCategories = async (
   IDCategorys
   ): Promise<AxiosResponse<CategoriesInterface[]|any>> => {
-  
+
     const response = await axios.get(
-      `https://data.jetadmin.io/projects/da_vinci/prod/jet_database_8fl3/models/categories/`,
+      `https://data.jetadmin.app/projects/da_vinci/prod/jet_database_8fl3/models/categories/`,
       {
         params: { id__in: `${IDCategorys}` },
         headers: {
@@ -16,6 +16,6 @@ export const getCategories = async (
         },
       }
     );
-  
+
     return response.data.results;
   };

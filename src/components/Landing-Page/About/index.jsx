@@ -11,7 +11,7 @@ const About = ({ budgets }) => {
   const products = budgets?.products;
   const categories = budgets.categories;
   budgets = budgets.budgets;
-  
+
   const bgTitle = budgets?.title;
   const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
 
@@ -137,7 +137,7 @@ const About = ({ budgets }) => {
                 <div className="col-lg-6 valign">
                   <div className="content pl-50">
                     <h2 className="mb-20 fw-800">
-                      {product.short_description}.{/* <br />{product.name}. */}
+                      {product.short_description ? product.short_description : product.name}.{/* <br />{product.name}. */}
                       <span style={{ display: "block" }} className="blue-color">
                         {" "}
                         {categories?.map((category) =>

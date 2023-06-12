@@ -6,7 +6,7 @@ export const getCustomers = async (
   id
 ): Promise<AxiosResponse<CustomersInterface>> => {
   const response = await axios.get(
-    `https://data.jetadmin.io/projects/da_vinci/prod/jet_database_8fl3/models/customers/`,
+    `https://data.jetadmin.app/projects/da_vinci/prod/jet_database_8fl3/models/customers/`,
     {
       params: { id: id },
       headers: {

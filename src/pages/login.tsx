@@ -121,13 +121,14 @@ LoginPage.getInitialProps = async ({ query }) => {
   const params = Object.keys(query)[0];
   const id = Object.values(query)[0];
   const setType = () => {
-      if(params.includes("pdf")) return "pdf"
-      if(params.includes("historico")) return "historico" 
+      if(params?.includes("pdf")) return "pdf"
+      if(params?.includes("historico")) return "historico"
       return "hotsite"
     }
   const type = setType()
   const budgets = type == 'historico' ? ( await getBudgetsHistory(id).then((res) => res.data))
       : ( await getBudgets(id).then((res) => res.data));
+
   const codeAccess = budgets.password_access_code;
   return { codeAccess }
 }

@@ -6,7 +6,7 @@ export const getBudgetsHistory = async (
   id
 ): Promise<AxiosResponse<BudgetsHistoryInterface>> => {
   const response = await axios.get(
-    `https://data.jetadmin.io/projects/da_vinci/prod/jet_database_8fl3/models/budget_history/${id}/`,
+    `https://data.jetadmin.app/projects/da_vinci/prod/jet_database_8fl3/models/budget_history/${id}/`,
     {
       headers: {
         Authorization: options.headers.Authorization,

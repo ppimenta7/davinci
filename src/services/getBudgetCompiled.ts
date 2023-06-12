@@ -11,7 +11,7 @@ export const getBudgetCompiled = async (
   id
 ): Promise<AxiosResponse<BudgetCompiledInterface>> => {
   const response = await axios.get(
-    `https://data.jetadmin.io/projects/da_vinci/prod/jet_database_8fl3/models/budget_compiled`,
+    `https://data.jetadmin.app/projects/da_vinci/prod/jet_database_8fl3/models/budget_compiled`,
     {
       params: { budget_id: `${id}` },
       headers: {
