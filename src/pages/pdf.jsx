@@ -21,8 +21,8 @@ const Pdf = ({ budgets }) => {
   const customers= budgets?.customers;
   budgets = budgets?.budgets;
 
-  const dataBirthdate = formateDate(customers?.birth_date);
-  const cpf = formataCPF(customers?.cpf);
+  const dataBirthdate = customers.birth_date ? formateDate(customers?.birth_date) : ''
+  const cpf = customers.cpf ? formataCPF(customers?.cpf) : '';
   const value = formateValue(budgets?.value);
   const discount = formateValue(budgets?.value - budgets?.discount);
   const data_atual = formateDateNow();
@@ -89,7 +89,7 @@ const Pdf = ({ budgets }) => {
         {
           text: [
             { text: `Tipo de Amputação: `, bold: true },
-            `${customers?.type_of_amputation}`,
+            `${customers.type_of_amputation ? customers?.type_of_amputation : ''}`,
           ],
           margin: [0, 0, 0, 50],
         },
@@ -129,7 +129,7 @@ const Pdf = ({ budgets }) => {
                 { text: "Valor Unit.", style: "tableHeader" },
               ],
               // contentProduct[0],
-              // contentProduct[1] != undefined && contentProduct[1], 
+              // contentProduct[1] != undefined && contentProduct[1],
               // totalValueBudgets(discount) ,
               contentProduct.length > 0
                 ? contentProduct[0]

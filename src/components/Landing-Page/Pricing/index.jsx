@@ -17,8 +17,8 @@ const Pricing = ({ budgets }) => {
   const customer= budgets?.customers
 
   budgets = budgets.budgets;
-  
-  const dataBirthdate = formateDate(customer?.birth_date);
+
+  const dataBirthdate = customer.birth_date ? formateDate(customer?.birth_date) : '';
   const cpf = formataCPF(customer?.cpf);
   const value = formateValue(budgets?.value);
 
@@ -75,7 +75,7 @@ const Pricing = ({ budgets }) => {
                       <td>{++idx}</td>
                       <td>
                         {prod.technical_description}
-                        {/* {budgets.comments_report == "" ? comment : budgets.comments_report} 
+                        {/* {budgets.comments_report == "" ? comment : budgets.comments_report}
                       </td>
                       <td>
                         {formateValue(prod.value == null ? 0 : prod.value)}
