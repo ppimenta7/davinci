@@ -18,8 +18,8 @@ const Pricing = ({ budgets }) => {
 
   budgets = budgets.budgets;
 
-  const dataBirthdate = customer.birth_date ? formateDate(customer?.birth_date) : '';
-  const cpf = formataCPF(customer?.cpf);
+  const dataBirthdate = customer?.birth_date ? formateDate(customer?.birth_date) : '';
+  const cpf = customers?.cpf ? formataCPF(customers?.cpf) : '';
   const value = formateValue(budgets?.value);
 
   const comment = "";
