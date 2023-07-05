@@ -138,12 +138,12 @@ const About = ({ budgets }) => {
                   <div className="content pl-50">
                     <h2 className="mb-20 fw-800">
                       {product.short_description ? product.short_description : product.name}.{/* <br />{product.name}. */}
-                      <span style={{ display: "block" }} className="blue-color">
+                      {/* <span style={{ display: "block" }} className="blue-color">
                         {" "}
                         {categories?.map((category) =>
                           category.id == product.category ? category.name : ""
                         )}{" "}
-                      </span>
+                      </span> */}
                     </h2>
 
                     <p>{htmlToText(strlenText(product.details))}</p>
