@@ -1,24 +1,24 @@
-Arguments: 
+Arguments:
   C:\Program Files\nodejs\node.exe C:\Users\claud\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add axios
 
-PATH: 
+PATH:
   C:\Users\claud\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\claud\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\Intel64;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Java\jdk-16.0.2\bin;C:\ProgramData\UNIVALI\Portugol Studio;C:\Program Files\dotnet;C:\Program Files (x86)\Calibre2;C:\Users\claud\AppData\Local\Microsoft\WindowsApps;C:\Users\claud\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\claud\AppData\Roaming\npm;C:\Users\claud\AppData\Local\GitHubDesktop\bin;C:\adb;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Users\claud\AppData\Local\Microsoft\WindowsApps;C:\Users\claud\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\claud\AppData\Local\GitHubDesktop\bin;C:\Users\claud\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
-Yarn version: 
+Yarn version:
   1.22.19
 
-Node version: 
+Node version:
   16.16.0
 
-Platform: 
+Platform:
   win32 x64
 
-Trace: 
-  Error: EPERM: operation not permitted, unlink 'E:\Área de Trabalho\Davinci\ravoreact-10\ravoreact-10\Main_files\ravo_react\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node'
+Trace:
+  Error: EPERM: operation not permitted, unlink 'E:\Área de Trabalho\Davinci\ravoreact-10\ravoreact-10\Main_files\Davinci\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node'
 
-npm manifest: 
+npm manifest:
   {
-    "name": "ravo_react",
+    "name": "Davinci",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -51,8 +51,8 @@ npm manifest:
     }
   }
 
-yarn manifest: 
+yarn manifest:
   No manifest
 
-Lockfile: 
+Lockfile:
   No lockfile

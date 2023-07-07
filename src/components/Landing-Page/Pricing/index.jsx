@@ -15,6 +15,7 @@ import { getCustomers } from "../../../services/getCustomers";
 const Pricing = ({ budgets }) => {
   const products = budgets?.products
   const customer= budgets?.customers
+  console.log(customer)
 
   budgets = budgets.budgets;
 
@@ -37,21 +38,27 @@ const Pricing = ({ budgets }) => {
               <p className="inline">
                 <span>Nome:</span> {customer?.full_name}
               </p>
-              <p className="inline">
-                <span>Endereço:</span> {customer?.address}
-              </p>
-              <p className="inline">
+              {cpf ? <p className="inline">
                 <span>CPF:</span> {cpf}
-              </p>
-              <p className="inline">
+              </p> : null}
+              {customer?.address ? <p >
+                <span>Endereço:</span> {customer?.address}
+              </p>: null}
+              {customer?.email ? <p className="inline">
+                <span>Email:</span> {customer?.email}
+              </p> : null}
+              {customer?.phone_number ? <p className="inline">
+                <span>Telefone:</span> {customer?.phone_number}
+              </p>: null}
+              <p>
                 <span>Data de Nascimento:</span> {dataBirthdate}
               </p>
-              <p>
+              {customer?.dr_responsible ? <p>
                 <span>Doutor Responsável:</span> {customer?.dr_responsible}
-              </p>
-              <p>
+              </p> : null}
+              {customer?.type_of_amputation ? <p>
                 <span>Tipo de Amputação:</span> {customer?.type_of_amputation}
-              </p>
+              </p> : null}
               {/* "reference": "teste" */}
             </div>
 

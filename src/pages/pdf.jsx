@@ -72,6 +72,15 @@ const Pdf = ({ budgets }) => {
         },
         {
           text: [
+            { text: `E-mail: `, bold: true },
+            `${customers?.email}          `,
+            { text: `Telefone: `, bold: true },
+            `${customers?.phone_number}\n`,
+          ],
+          margin: [0, 0, 0, 10],
+        },
+        {
+          text: [
             { text: `CPF: `, bold: true },
             `${cpf}          `,
             { text: `Data de Nascimento: `, bold: true },
