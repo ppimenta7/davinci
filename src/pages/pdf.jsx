@@ -23,6 +23,8 @@ const Pdf = ({ budgets }) => {
 
   const dataBirthdate = customers?.birth_date ? formateDate(customers?.birth_date) : ''
   const cpf = customers?.cpf ? formataCPF(customers?.cpf) : '';
+  const email = customers.email == null ? '' : customers.email
+  const telefone = customers.phone_number == null ? '' : customers.phone_number
   const value = formateValue(budgets?.value);
   const discount = formateValue(budgets?.value - budgets?.discount);
   const data_atual = formateDateNow();
@@ -73,9 +75,9 @@ const Pdf = ({ budgets }) => {
         {
           text: [
             { text: `E-mail: `, bold: true },
-            `${customers?.email}          `,
+            `${email}          `,
             { text: `Telefone: `, bold: true },
-            `${customers?.phone_number}\n`,
+            `${telefone}\n`,
           ],
           margin: [0, 0, 0, 10],
         },

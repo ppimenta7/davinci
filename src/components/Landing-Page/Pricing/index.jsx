@@ -15,7 +15,6 @@ import { getCustomers } from "../../../services/getCustomers";
 const Pricing = ({ budgets }) => {
   const products = budgets?.products
   const customer= budgets?.customers
-  console.log(customer)
 
   budgets = budgets.budgets;
 

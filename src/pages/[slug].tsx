@@ -27,7 +27,6 @@ interface SlugInterface {
 const Slug: NextPage<SlugInterface> = ({
   type, budgetCompiled,
 }) => {
-  console.log(budgetCompiled)
     if(type == 'pdf') return <Pdf budgets={budgetCompiled}/>;
     destroyCookie(undefined, "token");
     destroyCookie(undefined, "temp");
