@@ -12,6 +12,12 @@ const About = ({ budgets }) => {
   const categories = budgets.categories;
   budgets = budgets.budgets;
 
+  const quantidade = (idx) => {
+    const jsonProducts = budgets.products_quant
+    if(jsonProducts) return budgets.products_quant[idx].quantidade
+    return "1"
+  }
+
   const bgTitle = budgets?.title;
   const title = bgTitle ? bgTitle.replace(/Orçamento para/g, "") : null;
 
@@ -43,7 +49,7 @@ const About = ({ budgets }) => {
             </h2>
           </div>
         </div>
-        {products?.map((product) => (
+        {products?.map((product, idx) => (
           <section
             style={{ backgroundColor: "#f0f0f0" }}
             key={product.id}
@@ -145,7 +151,7 @@ const About = ({ budgets }) => {
                         )}{" "}
                       </span> */}
                     </h2>
-
+                      <span className="blue-color fw-700 fz-22">{quantidade(idx)} unidade(s)</span>
                     <p>{htmlToText(strlenText(product.details))}</p>
                     {product.details.length > 255 && (
                       <a
