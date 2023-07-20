@@ -3,6 +3,7 @@ import {
   formataCPF,
   formateDate,
   formateValue,
+  formateDateFull
 } from "../../../../public/js/index";
 
 import Image from "next/image";
@@ -161,19 +162,27 @@ const Pricing = ({ budgets }) => {
                 </table>
               </div>
               <div
-                style={{ flexDirection: "column", alignItems: "flex-end" }}
-                className="flex pb-30 pr-30"
+                style={{ justifyContent: 'space-between', alignItems: "flex-end" }}
+                className="flex padding-rl-30 pb-30"
               >
-                <Image
-                  style={{ width: "250px", transform: "translateY(45px)" }}
-                  src={ImgAss}
-                  alt=""
-                  width={"250px"}
-                  height={"128.2px"}
-                />
                 <span
-                  style={{ width: "250px", borderBottom: "2px black solid" }}
-                ></span>
+                  style={{ width: "100%", transform: 'translateY(4px)', alignItems: 'flex-end', gap: '8px' }} className="flex pb-30 padding-rl-30"
+                >
+                 Barueri, <span style={{ fontSize: '18px'}}>{formateDateFull(budgets.creation_date)}</span>
+                </span>
+                <div style={{ flexDirection: "column", alignItems: "flex-end" }}
+                className="flex pb-30 pr-30">
+                  <Image
+                    style={{ width: "250px", transform: "translateY(45px)" }}
+                    src={ImgAss}
+                    alt=""
+                    width={"250px"}
+                    height={"128.2px"}
+                  />
+                  <span
+                    style={{ width: "250px", borderBottom: "2px black solid" }}
+                  ></span>
+                </div>
               </div>
 
               <div className="valign pl-30">

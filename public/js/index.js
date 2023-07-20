@@ -16,7 +16,7 @@ export function formateDate(date){
 
 export function formateValue(val) {
     val = parseFloat(val)
-    const value = val.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) 
+    const value = val.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
     return value;
 }
 
@@ -29,11 +29,11 @@ export function formataCPF(cpf){
 export function formateDateNow(){
     const data = new Date();
 
-    const mesExtenso = Array("Janeiro", "Fevereiro", "Março", 
-    "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", 
+    const mesExtenso = Array("Janeiro", "Fevereiro", "Março",
+    "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro",
     "Outubro", "Novembro", "Dezembro");
 
-    const dia = data.getDate(); 
+    const dia = data.getDate();
     const mes = data.getMonth();
     const ano4 = data.getFullYear();
 
@@ -47,4 +47,18 @@ export function friendlyFilename(text) {
     .replace(/\-\-+/g, "-") // substitui múltiplos hífens por um único hífen
     .replace(/(ˆ-+|-+$)/, ""); // remove hífens extras do final ou do início da string
   return filename;
+}
+
+export function formateDateFull(date){
+    const data = new Date(date);
+
+    const mesExtenso = Array("Janeiro", "Fevereiro", "Março",
+    "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro",
+    "Outubro", "Novembro", "Dezembro");
+
+    const dia = data.getDate();
+    const mes = data.getMonth();
+    const ano4 = data.getFullYear();
+
+    return dia + ' de '+  mesExtenso[mes] + ' de ' + ano4;
 }
