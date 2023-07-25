@@ -101,7 +101,7 @@ const About = ({ budgets }) => {
                     </div>
                     <div className="img2">
                       <Image
-                        src={product.image}
+                        src={product.image || ''}
                         alt=""
                         layout="fill"
                         // width={'auto'}
